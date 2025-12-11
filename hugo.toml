@@ -1,0 +1,39 @@
+baseURL = "https://jackley-dev.github.io/"
+languageCode = "zh-cn"
+title = "我的技术博客"
+theme = "PaperMod"
+
+[params]
+  defaultTheme = "auto"
+
+  # ❌ 删除原来的 [params.profileMode] 相关设置
+  # ✅ 改用下面的 [params.homeInfoParams]
+
+  [params.homeInfoParams]
+    Title = "你好，我是开发者 👋"
+    # Content 支持 Markdown 语法，可以换行
+    Content = """
+    欢迎来到我的博客。
+    这里记录我的技术成长、踩坑经历与生活思考。
+    """
+
+  # 社交图标 (保持不变)
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/你的用户名"
+  [[params.socialIcons]]
+    name = "twitter"
+    url = "https://twitter.com/你的账号"
+
+# 顶部菜单 (保持不变)
+[menu]
+  [[menu.main]]
+    identifier = "posts"
+    name = "文章"
+    url = "/posts/"
+    weight = 10
+  [[menu.main]]
+    identifier = "search"
+    name = "搜索"
+    url = "/search/"
+    weight = 20

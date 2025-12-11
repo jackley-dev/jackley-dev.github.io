@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Github Pages on 我的技术博客</title>
+    <link>http://localhost:1313/tags/github-pages/</link>
+    <description>Recent content in Github Pages on 我的技术博客</description>
+    <generator>Hugo -- 0.152.2</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 05 Dec 2025 23:25:56 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/github-pages/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>配置Github Pages</title>
+      <link>http://localhost:1313/posts/hello-papermod/</link>
+      <pubDate>Fri, 05 Dec 2025 23:25:56 +0800</pubDate>
+      <guid>http://localhost:1313/posts/hello-papermod/</guid>
+      <description>&lt;p&gt;我想建立一个长期的写作基地，所以试着创建了自己的github pages，本篇记录了创建过程。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3分钟极简版，创建GitHub Pages&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;新建仓库：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;登录 GitHub，点击右上角 + -&amp;gt; New repository。&lt;/p&gt;
+&lt;p&gt;关键步骤： 仓库名（Repository name）必须填写为 用户名.github.io。例如：用户名是 tom, 仓库名必须是 tom.github.io。&lt;/p&gt;
+&lt;p&gt;勾选 Public，点击 Create repository。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;创建网页文件：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在仓库页面，点击 creating a new file 链接。&lt;/p&gt;
+&lt;p&gt;文件名填写：index.html&lt;/p&gt;
+&lt;p&gt;文件内容随便写，例如：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HTML
+
+&amp;lt;h1&amp;gt;这是我的技术博客&amp;lt;/h1&amp;gt;
+&amp;lt;p&amp;gt;Hello World! 2025年开始写作。&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;滚动到底部，点击绿色按钮 Commit changes。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;见证奇迹：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;等待 1-2 分钟。&lt;/p&gt;
+&lt;p&gt;在浏览器输入地址：https://用户名.github.io。&lt;/p&gt;
+&lt;p&gt;应该能看到刚才写的网页了。&lt;/p&gt;
+&lt;p&gt;总结：GitHub Pages 的本质就是————你把文件放在仓库里，它自动帮你变成一个网站。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
