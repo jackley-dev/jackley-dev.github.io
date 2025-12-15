@@ -1,6 +1,6 @@
 baseURL = "https://jackley-dev.github.io/"
 languageCode = "zh-cn"
-title = "我的技术博客"
+title = "我的博客"
 theme = "PaperMod"
 
 [params]
@@ -10,30 +10,39 @@ theme = "PaperMod"
   # ✅ 改用下面的 [params.homeInfoParams]
 
   [params.homeInfoParams]
-    Title = "你好，我是开发者 👋"
+    Title = "Hi there 👋"
     # Content 支持 Markdown 语法，可以换行
     Content = """
-    欢迎来到我的博客。
-    这里记录我的技术成长、踩坑经历与生活思考。
+    欢迎来到我的blog，这里记录我的技术成长、踩坑经历与生活思考。
     """
-
-  # 社交图标 (保持不变)
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/你的用户名"
-  [[params.socialIcons]]
-    name = "twitter"
-    url = "https://twitter.com/你的账号"
 
 # 顶部菜单 (保持不变)
 [menu]
   [[menu.main]]
-    identifier = "posts"
-    name = "文章"
-    url = "/posts/"
+    identifier = "aigc"
+    name = "AIGC"
+    url = "/categories/aigc/"
     weight = 10
+
   [[menu.main]]
-    identifier = "search"
-    name = "搜索"
-    url = "/search/"
+    identifier = "algo"
+    name = "推荐算法"
+    url = "/categories/推荐算法/" # 注意 URL 里的中文要和文章里写的一模一样
     weight = 20
+
+  [[menu.main]]
+    identifier = "life"
+    name = "生活感悟"
+    url = "/categories/生活感悟/"
+    weight = 30
+
+  # --- 新增 GitHub 入口 ---
+  [[menu.main]]
+    identifier = "github"
+    name = "GitHub"       # 你也可以用 emoji 比如 "🐙 GitHub"
+    url = "https://github.com/jackley-dev" # 记得换成你的真实地址
+    weight = 40           # 数字越大，越靠右
+
+    [menu.main.params]
+      # 这是一个小技巧：告诉浏览器在新标签页打开
+      external = true
