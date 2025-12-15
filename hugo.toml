@@ -47,7 +47,7 @@ theme = "PaperMod"
     identifier = "github"
     name = "GitHub"       # 你也可以用 emoji 比如 "🐙 GitHub"
     url = "https://github.com/jackley-dev" # 记得换成你的真实地址
-    weight = 40           # 数字越大，越靠右
+    weight = 50           # 数字越大，越靠右
 
     [menu.main.params]
       # 这是一个小技巧：告诉浏览器在新标签页打开
