@@ -36,6 +36,12 @@ theme = "PaperMod"
     url = "/categories/生活感悟/"
     weight = 30
 
+  [[menu.main]]
+    identifier = "tech"
+    name = "技术"
+    url = "/categories/技术/"
+    weight = 40
+
   # --- 新增 GitHub 入口 ---
   [[menu.main]]
     identifier = "github"

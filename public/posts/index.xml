@@ -6,13 +6,30 @@
     <description>Recent content in Posts on 我的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 05 Dec 2025 23:25:56 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Dec 2025 18:09:55 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>应对晚睡拖延症</title>
+      <link>http://localhost:1313/posts/%E5%BA%94%E5%AF%B9%E6%99%9A%E7%9D%A1%E6%8B%96%E5%BB%B6%E7%97%87/</link>
+      <pubDate>Mon, 15 Dec 2025 18:09:55 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E5%BA%94%E5%AF%B9%E6%99%9A%E7%9D%A1%E6%8B%96%E5%BB%B6%E7%97%87/</guid>
+      <description>&lt;p&gt;想早睡（如：晚上11点前睡），但实际总难以执行，有时还在12点之后才睡，第二天没有精神的时候又后悔前一天没有早睡。&lt;/p&gt;
+&lt;p&gt;我分析原因可能是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;早上面对即将来临的一整天的工作，精力不好是个比较难以容忍的状态；所以早上会希望自己前一天能早点休息&lt;/li&gt;
+&lt;li&gt;但是真到了晚上，所处的状态就发生变化了：由于马上就要休息了，即便身体疲惫一点，心理上好像也觉得问题不大，从而导致拖延入睡&lt;/li&gt;
+&lt;li&gt;短视频等也会吸引注意力，让手机难以放下，影响睡眠&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其中第1、2两点更多的是当下需求与未来需求的冲突，当下（晚上）的需求是放松，而未来的需求是早睡。大脑倾向于高估当下的快乐（刷短视频的爽感），而低估未来的痛苦（明早的疲惫）。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;靠“发誓今晚早睡”是没用的，需要设计环境和流程来改变行为。&lt;!-- raw HTML omitted --&gt;最粗暴也最有效的方法或许是物理隔离法，既然晚上的意志力薄弱，就不要挑战它。今天开始尝试进行强制阻断，即设置手机的“睡眠模式”或“屏幕使用时间”，到点屏幕变灰或强制锁定主要娱乐APP。&lt;/p&gt;
+&lt;p&gt;为了避免晚上的“放松”没了，设定21:30-22:30为“神圣娱乐时间”，在这1小时里，尽情玩手机、刷剧、打游戏，告诉自己这是奖励。但时间一到，配合手机的“睡眠模式”，娱乐必须结束，进入洗漱环节。&lt;/p&gt;
+&lt;p&gt;直接从高刺激进入低刺激很难，将22:30-23:00设为“缓冲期”：读纸质书/听播客/冥想/纯发呆。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>配置Github Pages</title>
-      <link>http://localhost:1313/posts/%E9%85%8D%E7%BD%AEgithub-pages/</link>
+      <link>http://localhost:1313/posts/setup-github-pages/</link>
       <pubDate>Fri, 05 Dec 2025 23:25:56 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E9%85%8D%E7%BD%AEgithub-pages/</guid>
+      <guid>http://localhost:1313/posts/setup-github-pages/</guid>
       <description>&lt;p&gt;我想建立一个长期的写作基地，所以试着创建了自己的github pages，本篇记录了创建过程。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3分钟极简版，创建GitHub Pages&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
