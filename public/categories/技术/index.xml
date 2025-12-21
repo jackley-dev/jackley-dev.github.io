@@ -6,8 +6,51 @@
     <description>Recent content in 技术 on 我的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 05 Dec 2025 23:25:56 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Dec 2025 21:58:48 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线上音频转录（mac版）</title>
+      <link>http://localhost:1313/posts/%E7%BA%BF%E4%B8%8A%E9%9F%B3%E9%A2%91%E8%BD%AC%E5%BD%95/</link>
+      <pubDate>Sun, 21 Dec 2025 21:58:48 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E7%BA%BF%E4%B8%8A%E9%9F%B3%E9%A2%91%E8%BD%AC%E5%BD%95/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;我想解决的问题是：&lt;/strong&gt; 面对一个线上音频，暂时没法下载下来，但我想将这个音频转写成文字版。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一个验证下来比较便捷可行的思路是：&lt;/strong&gt; 先安装虚拟声卡，让系统声音通过虚拟声卡播放，用音频转录工具接收虚拟声卡的声音进行转录。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第一步准备工具&#34;&gt;第一步：准备工具&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;虚拟声卡：&lt;/strong&gt; &lt;a href=&#34;https://github.com/ExistentialAudio/BlackHole&#34;&gt;BlackHole&lt;/a&gt;（建议下载 2ch 版本）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;转录工具：&lt;/strong&gt; &lt;a href=&#34;https://tingwu.aliyun.com/&#34;&gt;通义听悟&lt;/a&gt;（支持浏览器实时录音转写） 或 &lt;a href=&#34;https://www.feishu.cn/product/minutes&#34;&gt;飞书妙记&lt;/a&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;第二步核心配置音频-midi-设置&#34;&gt;第二步：核心配置（音频 MIDI 设置）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;打开 Mac 自带的 &lt;strong&gt;“音频 MIDI 设置”&lt;/strong&gt; 插件。&lt;/li&gt;
+&lt;li&gt;点击左下角 &lt;strong&gt;“+”&lt;/strong&gt;，创建 &lt;strong&gt;“多输出设备”&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;勾选 &lt;strong&gt;“MacBook Air 扬声器”&lt;/strong&gt;（并设为主设备）和 &lt;strong&gt;“BlackHole 2ch”&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;在 BlackHole 旁勾选 &lt;strong&gt;“漂移校正”&lt;/strong&gt; 以保证音轨同步。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;第三步切换系统输出&#34;&gt;第三步：切换系统输出&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;点击 Mac 菜单栏的 &lt;strong&gt;系统设置/声音&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;将输出设备切换为刚创建的 &lt;strong&gt;“多输出设备”&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;提示：切换后键盘音量键将失效，需提前调好系统音量。&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;第四步开启网页转录&#34;&gt;第四步：开启网页转录&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;权限检查：&lt;/strong&gt; 确保浏览器已获得系统麦克风访问权限（路径：&lt;strong&gt;系统设置 -&amp;gt; 隐私与安全性 -&amp;gt; 麦克风&lt;/strong&gt;）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开始录音：&lt;/strong&gt; 在通义听悟或飞书妙记中点击 &lt;strong&gt;“开始录音”&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;设备选择：&lt;/strong&gt; 在浏览器弹出的麦克风选项中，手动选择 &lt;strong&gt;“BlackHole 2ch (Virtual)”&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开始转录：&lt;/strong&gt; 回到视频播放页面点击播放，转录页面将实时同步生成文字。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;核查tips&#34;&gt;核查Tips&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;录制不到声音：&lt;/strong&gt; 请检查视频播放器是否被静音，或浏览器标签页是否开启了静音模式。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;录音中断：&lt;/strong&gt; 长时间录制时，请确保关闭 Mac 的“自动睡眠”功能并接通电源。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;权限失效：&lt;/strong&gt; 若一切设置无误但仍无声音，可尝试重启浏览器以刷新隐私权限。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>配置Github Pages</title>
       <link>http://localhost:1313/posts/setup-github-pages/</link>
