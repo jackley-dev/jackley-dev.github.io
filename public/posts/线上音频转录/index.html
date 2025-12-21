@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>线上音频转录（mac版） | 我的博客</title>
+<meta name="keywords" content="">
+<meta name="description" content="我想解决的问题是： 面对一个线上音频，暂时没法下载下来，但我想将这个音频转写成文字版。
+一个验证下来比较便捷可行的思路是： 先安装虚拟声卡，让系统声音通过虚拟声卡播放，用音频转录工具接收虚拟声卡的声音进行转录。
+
+第一步：准备工具
+
+虚拟声卡： BlackHole（建议下载 2ch 版本）。
+转录工具： 通义听悟（支持浏览器实时录音转写） 或 飞书妙记。
+
+第二步：核心配置（音频 MIDI 设置）
+
+打开 Mac 自带的 “音频 MIDI 设置” 插件。
+点击左下角 “&#43;”，创建 “多输出设备”。
+勾选 “MacBook Air 扬声器”（并设为主设备）和 “BlackHole 2ch”。
+在 BlackHole 旁勾选 “漂移校正” 以保证音轨同步。
+
+第三步：切换系统输出
+
+点击 Mac 菜单栏的 系统设置/声音。
+将输出设备切换为刚创建的 “多输出设备”。
+
+
+提示：切换后键盘音量键将失效，需提前调好系统音量。
+
+第四步：开启网页转录
+
+权限检查： 确保浏览器已获得系统麦克风访问权限（路径：系统设置 -&gt; 隐私与安全性 -&gt; 麦克风）。
+开始录音： 在通义听悟或飞书妙记中点击 “开始录音”。
+设备选择： 在浏览器弹出的麦克风选项中，手动选择 “BlackHole 2ch (Virtual)”。
+开始转录： 回到视频播放页面点击播放，转录页面将实时同步生成文字。
+
+
+核查Tips
+
+录制不到声音： 请检查视频播放器是否被静音，或浏览器标签页是否开启了静音模式。
+录音中断： 长时间录制时，请确保关闭 Mac 的“自动睡眠”功能并接通电源。
+权限失效： 若一切设置无误但仍无声音，可尝试重启浏览器以刷新隐私权限。
+">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/%E7%BA%BF%E4%B8%8A%E9%9F%B3%E9%A2%91%E8%BD%AC%E5%BD%95/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.343cc480b9ffc8f04ccbe5e968ad674880cab773ec19905e93033065c1e7a804.css" integrity="sha256-NDzEgLn/yPBMy&#43;XpaK1nSIDKt3PsGZBekwMwZcHnqAQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/%E7%BA%BF%E4%B8%8A%E9%9F%B3%E9%A2%91%E8%BD%AC%E5%BD%95/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="我的博客 (Alt + H)">我的博客</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="http://localhost:1313/categories/aigc/" title="AIGC">
+                    <span>AIGC</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/" title="推荐算法">
+                    <span>推荐算法</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/" title="生活感悟">
+                    <span>生活感悟</span>
+                </a>
+            </li>
+            <li>
+                <a href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF/" title="技术">
+                    <span>技术</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/jackley-dev" title="GitHub">
+                    <span>GitHub</span>&nbsp;
+                    <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
+                        <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path>
+                        <path d="M15 3h6v6"></path>
+                        <path d="M10 14L21 3"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      线上音频转录（mac版）
+    </h1>
+    <div class="post-meta"><span title='2025-12-21 21:58:48 +0800 CST'>December 21, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><strong>我想解决的问题是：</strong> 面对一个线上音频，暂时没法下载下来，但我想将这个音频转写成文字版。</p>
+<p><strong>一个验证下来比较便捷可行的思路是：</strong> 先安装虚拟声卡，让系统声音通过虚拟声卡播放，用音频转录工具接收虚拟声卡的声音进行转录。</p>
+<hr>
+<h3 id="第一步准备工具">第一步：准备工具<a hidden class="anchor" aria-hidden="true" href="#第一步准备工具">#</a></h3>
+<ol>
+<li><strong>虚拟声卡：</strong> <a href="https://github.com/ExistentialAudio/BlackHole">BlackHole</a>（建议下载 2ch 版本）。</li>
+<li><strong>转录工具：</strong> <a href="https://tingwu.aliyun.com/">通义听悟</a>（支持浏览器实时录音转写） 或 <a href="https://www.feishu.cn/product/minutes">飞书妙记</a>。</li>
+</ol>
+<h3 id="第二步核心配置音频-midi-设置">第二步：核心配置（音频 MIDI 设置）<a hidden class="anchor" aria-hidden="true" href="#第二步核心配置音频-midi-设置">#</a></h3>
+<ol>
+<li>打开 Mac 自带的 <strong>“音频 MIDI 设置”</strong> 插件。</li>
+<li>点击左下角 <strong>“+”</strong>，创建 <strong>“多输出设备”</strong>。</li>
+<li>勾选 <strong>“MacBook Air 扬声器”</strong>（并设为主设备）和 <strong>“BlackHole 2ch”</strong>。</li>
+<li>在 BlackHole 旁勾选 <strong>“漂移校正”</strong> 以保证音轨同步。</li>
+</ol>
+<h3 id="第三步切换系统输出">第三步：切换系统输出<a hidden class="anchor" aria-hidden="true" href="#第三步切换系统输出">#</a></h3>
+<ol>
+<li>点击 Mac 菜单栏的 <strong>系统设置/声音</strong>。</li>
+<li>将输出设备切换为刚创建的 <strong>“多输出设备”</strong>。</li>
+</ol>
+<ul>
+<li><em>提示：切换后键盘音量键将失效，需提前调好系统音量。</em></li>
+</ul>
+<h3 id="第四步开启网页转录">第四步：开启网页转录<a hidden class="anchor" aria-hidden="true" href="#第四步开启网页转录">#</a></h3>
+<ol>
+<li><strong>权限检查：</strong> 确保浏览器已获得系统麦克风访问权限（路径：<strong>系统设置 -&gt; 隐私与安全性 -&gt; 麦克风</strong>）。</li>
+<li><strong>开始录音：</strong> 在通义听悟或飞书妙记中点击 <strong>“开始录音”</strong>。</li>
+<li><strong>设备选择：</strong> 在浏览器弹出的麦克风选项中，手动选择 <strong>“BlackHole 2ch (Virtual)”</strong>。</li>
+<li><strong>开始转录：</strong> 回到视频播放页面点击播放，转录页面将实时同步生成文字。</li>
+</ol>
+<hr>
+<h3 id="核查tips">核查Tips<a hidden class="anchor" aria-hidden="true" href="#核查tips">#</a></h3>
+<ul>
+<li><strong>录制不到声音：</strong> 请检查视频播放器是否被静音，或浏览器标签页是否开启了静音模式。</li>
+<li><strong>录音中断：</strong> 长时间录制时，请确保关闭 Mac 的“自动睡眠”功能并接通电源。</li>
+<li><strong>权限失效：</strong> 若一切设置无误但仍无声音，可尝试重启浏览器以刷新隐私权限。</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="http://localhost:1313/">我的博客</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
