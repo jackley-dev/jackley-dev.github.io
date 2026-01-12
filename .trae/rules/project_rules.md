@@ -23,14 +23,17 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
     ```toml
     +++
     title = "{中文标题}"
-    date = "YYYY-MM-DDTHH:MM:SS+08:00"
+    date = "{ACTUAL_SYSTEM_TIME}"
     draft = false
     tags = ["{tag1}", "{tag2}"]
     categories = ["{Category}"]
     author = "Lifeng"
     +++
     ```
-  - **Check**: Ensure `date` is current.
+  - **Date Handling (CRITICAL)**:
+    - MUST run `date '+%Y-%m-%dT%H:%M:%S+08:00'` to get actual system time
+    - NEVER estimate or guess the time
+    - Use the command output directly in the `date` field
 
 ### 3. ☁️ Deployment (Trigger: "commit")
 - **Trigger**: User inputs "commit".
