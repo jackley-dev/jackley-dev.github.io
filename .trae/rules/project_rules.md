@@ -27,7 +27,7 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
     draft = false
     tags = ["{tag1}", "{tag2}"]
     categories = ["{Category}"]
-    author = "Lifeng"
+    author = "jackley"
     +++
     ```
   - **Date Handling (CRITICAL)**:

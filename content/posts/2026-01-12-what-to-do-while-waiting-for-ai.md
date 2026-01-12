@@ -4,7 +4,7 @@ date = "2026-01-12T16:13:05+08:00"
 draft = false
 tags = ["效率", "AI协作", "思维模式", "张一鸣"]
 categories = ["技术管理", "生活感悟"]
-author = "Lifeng"
+author = "jackley"
 +++
 
 在与 AI 结对编程的日常中，我们经常面临一个特殊的场景：**等待 AI 的流式输出**。

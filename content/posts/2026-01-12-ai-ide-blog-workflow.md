@@ -4,7 +4,7 @@ date = "2026-01-12T11:55:26+08:00"
 draft = false
 tags = ["AI IDE", "Trae", "Claude Code", "Hugo", "工作流"]
 categories = ["AIGC"]
-author = "Lifeng"
+author = "jackley"
 +++
 
 ## 背景
@@ -83,7 +83,7 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
     draft = false
     tags = ["{tag1}", "{tag2}"]
     categories = ["{Category}"]
-    author = "Lifeng"
+    author = "jackley"
     +++
 ```
 
