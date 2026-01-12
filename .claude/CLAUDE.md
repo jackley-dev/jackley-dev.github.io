@@ -41,6 +41,16 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
   - Run: `git add . && git commit -m "Add post: {English Slug}" && git push origin main`
   - Output: "Deployed to https://jackley-dev.github.io/"
 
+### 4. Publish to Xiaohongshu (Trigger: "pub")
+- **Trigger**: User inputs "pub".
+- **Action**:
+  - Use xiaohongshu-mcp to publish the latest article to Xiaohongshu
+  - Convert Markdown content to plain text (remove code blocks, keep structure)
+  - Title: Use article title
+  - Content: Summarize key points (小红书 has 1000 char limit)
+  - If article has images, include them; otherwise skip images
+  - Output: Confirmation with link to published note
+
 ## Constraints
 - Check `~/ai-memory/` for preferences.
 - Never modify `themes/` unless requested.
