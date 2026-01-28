@@ -14,42 +14,55 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
 - **Action**: Discuss, question, and refine ideas. Do NOT generate the post yet.
 
 ### 2. ✅ Content Generation (Trigger: "ga")
-- **Trigger**: User inputs "ga" (generate article).
+- **Trigger**: User inputs "ga [category]" (e.g., "ga tech", "ga life").
+- **Default**: If no category is specified, confirm with user or default to `misc`.
 - **Action**:
   - Summarize discussion into a structured blog post.
-  - **File**: `content/posts/YYYY-MM-DD-{english-slug}.md`
-    - *Note: Use English slug for URL compatibility.*
-  - **Front Matter** (TOML):
-    ```toml
-    +++
-    title = "{中文标题}"
-    date = "{ACTUAL_SYSTEM_TIME}"
-    draft = false
-    tags = ["{tag1}", "{tag2}"]
-    categories = ["{Category}"]
-    author = "jackley"
-    +++
-    ```
-  - **Date Handling (CRITICAL)**:
-    - MUST run `date '+%Y-%m-%dT%H:%M:%S+08:00'` to get actual system time
-    - NEVER estimate or guess the time
-    - Use the command output directly in the `date` field
+  - **File**: `content/posts/{category}/YYYY-MM-DD-{english-slug}.md`
+  - **Front Matter**: (Standard Hugo TOML)
 
-### 3. ☁️ Deployment (Trigger: "commit")
+### 3. 📝 Convert to XHS Draft (Trigger: "convert")
+- **Step 1: Clean (Automatic)**
+  - **Action**: Run `python3 scripts/xhs/convert_blog.py`.
+  - **Logic**: Reads the latest blog post, strips Front Matter/Shortcodes/Links.
+  - **Output**: Creates/Overwrites the content file at `xhs_drafts/{filename}.md`. (Contains only the cleaned article body).
+
+- **Step 2: Summarize (AI Assisted)**
+  - **Action**: User (or Agent) reads `xhs_drafts/{filename}.md` and asks LLM to generate a summary.
+  - **Prompt Template**:
+    ```text
+    Role: Social Media Expert (Xiaohongshu)
+    Task: Create a viral Xiaohongshu post based on the attached article.
+    Requirements:
+    1. Title: Catchy, uses emojis, addresses pain points.
+    2. Caption (Summary): 100-200 words, highly engaging, bullet points, includes tags.
+    3. Tone: Professional yet accessible, "sharing useful knowledge".
+    ```
+  - **Output**: Save the result to `xhs_drafts/{filename}_summary.md`.
+
+- **Step 3: Edit (User Action)**
+  - Review and refine `xhs_drafts/{filename}_summary.md`.
+
+### 4. 🖼️ Generate XHS Card (Trigger: "gen-card")
+- **Trigger**: User inputs "gen-card".
+- **Action**:
+  - Run: `python3 scripts/xhs/publish_post_to_xhs.py`
+  - **Logic**: Reads only the `<!-- CONTENT_START -->` section of the draft.
+  - Output: "Cards generated in xhs_drafts/image/"
+
+### 5. 📕 Publish to Xiaohongshu (Trigger: "pub")
+- **Trigger**: User inputs "pub".
+- **Action**:
+  - Run: `python3 scripts/xhs/prepare_pub_data.py`
+  - **Logic**: Extracts text from `<!-- SUMMARY_START -->` section and images from `xhs_drafts/image/`.
+  - Use **xiaohongshu-mcp** to publish.
+  - Output: Confirmation with link to published note
+
+### 6. ☁️ Deployment (Trigger: "commit")
 - **Trigger**: User inputs "commit".
 - **Action**:
   - Run: `git add . && git commit -m "Add post: {English Slug}" && git push origin main`
   - Output: "Deployed to https://jackley-dev.github.io/"
-
-### 4. 📕 Publish to Xiaohongshu (Trigger: "pub")
-- **Trigger**: User inputs "pub".
-- **Action**:
-  - Use xiaohongshu-mcp to publish the latest article to Xiaohongshu
-  - Convert Markdown content to plain text (remove code blocks, keep structure)
-  - Title: Use article title
-  - Content: Summarize key points (小红书 has 1000 char limit)
-  - If article has images, include them; otherwise skip images
-  - Output: Confirmation with link to published note
 
 ## 🛑 Constraints
 - Check `~/ai-memory/` for preferences.

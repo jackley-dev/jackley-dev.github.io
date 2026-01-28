@@ -16,6 +16,11 @@ theme = "PaperMod"
     欢迎来到我的blog，这里记录我的技术成长、踩坑经历与生活思考。
     """
 
+[permalinks]
+  # 保持 URL 结构为 /posts/filename/，不受子目录分类影响
+  # 这样你可以随意调整 content/posts 下的文件夹结构，而不会破坏现有的 URL
+  posts = "/posts/:slug/"
+
 # 顶部菜单 (保持不变)
 [menu]
   [[menu.main]]
