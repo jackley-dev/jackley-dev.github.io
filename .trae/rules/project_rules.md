@@ -35,7 +35,7 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
     Task: Create a viral Xiaohongshu post based on the attached article.
     Requirements:
     1. Title: Catchy, uses emojis, addresses pain points.
-    2. Caption (Summary): 100-200 words, highly engaging, bullet points, includes tags.
+    2. Caption (Summary): 100-150 words, highly engaging, bullet points, includes tags.
     3. Tone: Professional yet accessible, "sharing useful knowledge".
     ```
   - **Output**: Save the result to `xhs_drafts/{filename}_summary.md`.
@@ -47,14 +47,14 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
 - **Trigger**: User inputs "gen-card".
 - **Action**:
   - Run: `python3 scripts/xhs/publish_post_to_xhs.py`
-  - **Logic**: Reads only the `<!-- CONTENT_START -->` section of the draft.
+  - **Logic**: Reads the full content of `xhs_drafts/{filename}.md`.
   - Output: "Cards generated in xhs_drafts/image/"
 
 ### 5. 📕 Publish to Xiaohongshu (Trigger: "pub")
 - **Trigger**: User inputs "pub".
 - **Action**:
   - Run: `python3 scripts/xhs/prepare_pub_data.py`
-  - **Logic**: Extracts text from `<!-- SUMMARY_START -->` section and images from `xhs_drafts/image/`.
+  - **Logic**: Extracts text from `xhs_drafts/{filename}_summary.md` and images from `xhs_drafts/image/`.
   - Use **xiaohongshu-mcp** to publish.
   - Output: Confirmation with link to published note
 
