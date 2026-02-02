@@ -3,7 +3,7 @@ title = "等待AI流式输出时，我们应该做什么？"
 date = "2026-01-12T16:13:05+08:00"
 draft = false
 tags = ["效率", "AI协作", "思维模式", "张一鸣"]
-categories = ["技术管理", "生活感悟"]
+categories = ["tech"]
 author = "jackley"
 +++
 

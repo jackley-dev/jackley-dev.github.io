@@ -3,7 +3,7 @@ date = '2025-12-05T23:25:56+08:00'
 draft = false
 title = '配置Github Pages'
 
-categories = ["技术"]  # 分类
+categories = ["tech"]  # 分类
 +++
 
 

@@ -3,7 +3,7 @@ title = "晚睡心理学：为什么夜间CEO总是坑害白天打工仔？"
 date = "2026-01-14T22:56:56+08:00"
 draft = false
 tags = ["心理学", "自我管理", "认知偏差", "睡眠"]
-categories = ["生活"]
+categories = ["life"]
 author = "jackley"
 +++
 

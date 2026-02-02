@@ -3,7 +3,7 @@ title = "Pencil.dev：开发者时代的 \"Vibe Coding\" 设计革命"
 date = 2026-01-29T10:00:00+08:00
 lastmod = 2026-01-29T10:00:00+08:00
 tags = ["AI", "Tools", "Vibe Coding", "Frontend", "Design"]
-categories = ["Tech"]
+categories = ["tech"]
 slug = "pencil-dev-vibe-coding"
 draft = false
 +++

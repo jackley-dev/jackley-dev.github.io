@@ -3,7 +3,7 @@ title = "一键发布博客到小红书:从Markdown到图文笔记的自动化"
 date = "2026-01-12T22:56:32+08:00"
 draft = false
 tags = ["自动化", "小红书", "MCP", "Python"]
-categories = ["AIGC"]
+categories = ["tech"]
 author = "jackley"
 +++
 

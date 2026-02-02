@@ -3,7 +3,7 @@ title = "进化错配：旧石器大脑 vs AI 时代"
 date = "2026-01-18T22:29:27+08:00"
 draft = false
 tags = ["进化心理学", "心智模型", "SOP", "认知升级"]
-categories = ["Cognition"]
+categories = ["life"]
 author = "jackley"
 +++
 

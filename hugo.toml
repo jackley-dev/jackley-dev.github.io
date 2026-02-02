@@ -24,35 +24,23 @@ theme = "PaperMod"
 # 顶部菜单 (保持不变)
 [menu]
   [[menu.main]]
-    identifier = "aigc"
-    name = "AIGC"
-    url = "/categories/aigc/"
+    identifier = "life"
+    name = "Life"
+    url = "/categories/life/"
     weight = 10
 
   [[menu.main]]
-    identifier = "algo"
-    name = "推荐算法"
-    url = "/categories/推荐算法/" # 注意 URL 里的中文要和文章里写的一模一样
-    weight = 20
-
-  [[menu.main]]
-    identifier = "life"
-    name = "生活感悟"
-    url = "/categories/生活感悟/"
-    weight = 30
-
-  [[menu.main]]
     identifier = "tech"
-    name = "技术"
-    url = "/categories/技术/"
-    weight = 40
+    name = "Tech"
+    url = "/categories/tech/"
+    weight = 20
 
   # --- 新增 GitHub 入口 ---
   [[menu.main]]
     identifier = "github"
     name = "GitHub"       # 你也可以用 emoji 比如 "🐙 GitHub"
     url = "https://github.com/jackley-dev" # 记得换成你的真实地址
-    weight = 50           # 数字越大，越靠右
+    weight = 30           # 数字越大，越靠右
 
     [menu.main.params]
       # 这是一个小技巧：告诉浏览器在新标签页打开

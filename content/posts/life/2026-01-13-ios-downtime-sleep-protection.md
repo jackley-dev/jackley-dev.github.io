@@ -3,7 +3,7 @@ title = "给手机设个“数字宵禁”：利用 iOS 停用时间保障睡眠
 date = "2026-01-13T22:50:25+08:00"
 draft = false
 tags = ["LifeHack", "DigitalWellbeing", "iOS"]
-categories = ["Life"]
+categories = ["life"]
 author = "jackley"
 +++
 

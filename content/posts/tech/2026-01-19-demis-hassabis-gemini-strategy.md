@@ -3,7 +3,7 @@ title = "Demis Hassabis 的反击：与其更好，不如不同"
 date = "2026-01-19T20:48:36+08:00"
 draft = false
 tags = ["AI Strategy", "Gemini", "Google", "Management", "Demis Hassabis"]
-categories = ["Tech"]
+categories = ["tech"]
 author = "jackley"
 +++
 

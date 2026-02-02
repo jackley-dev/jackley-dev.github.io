@@ -3,7 +3,7 @@ title = "用 AI IDE 打造博客写作工作流：Trae 与 Claude Code 双平台
 date = "2026-01-12T11:55:26+08:00"
 draft = false
 tags = ["AI IDE", "Trae", "Claude Code", "Hugo", "工作流"]
-categories = ["AIGC"]
+categories = ["tech"]
 author = "jackley"
 +++
 
