@@ -4,6 +4,7 @@ date = "2026-01-18T22:29:27+08:00"
 draft = false
 tags = ["进化心理学", "心智模型", "SOP", "认知升级"]
 categories = ["life"]
+slug = "evolutionary-mismatch-paleolithic-brain-vs-ai-era"
 author = "jackley"
 +++
 
