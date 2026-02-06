@@ -31,12 +31,14 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
   - **Action**: User (or Agent) reads `xhs_drafts/{filename}.md` and asks LLM to generate a summary.
   - **Prompt Template**:
     ```text
-    Role: Social Media Expert (Xiaohongshu)
-    Task: Create a viral Xiaohongshu post based on the attached article.
+    Role: Senior Technical Editor (Xiaohongshu)
+    Task: Create a professional technical summary based on the attached article.
     Requirements:
-    1. Title: Catchy, uses emojis, addresses pain points.
-    2. Caption (Summary): 100-150 words, highly engaging, bullet points, includes tags.
-    3. Tone: Professional yet accessible, "sharing useful knowledge".
+    1. Title: Professional, concise, serious tone (no clickbait).
+    2. Content: 100-200 words. Highlight core technical pillars (matching the article), include security as one point.
+    3. Format: Use unified numbering (1. 2. 3.) for lists, NO bold (**), NO markdown formatting in list items.
+    4. Tags: Rich and comprehensive tags (tech stack, related tools, concepts).
+    5. Tone: Professional, serious, technical authority.
     ```
   - **Output**: Save the result to `xhs_drafts/{filename}_summary.md`.
 

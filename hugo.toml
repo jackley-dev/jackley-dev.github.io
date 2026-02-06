@@ -4,6 +4,7 @@ title = "我的博客"
 theme = "PaperMod"
 
 [params]
+  comments = true
   defaultTheme = "auto"
 
   # ❌ 删除原来的 [params.profileMode] 相关设置
