@@ -7,7 +7,7 @@ tags = ["AI", "Agent", "OpenClaw", "Sovereign AI", "Safety"]
 slug = "openclaw-viral-truth-sovereign-ai"
 +++
 
-简单来说：**Clawdbot $\rightarrow$ Moltbot $\rightarrow$ OpenClaw** 是同一个项目在短短两周内的被迫演变。
+简单来说：**Clawdbot → Moltbot → OpenClaw** 是同一个项目在短短两周内的被迫演变。
 
 这不仅仅是一个改名事件，它折射出了当前 AI Agent 领域的**野蛮生长**和**脆弱性**。
 
