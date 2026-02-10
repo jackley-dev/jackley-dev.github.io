@@ -69,3 +69,5 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
 ## 🛑 Constraints
 - Check `~/ai-memory/` for preferences.
 - Never modify `themes/` unless requested.
+- **Output Quality Control**: Ensure all generated files use standard UTF-8 encoding. STRICTLY PROHIBIT the use of Zero Width Space (\u200b), Non-breaking Space (\u00a0), or other invisible control characters. Use standard space (0x20) and newline (\n) only.
+- **Content Formatting**: Do NOT use `<!--more-->` tag in blog posts. Rely on Hugo's automatic summary or `description` front matter field.
