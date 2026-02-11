@@ -45,11 +45,19 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
 - **Step 3: Edit (User Action)**
   - Review and refine `xhs_drafts/{filename}_summary.md`.
 
-### 4. 🖼️ Generate XHS Card (Trigger: "gen-card")
+### 4. 🖼️ Generate XHS Card
+#### Option A: Plain Text (Trigger: "gen-card")
 - **Trigger**: User inputs "gen-card".
 - **Action**:
   - Run: `python3 scripts/xhs/publish_post_to_xhs.py`
-  - **Logic**: Reads the full content of `xhs_drafts/{filename}.md`.
+  - **Logic**: Simple text-based generation using PIL. Best for simple news/quotes.
+  - Output: "Cards generated in xhs_drafts/image/"
+
+#### Option B: Rich Content (Trigger: "gen-rich")
+- **Trigger**: User inputs "gen-rich".
+- **Action**:
+  - Run: `python3 scripts/xhs/publish_post_to_xhs.py -m render`
+  - **Logic**: HTML/CSS based rendering with Playwright. Supports Code blocks, Tables, Images, Notion-style layout.
   - Output: "Cards generated in xhs_drafts/image/"
 
 ### 5. 📕 Publish to Xiaohongshu (Trigger: "pub")
