@@ -103,18 +103,13 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="http://localhost:1313/categories/aigc/" title="AIGC">
-                    <span>AIGC</span>
+                <a href="http://localhost:1313/categories/life/" title="Life">
+                    <span>Life</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/categories/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/" title="推荐算法">
-                    <span>推荐算法</span>
-                </a>
-            </li>
-            <li>
-                <a href="http://localhost:1313/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%82%9F/" title="生活感悟">
-                    <span>生活感悟</span>
+                <a href="http://localhost:1313/categories/tech/" title="Tech">
+                    <span>Tech</span>
                 </a>
             </li>
             <li>
@@ -140,32 +135,26 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">配置Github Pages
+    <h2 class="entry-hint-parent">用 AI IDE 打造博客写作工作流：Trae 与 Claude Code 双平台实践
     </h2>
   </header>
   <div class="entry-content">
-    <p>我想建立一个长期的写作基地，所以试着创建了自己的github pages，本篇记录了创建过程。
-3分钟极简版，创建GitHub Pages
-新建仓库： 登录 GitHub，点击右上角 &#43; -&gt; New repository。
-关键步骤： 仓库名（Repository name）必须填写为 用户名.github.io。例如：用户名是 tom, 仓库名必须是 tom.github.io。
-勾选 Public，点击 Create repository。
-创建网页文件： 在仓库页面，点击 creating a new file 链接。
-文件名填写：index.html
-文件内容随便写，例如：
-HTML &lt;h1&gt;这是我的技术博客&lt;/h1&gt; &lt;p&gt;Hello World! 2025年开始写作。&lt;/p&gt; 滚动到底部，点击绿色按钮 Commit changes。
-见证奇迹： 等待 1-2 分钟。
-在浏览器输入地址：https://用户名.github.io。
-应该能看到刚才写的网页了。
-总结：GitHub Pages 的本质就是————你把文件放在仓库里，它自动帮你变成一个网站。
-</p>
+    <p>背景 写博客最难的部分往往不是写作本身，而是从想法到成文的过程。很多时候，和朋友聊天时灵感迸发，但事后整理却觉得索然无味。
+我想要一个这样的工作流：
+对话激发想法 → 输入 &#34;ga&#34; → AI 整理成文章 → 输入 &#34;commit&#34; → 自动发布 这篇文章记录了我如何在 Trae 和 Claude Code 两个 AI IDE 中实现这套流程。
+核心思路 无论是 Trae 还是 Claude Code，都支持「项目规则」机制——在特定目录下放置配置文件，AI 会自动读取并遵循这些规则。
+平台 规则文件位置 Trae .trae/rules/project_rules.md Claude Code .claude/CLAUDE.md 我的策略是：写一份规则，两个平台共用（稍作调整）。
+规则设计 SOP 结构 采用标准操作流程（SOP）的结构来组织规则：
+# Blog Automation SOP Goal: Facilitate a seamless &#34;Idea -&gt; Content -&gt; Publish&#34; workflow. ## Role &amp; Tone - Role: Senior Technical Editor &amp; Pair Programmer - Language: Chinese (Simplified) ## Workflow Triggers (STRICT) ... 关键点：
+...</p>
   </div>
-  <footer class="entry-footer"><span title='2025-12-05 23:25:56 +0800 CST'>December 5, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to 配置Github Pages" href="http://localhost:1313/posts/%E9%85%8D%E7%BD%AEgithub-pages/"></a>
+  <footer class="entry-footer"><span title='2026-01-12 11:55:26 +0800 CST'>January 12, 2026</span>&nbsp;·&nbsp;<span>jackley</span></footer>
+  <a class="entry-link" aria-label="post link to 用 AI IDE 打造博客写作工作流：Trae 与 Claude Code 双平台实践" href="http://localhost:1313/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/"></a>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="http://localhost:1313/">我的博客</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">我的博客</a></span> · 
 
     <span>
         Powered by

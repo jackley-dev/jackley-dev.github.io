@@ -78,4 +78,6 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
 - Check `~/ai-memory/` for preferences.
 - Never modify `themes/` unless requested.
 - **Output Quality Control**: Ensure all generated files use standard UTF-8 encoding. STRICTLY PROHIBIT the use of Zero Width Space (\u200b), Non-breaking Space (\u00a0), or other invisible control characters. Use standard space (0x20) and newline (\n) only.
-- **Content Formatting**: Do NOT use `<!--more-->` tag in blog posts. Rely on Hugo's automatic summary or `description` front matter field.
+- **Content Formatting**:
+  - Do NOT use `<!--more-->` tag in blog posts. Rely on Hugo's automatic summary or `description` front matter field.
+  - **Header Levels**: Use H2 (##) for main sections and H3 (###) for subsections. Avoid using H4 (####) or deeper to ensure better compatibility with XHS card generation (font size issues).

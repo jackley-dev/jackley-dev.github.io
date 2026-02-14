@@ -6,6 +6,441 @@
     <description>Recent content in Tags on 我的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
+    <lastBuildDate>Thu, 12 Feb 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI Agent</title>
+      <link>http://localhost:1313/tags/ai-agent/</link>
+      <pubDate>Thu, 12 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/ai-agent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Aliyun</title>
+      <link>http://localhost:1313/tags/aliyun/</link>
+      <pubDate>Thu, 12 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/aliyun/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OpenClaw</title>
+      <link>http://localhost:1313/tags/openclaw/</link>
+      <pubDate>Thu, 12 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/openclaw/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Review</title>
+      <link>http://localhost:1313/tags/review/</link>
+      <pubDate>Thu, 12 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/review/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tencent Cloud</title>
+      <link>http://localhost:1313/tags/tencent-cloud/</link>
+      <pubDate>Thu, 12 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/tencent-cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Automation</title>
+      <link>http://localhost:1313/tags/automation/</link>
+      <pubDate>Wed, 11 Feb 2026 12:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/automation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Playwright</title>
+      <link>http://localhost:1313/tags/playwright/</link>
+      <pubDate>Wed, 11 Feb 2026 12:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/playwright/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Wed, 11 Feb 2026 12:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Technical Writing</title>
+      <link>http://localhost:1313/tags/technical-writing/</link>
+      <pubDate>Wed, 11 Feb 2026 12:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/technical-writing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Xiaohongshu</title>
+      <link>http://localhost:1313/tags/xiaohongshu/</link>
+      <pubDate>Wed, 11 Feb 2026 12:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/xiaohongshu/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/tags/ai/</link>
+      <pubDate>Tue, 10 Feb 2026 14:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grady Booch</title>
+      <link>http://localhost:1313/tags/grady-booch/</link>
+      <pubDate>Tue, 10 Feb 2026 14:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/grady-booch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Engineering</title>
+      <link>http://localhost:1313/tags/software-engineering/</link>
+      <pubDate>Tue, 10 Feb 2026 14:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Thinking</title>
+      <link>http://localhost:1313/tags/thinking/</link>
+      <pubDate>Tue, 10 Feb 2026 14:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/thinking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data-Science</title>
+      <link>http://localhost:1313/tags/data-science/</link>
+      <pubDate>Mon, 09 Feb 2026 16:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/data-science/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Simpson-Paradox</title>
+      <link>http://localhost:1313/tags/simpson-paradox/</link>
+      <pubDate>Mon, 09 Feb 2026 16:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/simpson-paradox/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Statistics</title>
+      <link>http://localhost:1313/tags/statistics/</link>
+      <pubDate>Mon, 09 Feb 2026 16:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/statistics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Thinking-Models</title>
+      <link>http://localhost:1313/tags/thinking-models/</link>
+      <pubDate>Mon, 09 Feb 2026 16:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/thinking-models/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Architecture</title>
+      <link>http://localhost:1313/tags/architecture/</link>
+      <pubDate>Sat, 07 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/architecture/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud Computing</title>
+      <link>http://localhost:1313/tags/cloud-computing/</link>
+      <pubDate>Sat, 07 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/cloud-computing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Maker</title>
+      <link>http://localhost:1313/tags/maker/</link>
+      <pubDate>Sat, 07 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/maker/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>RPA</title>
+      <link>http://localhost:1313/tags/rpa/</link>
+      <pubDate>Sat, 07 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/rpa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>个人成长</title>
+      <link>http://localhost:1313/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</link>
+      <pubDate>Fri, 06 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>信息论</title>
+      <link>http://localhost:1313/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/</link>
+      <pubDate>Fri, 06 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E4%BF%A1%E6%81%AF%E8%AE%BA/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>反脆弱</title>
+      <link>http://localhost:1313/tags/%E5%8F%8D%E8%84%86%E5%BC%B1/</link>
+      <pubDate>Fri, 06 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E5%8F%8D%E8%84%86%E5%BC%B1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>思维模型</title>
+      <link>http://localhost:1313/tags/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Fri, 06 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>社交策略</title>
+      <link>http://localhost:1313/tags/%E7%A4%BE%E4%BA%A4%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Fri, 06 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E7%A4%BE%E4%BA%A4%E7%AD%96%E7%95%A5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Agent</title>
+      <link>http://localhost:1313/tags/agent/</link>
+      <pubDate>Sun, 01 Feb 2026 11:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/agent/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Safety</title>
+      <link>http://localhost:1313/tags/safety/</link>
+      <pubDate>Sun, 01 Feb 2026 11:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/safety/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sovereign AI</title>
+      <link>http://localhost:1313/tags/sovereign-ai/</link>
+      <pubDate>Sun, 01 Feb 2026 11:30:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/sovereign-ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Design</title>
+      <link>http://localhost:1313/tags/design/</link>
+      <pubDate>Thu, 29 Jan 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/design/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Frontend</title>
+      <link>http://localhost:1313/tags/frontend/</link>
+      <pubDate>Thu, 29 Jan 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/frontend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>http://localhost:1313/tags/tools/</link>
+      <pubDate>Thu, 29 Jan 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vibe Coding</title>
+      <link>http://localhost:1313/tags/vibe-coding/</link>
+      <pubDate>Thu, 29 Jan 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/tags/vibe-coding/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI Strategy</title>
+      <link>http://localhost:1313/tags/ai-strategy/</link>
+      <pubDate>Mon, 19 Jan 2026 20:48:36 +0800</pubDate>
+      <guid>http://localhost:1313/tags/ai-strategy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Demis Hassabis</title>
+      <link>http://localhost:1313/tags/demis-hassabis/</link>
+      <pubDate>Mon, 19 Jan 2026 20:48:36 +0800</pubDate>
+      <guid>http://localhost:1313/tags/demis-hassabis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gemini</title>
+      <link>http://localhost:1313/tags/gemini/</link>
+      <pubDate>Mon, 19 Jan 2026 20:48:36 +0800</pubDate>
+      <guid>http://localhost:1313/tags/gemini/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Google</title>
+      <link>http://localhost:1313/tags/google/</link>
+      <pubDate>Mon, 19 Jan 2026 20:48:36 +0800</pubDate>
+      <guid>http://localhost:1313/tags/google/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Management</title>
+      <link>http://localhost:1313/tags/management/</link>
+      <pubDate>Mon, 19 Jan 2026 20:48:36 +0800</pubDate>
+      <guid>http://localhost:1313/tags/management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SOP</title>
+      <link>http://localhost:1313/tags/sop/</link>
+      <pubDate>Sun, 18 Jan 2026 22:29:27 +0800</pubDate>
+      <guid>http://localhost:1313/tags/sop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>心智模型</title>
+      <link>http://localhost:1313/tags/%E5%BF%83%E6%99%BA%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Sun, 18 Jan 2026 22:29:27 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E5%BF%83%E6%99%BA%E6%A8%A1%E5%9E%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>认知升级</title>
+      <link>http://localhost:1313/tags/%E8%AE%A4%E7%9F%A5%E5%8D%87%E7%BA%A7/</link>
+      <pubDate>Sun, 18 Jan 2026 22:29:27 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E8%AE%A4%E7%9F%A5%E5%8D%87%E7%BA%A7/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>进化心理学</title>
+      <link>http://localhost:1313/tags/%E8%BF%9B%E5%8C%96%E5%BF%83%E7%90%86%E5%AD%A6/</link>
+      <pubDate>Sun, 18 Jan 2026 22:29:27 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E8%BF%9B%E5%8C%96%E5%BF%83%E7%90%86%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>心理学</title>
+      <link>http://localhost:1313/tags/%E5%BF%83%E7%90%86%E5%AD%A6/</link>
+      <pubDate>Wed, 14 Jan 2026 22:56:56 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E5%BF%83%E7%90%86%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>睡眠</title>
+      <link>http://localhost:1313/tags/%E7%9D%A1%E7%9C%A0/</link>
+      <pubDate>Wed, 14 Jan 2026 22:56:56 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E7%9D%A1%E7%9C%A0/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>自我管理</title>
+      <link>http://localhost:1313/tags/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Wed, 14 Jan 2026 22:56:56 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E8%87%AA%E6%88%91%E7%AE%A1%E7%90%86/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>认知偏差</title>
+      <link>http://localhost:1313/tags/%E8%AE%A4%E7%9F%A5%E5%81%8F%E5%B7%AE/</link>
+      <pubDate>Wed, 14 Jan 2026 22:56:56 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E8%AE%A4%E7%9F%A5%E5%81%8F%E5%B7%AE/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DigitalWellbeing</title>
+      <link>http://localhost:1313/tags/digitalwellbeing/</link>
+      <pubDate>Tue, 13 Jan 2026 22:50:25 +0800</pubDate>
+      <guid>http://localhost:1313/tags/digitalwellbeing/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IOS</title>
+      <link>http://localhost:1313/tags/ios/</link>
+      <pubDate>Tue, 13 Jan 2026 22:50:25 +0800</pubDate>
+      <guid>http://localhost:1313/tags/ios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LifeHack</title>
+      <link>http://localhost:1313/tags/lifehack/</link>
+      <pubDate>Tue, 13 Jan 2026 22:50:25 +0800</pubDate>
+      <guid>http://localhost:1313/tags/lifehack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MCP</title>
+      <link>http://localhost:1313/tags/mcp/</link>
+      <pubDate>Mon, 12 Jan 2026 22:56:32 +0800</pubDate>
+      <guid>http://localhost:1313/tags/mcp/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>小红书</title>
+      <link>http://localhost:1313/tags/%E5%B0%8F%E7%BA%A2%E4%B9%A6/</link>
+      <pubDate>Mon, 12 Jan 2026 22:56:32 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E5%B0%8F%E7%BA%A2%E4%B9%A6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>自动化</title>
+      <link>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+      <pubDate>Mon, 12 Jan 2026 22:56:32 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI协作</title>
+      <link>http://localhost:1313/tags/ai%E5%8D%8F%E4%BD%9C/</link>
+      <pubDate>Mon, 12 Jan 2026 16:13:05 +0800</pubDate>
+      <guid>http://localhost:1313/tags/ai%E5%8D%8F%E4%BD%9C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>张一鸣</title>
+      <link>http://localhost:1313/tags/%E5%BC%A0%E4%B8%80%E9%B8%A3/</link>
+      <pubDate>Mon, 12 Jan 2026 16:13:05 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E5%BC%A0%E4%B8%80%E9%B8%A3/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>思维模式</title>
+      <link>http://localhost:1313/tags/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 12 Jan 2026 16:13:05 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%BC%8F/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>效率</title>
+      <link>http://localhost:1313/tags/%E6%95%88%E7%8E%87/</link>
+      <pubDate>Mon, 12 Jan 2026 16:13:05 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E6%95%88%E7%8E%87/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI IDE</title>
+      <link>http://localhost:1313/tags/ai-ide/</link>
+      <pubDate>Mon, 12 Jan 2026 11:55:26 +0800</pubDate>
+      <guid>http://localhost:1313/tags/ai-ide/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Claude Code</title>
+      <link>http://localhost:1313/tags/claude-code/</link>
+      <pubDate>Mon, 12 Jan 2026 11:55:26 +0800</pubDate>
+      <guid>http://localhost:1313/tags/claude-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/tags/hugo/</link>
+      <pubDate>Mon, 12 Jan 2026 11:55:26 +0800</pubDate>
+      <guid>http://localhost:1313/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Trae</title>
+      <link>http://localhost:1313/tags/trae/</link>
+      <pubDate>Mon, 12 Jan 2026 11:55:26 +0800</pubDate>
+      <guid>http://localhost:1313/tags/trae/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>工作流</title>
+      <link>http://localhost:1313/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/</link>
+      <pubDate>Mon, 12 Jan 2026 11:55:26 +0800</pubDate>
+      <guid>http://localhost:1313/tags/%E5%B7%A5%E4%BD%9C%E6%B5%81/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

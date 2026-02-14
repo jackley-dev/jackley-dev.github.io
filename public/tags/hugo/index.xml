@@ -6,39 +6,53 @@
     <description>Recent content in Hugo on 我的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 05 Dec 2025 23:25:56 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 11:55:26 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>配置Github Pages</title>
-      <link>http://localhost:1313/posts/%E9%85%8D%E7%BD%AEgithub-pages/</link>
-      <pubDate>Fri, 05 Dec 2025 23:25:56 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E9%85%8D%E7%BD%AEgithub-pages/</guid>
-      <description>&lt;p&gt;我想建立一个长期的写作基地，所以试着创建了自己的github pages，本篇记录了创建过程。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3分钟极简版，创建GitHub Pages&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;新建仓库：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;登录 GitHub，点击右上角 + -&amp;gt; New repository。&lt;/p&gt;
-&lt;p&gt;关键步骤： 仓库名（Repository name）必须填写为 用户名.github.io。例如：用户名是 tom, 仓库名必须是 tom.github.io。&lt;/p&gt;
-&lt;p&gt;勾选 Public，点击 Create repository。&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;创建网页文件：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;在仓库页面，点击 creating a new file 链接。&lt;/p&gt;
-&lt;p&gt;文件名填写：index.html&lt;/p&gt;
-&lt;p&gt;文件内容随便写，例如：&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;HTML
-
-&amp;lt;h1&amp;gt;这是我的技术博客&amp;lt;/h1&amp;gt;
-&amp;lt;p&amp;gt;Hello World! 2025年开始写作。&amp;lt;/p&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;滚动到底部，点击绿色按钮 Commit changes。&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;见证奇迹：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;等待 1-2 分钟。&lt;/p&gt;
-&lt;p&gt;在浏览器输入地址：https://用户名.github.io。&lt;/p&gt;
-&lt;p&gt;应该能看到刚才写的网页了。&lt;/p&gt;
-&lt;p&gt;总结：GitHub Pages 的本质就是————你把文件放在仓库里，它自动帮你变成一个网站。&lt;/p&gt;</description>
+      <title>用 AI IDE 打造博客写作工作流：Trae 与 Claude Code 双平台实践</title>
+      <link>http://localhost:1313/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Mon, 12 Jan 2026 11:55:26 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</guid>
+      <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
+&lt;p&gt;写博客最难的部分往往不是写作本身，而是从想法到成文的过程。很多时候，和朋友聊天时灵感迸发，但事后整理却觉得索然无味。&lt;/p&gt;
+&lt;p&gt;我想要一个这样的工作流：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;对话激发想法 → 输入 &amp;#34;ga&amp;#34; → AI 整理成文章 → 输入 &amp;#34;commit&amp;#34; → 自动发布
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这篇文章记录了我如何在 Trae 和 Claude Code 两个 AI IDE 中实现这套流程。&lt;/p&gt;
+&lt;h2 id=&#34;核心思路&#34;&gt;核心思路&lt;/h2&gt;
+&lt;p&gt;无论是 Trae 还是 Claude Code，都支持「项目规则」机制——在特定目录下放置配置文件，AI 会自动读取并遵循这些规则。&lt;/p&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;平台&lt;/th&gt;
+          &lt;th&gt;规则文件位置&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Trae&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;.trae/rules/project_rules.md&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;Claude Code&lt;/td&gt;
+          &lt;td&gt;&lt;code&gt;.claude/CLAUDE.md&lt;/code&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;我的策略是：写一份规则，两个平台共用（稍作调整）。&lt;/p&gt;
+&lt;h2 id=&#34;规则设计&#34;&gt;规则设计&lt;/h2&gt;
+&lt;h3 id=&#34;sop-结构&#34;&gt;SOP 结构&lt;/h3&gt;
+&lt;p&gt;采用标准操作流程（SOP）的结构来组织规则：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;# Blog Automation SOP
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Goal: Facilitate a seamless &amp;#34;Idea -&amp;gt; Content -&amp;gt; Publish&amp;#34; workflow.
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Role &amp;amp; Tone
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Role: Senior Technical Editor &amp;amp; Pair Programmer
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;-&lt;/span&gt; Language: Chinese (Simplified)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;## Workflow Triggers (STRICT)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;...
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;关键点：&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
