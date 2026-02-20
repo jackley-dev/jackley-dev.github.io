@@ -146,7 +146,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">国内云部署OpenClaw体验
+    <h2 class="entry-hint-parent">警惕“外包思维”：AI 时代的技术主权与技能形成
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p> “AI Enhanced Productivity ≠ Competence. 生产力的提升不代表能力的提升。”
+最近，Anthropic 的研究员 Judy Hanwen Shen 和 Alex Tamkin 发布了一篇非常及时的论文：How AI Impacts Skill Formation (arXiv:2601.20245)。
+在这个 Copilot 几乎成为标配的时代，这篇论文通过严谨的随机对照实验，揭示了一个令人不安的趋势：过度依赖 AI 的新手，正在失去核心的编程能力。
+1. 效率与能力的“魔鬼交易” 实验让开发者学习一个新的异步编程库。结果显示：
+技能受损：使用 AI 的新手在概念理解、代码阅读和调试能力上表现显著更差。 效率假象：平均而言，使用 AI 的组并没有获得显著的效率提升。虽然代码生成得快，但理解和修复 AI 的错误花费了更多时间。 完全委托（Full Delegation）的代价：那些将任务“全权委托”给 AI 的参与者，虽然在生产力上略有提升，但代价是几乎没有学会这个库的使用。 这不仅仅是“新手”的问题，这是所有在这个时代写代码的人面临的共同危机。
+2. 关键变量：认知参与 (Cognitive Engagement) 论文最精彩的部分在于，它没有全盘否定 AI。它识别了 6 种交互模式，其中有 3 种模式 即使使用了 AI，依然保持了良好的学习效果。
+它们的共同点是：认知参与 (Cognitive Engagement)。
+❌ 坏模式 (Low Engagement)：盲目复制粘贴、让 AI 解决所有报错、大脑“离线”。 ✅ 好模式 (High Engagement)：在使用 AI 时，依然在主动思考逻辑、结构和原理。 3. 视角模拟：Software 2.0 时代的技术主权 如果我们代入 Andrej Karpathy (OpenAI 创始成员, 前 Tesla AI 总监) 的视角来看这个问题：
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-02-20 10:00:00 +0800 CST'>February 20, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to 警惕“外包思维”：AI 时代的技术主权与技能形成" href="http://localhost:1313/posts/%E8%AD%A6%E6%83%95%E5%A4%96%E5%8C%85%E6%80%9D%E7%BB%B4ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%BB%E6%9D%83%E4%B8%8E%E6%8A%80%E8%83%BD%E5%BD%A2%E6%88%90/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">国内云部署OpenClaw实战：两天烧掉60元，它离“好用”还有多远？
     </h2>
   </header>
   <div class="entry-content">
@@ -155,13 +175,13 @@
 1. 祛魅：它能干的，AI Coding 工具也能干 OpenClaw 宣传的很多核心生产力，比如技术调研、代码生成、自动化操作，其实现在的 AI 编程工具（如 Trae, Cursor, Windsurf）在专业度上依然更胜一筹。
 调研：Trae/Cursor 是“懂代码的专家”，能结合代码上下文精准搜索；而 OpenClaw 更像通用助手，搜索能力并非开箱即用，还得额外折腾 Skills 和 API Key。 编码：AI IDE 在代码补全和重构上已经非常成熟；相比之下，OpenClaw 对整个代码库（Context）的理解还很薄弱，难以胜任复杂项目。 自动化：发邮件、设提醒这类任务，IDE 配合脚本可以精准执行；OpenClaw 却往往需要反复校准和指引，操作繁琐，试错成本极高。 OpenClaw 在这些核心生产力领域，并没有展现出相对于AI IDE的“降维打击”，反而显得有些笨拙。
 2. 劝退：更傻、受限、更贵 相比于成熟的 AI Coding 工具，OpenClaw 在国内云环境下的表现显得非常“稚嫩”。
-2.1 有点傻：不稳定的执行者 提醒功能灾难：设置提醒时常失灵，或者像病毒一样疯狂弹窗。有次甚至发了 120 多次 重复提醒，直接炸了通知栏。 缺乏能动性：遇到报错（如缺库）只会“两手一摊”，不会像 Trae 那样主动请求安装。它更像死板的执行器，离“会思考”还很远。 图：OpenClaw 的“夺命连环 call”
-2.2 受限：国内网络环境的制约 这是国内云部署面临的主要挑战。
-Skill 可用性受限：OpenClaw 的强大在于 Skills（技能）。但在国内网络环境下，很多依赖海外服务的 Skills（比如 Google Search, Twitter 整合）无法正常连接。 搜索能力缺失：没有好用的搜索 Skill，它就变成了一个只能靠训练数据（旧知识）回答问题的“断网 AI”，实用性大打折扣。 2.3 更贵：两天花一个月订阅费 最让人肉疼的是真金白银的账单。 为了追求更好的效果，我配置了 Kimi k2.5 模型。
+2.1 更傻：不稳定的执行者 提醒功能灾难：设置提醒时常失灵，或者像病毒一样疯狂弹窗。有次甚至发了 120 多次 重复提醒，直接炸了通知栏。 缺乏能动性：遇到报错（如缺库）只会“两手一摊”，不会像 Trae 那样主动请求安装。它更像死板的执行器，离“会思考”还很远。 图：OpenClaw 的“夺命连环 call”
+2.2 受限：严重的“水土不服” 这是国内云部署面临的主要挑战。
+Skill 生态隔离：OpenClaw 的强大在于 Skills（技能）。但其官方生态主要依赖海外服务（比如 Google Search, Twitter 整合），在国内云环境下无法直接连接，导致大量技能失效。 本土化能力缺失：缺乏适配国内生态的 Skills（如百度搜索、微信集成），在没有额外开发的情况下，它就变成了一个只能靠训练数据（旧知识）回答问题的“断网 AI”，实用性大打折扣。 2.3 更贵：两天花一个月订阅费 最直观的痛点在于高昂的 API 调用成本。 为了追求更好的效果，我配置了 Kimi k2.5 模型。
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-02-12 10:00:00 +0800 CST'>February 12, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to 国内云部署OpenClaw体验" href="http://localhost:1313/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%83%A8%E7%BD%B2openclaw%E4%BD%93%E9%AA%8C/"></a>
+  <a class="entry-link" aria-label="post link to 国内云部署OpenClaw实战：两天烧掉60元，它离“好用”还有多远？" href="http://localhost:1313/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%83%A8%E7%BD%B2openclaw%E5%AE%9E%E6%88%98%E4%B8%A4%E5%A4%A9%E7%83%A7%E6%8E%8960%E5%85%83%E5%AE%83%E7%A6%BB%E5%A5%BD%E7%94%A8%E8%BF%98%E6%9C%89%E5%A4%9A%E8%BF%9C/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -322,21 +342,6 @@ Google Brain：Transformer 的发源地，隶属于 Google 内部。 DeepMind：
   </div>
   <footer class="entry-footer"><span title='2026-01-19 20:48:36 +0800 CST'>January 19, 2026</span>&nbsp;·&nbsp;<span>jackley</span></footer>
   <a class="entry-link" aria-label="post link to Demis Hassabis 的反击：与其更好，不如不同" href="http://localhost:1313/posts/demis-hassabis-%E7%9A%84%E5%8F%8D%E5%87%BB%E4%B8%8E%E5%85%B6%E6%9B%B4%E5%A5%BD%E4%B8%8D%E5%A6%82%E4%B8%8D%E5%90%8C/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">进化错配：旧石器大脑 vs AI 时代 (Evolutionary Mismatch)
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Key Takeaways (BLUF) 现代人的核心困境：硬件与软件不兼容。
-我们的基因是为了在 匮乏、线性、小部落 的草原上生存而优化的；但我们此刻身处 过剩、指数级、全球化 的数字丛林。 这种错配导致了直觉的系统性失效。要提高生存质量，不能顺应本能，而要 “逆本能”设计环境。
-核心错配清单 1. 线性直觉 vs 指数增长 (Linear vs. Exponential) 动物机制：自然界的猎物跑得再快也是线性的。我们的直觉只能理解 y = ax &#43; b（比如种地，投入一分收获一分）。 现代错配：技术发展（AI）、复利理财、病毒传播是 y = a^x。 后果： 低估长期：在 AI 发展的早期（拐点前）觉得“不过如此”，在爆发期（拐点后）惊慌失措。 短视：无法理解“每天进步1%”的恐怖威力。 SOP (补丁)： 强制计算：遇到增长类问题，不要凭感觉，打开 Excel 拉一下公式。 长期主义信仰：在拐点到来前（看不见收益时），依靠逻辑而非反馈来坚持。 2. 节能模式 vs 终身学习 (Energy Conservation vs. Growth) 动物机制：思考极其耗能（大脑占体重的2%，耗能20%）。为了省能量活过冬天，大脑默认策略是**“能不动脑就不动脑”**（认知吝啬鬼）。 现代错配：AI 时代唯一不变的是变化。停留在舒适区（省能模式）意味着被淘汰。 后果： 信息茧房：只看喜欢的、同意的观点（省脑子）。 技能固化：拒绝学习新工具（如 Cursor/Trae），觉得“老方法也能用”。 SOP (补丁)： 把“难受”当信号：当你感到学习很累、脑子转不动时，告诉自己“这是神经元在建立新连接”，是 升级的信号，而非停止的信号。 微习惯：降低启动门槛，骗过大脑的节能机制。 3. 部落社交 vs 独立思考 (Tribalism vs. Independent Thinking) 动物机制：在部落里，被排挤=死亡。所以**“从众”**是第一生存法则。 现代错配：互联网放大了群体极化。投资、职业选择上的“人多的地方”往往是红海或泡沫。 后果： FOMO (错失恐惧)：大家都在炒股/搞大模型，我也要搞，不然被部落抛弃了。 缺乏主见：在海量信息中迷失，沦为算法的奴隶。 SOP (补丁)： 断舍离：主动屏蔽朋友圈/热搜，物理切断“部落噪音”。 反向思考：当所有人都在谈论一件事时，强制自己列出这件事的 3 个反面观点。 4. 负面偏误 vs 探索创新 (Negativity Bias vs. Innovation) 动物机制：对风吹草动过度敏感（宁可把树影看成老虎跑掉，也不能把老虎看成树影）。损失厌恶极其强烈。 现代错配：现代社会“物理死亡”风险极低，但“社会性死亡”恐惧依旧。 后果： 不敢发声：怕被喷，怕犯错（Type I Error 恐惧过大）。 求稳：死守一份不喜欢的工作，不敢尝试低成本创业。 SOP (补丁)： 定义恐惧：写下来，“如果我失败了，最坏的结果是什么？”（通常只是丢点面子，不会饿死）。 小步试错：用“沙箱模式”测试，把风险控制在可承受范围内。 5. 匮乏机制 vs 超常刺激 (Scarcity vs. Supernormal Stimuli) 动物机制：在草原上，糖分、热量和新奇信息都是极度匮乏的。基因设定：“只要遇到，立刻吃光/看完，不要停”，因为下顿不知在哪里。 现代错配：我们身处**“超常刺激”**（Supernormal Stimuli）的海洋。短视频（高密度新奇）、垃圾食品（高糖高脂）无处不在。 后果： 多巴胺劫持：大脑被高刺激源“各种插队”，导致**“惯性过载”**，刷手机停不下来，无法忍受低刺激的深度工作（Boring is new busy）。 SOP (补丁)： 外置熔断器：既然靠意志力（内部刹车）斗不过基因，就靠环境设计。 物理隔离：例如设定每日 22:30 手机停用时间，将手机移出卧室，利用外部规则强行切断刺激源。 总结 进化没有“过时”，它只是“错位”。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-01-18 22:29:27 +0800 CST'>January 18, 2026</span>&nbsp;·&nbsp;<span>jackley</span></footer>
-  <a class="entry-link" aria-label="post link to 进化错配：旧石器大脑 vs AI 时代 (Evolutionary Mismatch)" href="http://localhost:1313/posts/evolutionary-mismatch-paleolithic-brain-vs-ai-era/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

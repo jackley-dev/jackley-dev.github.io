@@ -6,13 +6,20 @@
     <description>Recent content in Posts on 我的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 12 Feb 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 10:00:00 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>国内云（阿里/腾讯）OpenClaw 体验报告：难用，但在某些时刻不可替代</title>
-      <link>http://localhost:1313/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%98%BF%E9%87%8C/%E8%85%BE%E8%AE%AFopenclaw-%E4%BD%93%E9%AA%8C%E6%8A%A5%E5%91%8A%E9%9A%BE%E7%94%A8%E4%BD%86%E5%9C%A8%E6%9F%90%E4%BA%9B%E6%97%B6%E5%88%BB%E4%B8%8D%E5%8F%AF%E6%9B%BF%E4%BB%A3/</link>
+      <title>警惕“外包思维”：AI 时代的技术主权与技能形成</title>
+      <link>http://localhost:1313/posts/%E8%AD%A6%E6%83%95%E5%A4%96%E5%8C%85%E6%80%9D%E7%BB%B4ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%BB%E6%9D%83%E4%B8%8E%E6%8A%80%E8%83%BD%E5%BD%A2%E6%88%90/</link>
+      <pubDate>Fri, 20 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>http://localhost:1313/posts/%E8%AD%A6%E6%83%95%E5%A4%96%E5%8C%85%E6%80%9D%E7%BB%B4ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%BB%E6%9D%83%E4%B8%8E%E6%8A%80%E8%83%BD%E5%BD%A2%E6%88%90/</guid>
+      <description>解读 Anthropic 最新论文《How AI Impacts Skill Formation》：当 AI 成为副驾驶，我们是否正在失去驾驶能力？</description>
+    </item>
+    <item>
+      <title>国内云部署OpenClaw实战：两天烧掉60元，它离“好用”还有多远？</title>
+      <link>http://localhost:1313/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%83%A8%E7%BD%B2openclaw%E5%AE%9E%E6%88%98%E4%B8%A4%E5%A4%A9%E7%83%A7%E6%8E%8960%E5%85%83%E5%AE%83%E7%A6%BB%E5%A5%BD%E7%94%A8%E8%BF%98%E6%9C%89%E5%A4%9A%E8%BF%9C/</link>
       <pubDate>Thu, 12 Feb 2026 10:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%98%BF%E9%87%8C/%E8%85%BE%E8%AE%AFopenclaw-%E4%BD%93%E9%AA%8C%E6%8A%A5%E5%91%8A%E9%9A%BE%E7%94%A8%E4%BD%86%E5%9C%A8%E6%9F%90%E4%BA%9B%E6%97%B6%E5%88%BB%E4%B8%8D%E5%8F%AF%E6%9B%BF%E4%BB%A3/</guid>
+      <guid>http://localhost:1313/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%83%A8%E7%BD%B2openclaw%E5%AE%9E%E6%88%98%E4%B8%A4%E5%A4%A9%E7%83%A7%E6%8E%8960%E5%85%83%E5%AE%83%E7%A6%BB%E5%A5%BD%E7%94%A8%E8%BF%98%E6%9C%89%E5%A4%9A%E8%BF%9C/</guid>
       <description>OpenClaw 在国内云环境下的真实体验报告。核心感受：难用。相比 AI Coding 工具，它更贵、更傻、更受限，但在移动端交互上有着不可替代的“真·助理感”。</description>
     </item>
     <item>
