@@ -50,7 +50,7 @@ description = "解读 Anthropic 最新论文《How AI Impacts Skill Formation》
 
 1.  **保持“认知在线”**
     *   **Before**: 在 Prompt 之前，先在脑子里（或纸上）过一遍逻辑框架。不要让 AI 替你思考架构。
-    *   **After**: AI 生成代码后，不要直接 Run。先**阅读并解释**给 AI 听（"Feynman Technique" with AI）。如果你不能解释每一行代码在做什么，就不要 commit。
+    *   **After**: AI 生成代码后，不要直接 Run。对于**关键逻辑**，尝试用自己的话复述一遍。**底线是：永远不要 Commit 你完全看不懂的代码。**
 
 2.  **把 AI 当导师，而非外包**
     *   ❌ "写一个异步爬虫脚本。"
@@ -59,7 +59,8 @@ description = "解读 Anthropic 最新论文《How AI Impacts Skill Formation》
 
 3.  **刻意练习调试 (Debug First)**
     *   不要一报错就贴给 AI。
-    *   先尝试自己定位问题，再看 AI 的分析，对比思路差异。调试能力是程序员的核心护城河，不要轻易交出。
+    *   **AI 定位，人类审核 (Review)**：可以让 AI 快速帮你定位 Bug，但不要只看修复代码 (Fix)，要追问根本原因 (Root Cause)。
+    *   **Ask Why**: "为什么这里会报错？原理是什么？" 确保你理解了 Bug 的本质，而不仅仅是把它修好。
 
 ## 结语
 
