@@ -2,45 +2,59 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>我的博客</title>
-    <link>http://localhost:1313/</link>
+    <link>https://jackley-dev.github.io/</link>
     <description>Recent content on 我的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 23 Feb 2026 10:00:00 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Mar 2026 10:00:00 +0800</lastBuildDate>
+    <atom:link href="https://jackley-dev.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>心智的摩托车：AI 时代的判断力与品味</title>
-      <link>http://localhost:1313/posts/%E5%BF%83%E6%99%BA%E7%9A%84%E6%91%A9%E6%89%98%E8%BD%A6ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E5%88%A4%E6%96%AD%E5%8A%9B%E4%B8%8E%E5%93%81%E5%91%B3/</link>
+      <title>构建你的第二大脑：基于 AI 的个人记忆系统 (AI Memory System)</title>
+      <link>https://jackley-dev.github.io/posts/%E6%9E%84%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E5%9F%BA%E4%BA%8E-ai-%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F-ai-memory-system/</link>
+      <pubDate>Sun, 01 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/%E6%9E%84%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E5%9F%BA%E4%BA%8E-ai-%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F-ai-memory-system/</guid>
+      <description>仅仅把 AI 当作工具是不够的。本文详细介绍了一套名为 AI Memory System 的个人记忆架构，通过 core-identity, patterns, preferences 等层级化 Markdown 文件，让 AI 真正理解你的价值观、思维模式和偏好，从被动执行者进化为主动思考的合作伙伴。</description>
+    </item>
+    <item>
+      <title>深度解读 Claude Skills：打造 Agent 的“食谱”与“大脑”</title>
+      <link>https://jackley-dev.github.io/posts/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-claude-skills%E6%89%93%E9%80%A0-agent-%E7%9A%84%E9%A3%9F%E8%B0%B1%E4%B8%8E%E5%A4%A7%E8%84%91/</link>
+      <pubDate>Fri, 27 Feb 2026 10:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-claude-skills%E6%89%93%E9%80%A0-agent-%E7%9A%84%E9%A3%9F%E8%B0%B1%E4%B8%8E%E5%A4%A7%E8%84%91/</guid>
+      <description>Anthropic 发布了构建 Claude Skills 的完整指南。如果说 MCP 是连接工具的“厨房”，那么 Skills 就是烹饪佳肴的“食谱”。本文深入解析 Skills 的渐进式披露设计、核心架构以及五种能够大幅提升 Agent 稳定性的设计模式。</description>
+    </item>
+    <item>
+      <title>心智的摩托车：AI 时代的减法与专注</title>
+      <link>https://jackley-dev.github.io/posts/%E5%BF%83%E6%99%BA%E7%9A%84%E6%91%A9%E6%89%98%E8%BD%A6ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E5%87%8F%E6%B3%95%E4%B8%8E%E4%B8%93%E6%B3%A8/</link>
       <pubDate>Mon, 23 Feb 2026 10:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%BF%83%E6%99%BA%E7%9A%84%E6%91%A9%E6%89%98%E8%BD%A6ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E5%88%A4%E6%96%AD%E5%8A%9B%E4%B8%8E%E5%93%81%E5%91%B3/</guid>
-      <description>在 AI 能够快速生成代码的时代，人类的价值不再是敲击键盘的速度，而是判断力（Judgment）和品味（Taste）。纳瓦尔将 AI 比作“心智的摩托车”，这意味着我们要从引擎的动力转向车手的方向感。</description>
+      <guid>https://jackley-dev.github.io/posts/%E5%BF%83%E6%99%BA%E7%9A%84%E6%91%A9%E6%89%98%E8%BD%A6ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E5%87%8F%E6%B3%95%E4%B8%8E%E4%B8%93%E6%B3%A8/</guid>
+      <description>在高质量信息爆炸的 AI 时代，最大的风险不是错过，而是浅尝辄止。纳瓦尔的“判断力”不仅仅是选择做什么，更是决定不做什么。本文探讨如何利用 AI 杠杆，通过做减法和深潜，在无限的选项中找到属于你的不对称红利。</description>
     </item>
     <item>
       <title>警惕“外包思维”：AI 时代的技术主权与技能形成</title>
-      <link>http://localhost:1313/posts/%E8%AD%A6%E6%83%95%E5%A4%96%E5%8C%85%E6%80%9D%E7%BB%B4ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%BB%E6%9D%83%E4%B8%8E%E6%8A%80%E8%83%BD%E5%BD%A2%E6%88%90/</link>
+      <link>https://jackley-dev.github.io/posts/%E8%AD%A6%E6%83%95%E5%A4%96%E5%8C%85%E6%80%9D%E7%BB%B4ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%BB%E6%9D%83%E4%B8%8E%E6%8A%80%E8%83%BD%E5%BD%A2%E6%88%90/</link>
       <pubDate>Fri, 20 Feb 2026 10:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E8%AD%A6%E6%83%95%E5%A4%96%E5%8C%85%E6%80%9D%E7%BB%B4ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%BB%E6%9D%83%E4%B8%8E%E6%8A%80%E8%83%BD%E5%BD%A2%E6%88%90/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E8%AD%A6%E6%83%95%E5%A4%96%E5%8C%85%E6%80%9D%E7%BB%B4ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%BB%E6%9D%83%E4%B8%8E%E6%8A%80%E8%83%BD%E5%BD%A2%E6%88%90/</guid>
       <description>解读 Anthropic 最新论文《How AI Impacts Skill Formation》：当 AI 成为副驾驶，我们是否正在失去驾驶能力？</description>
     </item>
     <item>
       <title>国内云部署OpenClaw实战：两天烧掉60元，它离“好用”还有多远？</title>
-      <link>http://localhost:1313/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%83%A8%E7%BD%B2openclaw%E5%AE%9E%E6%88%98%E4%B8%A4%E5%A4%A9%E7%83%A7%E6%8E%8960%E5%85%83%E5%AE%83%E7%A6%BB%E5%A5%BD%E7%94%A8%E8%BF%98%E6%9C%89%E5%A4%9A%E8%BF%9C/</link>
+      <link>https://jackley-dev.github.io/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%83%A8%E7%BD%B2openclaw%E5%AE%9E%E6%88%98%E4%B8%A4%E5%A4%A9%E7%83%A7%E6%8E%8960%E5%85%83%E5%AE%83%E7%A6%BB%E5%A5%BD%E7%94%A8%E8%BF%98%E6%9C%89%E5%A4%9A%E8%BF%9C/</link>
       <pubDate>Thu, 12 Feb 2026 10:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%83%A8%E7%BD%B2openclaw%E5%AE%9E%E6%88%98%E4%B8%A4%E5%A4%A9%E7%83%A7%E6%8E%8960%E5%85%83%E5%AE%83%E7%A6%BB%E5%A5%BD%E7%94%A8%E8%BF%98%E6%9C%89%E5%A4%9A%E8%BF%9C/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%83%A8%E7%BD%B2openclaw%E5%AE%9E%E6%88%98%E4%B8%A4%E5%A4%A9%E7%83%A7%E6%8E%8960%E5%85%83%E5%AE%83%E7%A6%BB%E5%A5%BD%E7%94%A8%E8%BF%98%E6%9C%89%E5%A4%9A%E8%BF%9C/</guid>
       <description>OpenClaw 在国内云环境下的真实体验报告。核心感受：难用。相比 AI Coding 工具，它更贵、更傻、更受限，但在移动端交互上有着不可替代的“真·助理感”。</description>
     </item>
     <item>
       <title>告别长图：构建基于 Markdown 和 Playwright 的自动化技术写作流</title>
-      <link>http://localhost:1313/posts/%E5%91%8A%E5%88%AB%E9%95%BF%E5%9B%BE%E6%9E%84%E5%BB%BA%E5%9F%BA%E4%BA%8E-markdown-%E5%92%8C-playwright-%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E5%86%99%E4%BD%9C%E6%B5%81/</link>
+      <link>https://jackley-dev.github.io/posts/%E5%91%8A%E5%88%AB%E9%95%BF%E5%9B%BE%E6%9E%84%E5%BB%BA%E5%9F%BA%E4%BA%8E-markdown-%E5%92%8C-playwright-%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E5%86%99%E4%BD%9C%E6%B5%81/</link>
       <pubDate>Wed, 11 Feb 2026 12:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%91%8A%E5%88%AB%E9%95%BF%E5%9B%BE%E6%9E%84%E5%BB%BA%E5%9F%BA%E4%BA%8E-markdown-%E5%92%8C-playwright-%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E5%86%99%E4%BD%9C%E6%B5%81/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E5%91%8A%E5%88%AB%E9%95%BF%E5%9B%BE%E6%9E%84%E5%BB%BA%E5%9F%BA%E4%BA%8E-markdown-%E5%92%8C-playwright-%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E5%86%99%E4%BD%9C%E6%B5%81/</guid>
       <description>如何用工程师的方式做小红书？本文介绍了一套 &amp;#39;gen-rich&amp;#39; 方案，实现了从 Markdown 源码到 Notion 风格分页卡片的自动化渲染。</description>
     </item>
     <item>
       <title>软件工程已死？UML 之父 Grady Booch：错！这是第三次黄金时代</title>
-      <link>http://localhost:1313/posts/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B7%B2%E6%AD%BBuml-%E4%B9%8B%E7%88%B6-grady-booch%E9%94%99%E8%BF%99%E6%98%AF%E7%AC%AC%E4%B8%89%E6%AC%A1%E9%BB%84%E9%87%91%E6%97%B6%E4%BB%A3/</link>
+      <link>https://jackley-dev.github.io/posts/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B7%B2%E6%AD%BBuml-%E4%B9%8B%E7%88%B6-grady-booch%E9%94%99%E8%BF%99%E6%98%AF%E7%AC%AC%E4%B8%89%E6%AC%A1%E9%BB%84%E9%87%91%E6%97%B6%E4%BB%A3/</link>
       <pubDate>Tue, 10 Feb 2026 14:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B7%B2%E6%AD%BBuml-%E4%B9%8B%E7%88%B6-grady-booch%E9%94%99%E8%BF%99%E6%98%AF%E7%AC%AC%E4%B8%89%E6%AC%A1%E9%BB%84%E9%87%91%E6%97%B6%E4%BB%A3/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B7%B2%E6%AD%BBuml-%E4%B9%8B%E7%88%B6-grady-booch%E9%94%99%E8%BF%99%E6%98%AF%E7%AC%AC%E4%B8%89%E6%AC%A1%E9%BB%84%E9%87%91%E6%97%B6%E4%BB%A3/</guid>
       <description>&lt;p&gt;近日，关于“SaaS 已死”和“软件工程将被 AI 取代”的论调再次甚嚣尘上。&lt;/p&gt;
 &lt;p&gt;起因是 Anthropic 的 CEO Dario Amodei 在达沃斯论坛上的一番言论，他暗示随着 AI 能力的提升，软件工程将被完全自动化，代码将变得“不值钱”。这番话引发了硅谷投资圈和技术圈的激烈反弹。a16z 合伙人 Justine Moore 调侃道：“好像你真能让财富 500 强企业放弃 Salesforce，转而使用一个 13 岁小孩用 AI 写的 CRM 系统似的！”&lt;/p&gt;
 &lt;p&gt;而最重量级的反击，来自现年 71 岁的软件工程泰斗 —— &lt;strong&gt;Grady Booch&lt;/strong&gt;。&lt;/p&gt;
@@ -65,9 +79,9 @@
     </item>
     <item>
       <title>辛普森悖论 vs 均值特性：统计学的直觉陷阱</title>
-      <link>http://localhost:1313/posts/simpson-paradox-vs-mean-value/</link>
+      <link>https://jackley-dev.github.io/posts/simpson-paradox-vs-mean-value/</link>
       <pubDate>Mon, 09 Feb 2026 16:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/simpson-paradox-vs-mean-value/</guid>
+      <guid>https://jackley-dev.github.io/posts/simpson-paradox-vs-mean-value/</guid>
       <description>&lt;p&gt;在数据分析和决策中，我们经常会遇到直觉与数据相悖的情况。最令人困惑的莫过于 &lt;strong&gt;“均值特性” (Mean Value Property)&lt;/strong&gt; 和 &lt;strong&gt;“辛普森悖论” (Simpson&amp;rsquo;s Paradox)&lt;/strong&gt; 的混淆。&lt;/p&gt;
 &lt;p&gt;乍看之下，它们都关乎“平均数”和“分组”，但数学本质却天差地别。本文将通过代码演示和核心原理拆解，帮你彻底厘清这两个概念。&lt;/p&gt;
 &lt;h2 id=&#34;1-辛普森悖论-simpsons-paradox&#34;&gt;1. 辛普森悖论 (Simpson&amp;rsquo;s Paradox)&lt;/h2&gt;
@@ -121,9 +135,9 @@
     </item>
     <item>
       <title>OpenClaw 部署兵法：别被名字忽悠，算力形态决定成败</title>
-      <link>http://localhost:1313/posts/openclaw-deployment-strategy/</link>
+      <link>https://jackley-dev.github.io/posts/openclaw-deployment-strategy/</link>
       <pubDate>Sat, 07 Feb 2026 10:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/openclaw-deployment-strategy/</guid>
+      <guid>https://jackley-dev.github.io/posts/openclaw-deployment-strategy/</guid>
       <description>&lt;p&gt;OpenClaw 作为一款现代化的 RPA (Robotic Process Automation) 平台，提供了多达五种的部署方式。最近我在看阿里云的控制台时，看到了一张图展示了这些选项：轻量云服务器、无影云电脑（企业版/个人版）、AgentBay 以及 ECS 云服务器。&lt;/p&gt;
 &lt;p&gt;作为技术决策者，或者正在利用周末时间进行 &amp;ldquo;Maker Mode&amp;rdquo; 探索的开发者，我们不能只看它们的名字，而要看它们背后的&lt;strong&gt;算力形态&lt;/strong&gt;和&lt;strong&gt;运维成本&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;这对你至关重要——选错了部署方式，你可能把一半的时间都浪费在配环境上（比如在 Linux 上折腾 X11），而不是在构建核心资产。&lt;/p&gt;
@@ -220,9 +234,9 @@
     </item>
     <item>
       <title>重新定义闲聊：反脆弱、熵增与弱关系的硬核视角</title>
-      <link>http://localhost:1313/posts/strategic-small-talk-antifragility-entropy/</link>
+      <link>https://jackley-dev.github.io/posts/strategic-small-talk-antifragility-entropy/</link>
       <pubDate>Fri, 06 Feb 2026 10:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/strategic-small-talk-antifragility-entropy/</guid>
+      <guid>https://jackley-dev.github.io/posts/strategic-small-talk-antifragility-entropy/</guid>
       <description>&lt;p&gt;这是一个非常敏锐的观察。我们之前的价值观往往偏向于“高信噪比”和“价值门票论”（先有价值再有社交），这在**执行期（Exploitation）**是非常高效的策略。&lt;/p&gt;
 &lt;p&gt;但如果你现在感觉到了“闲聊的重要性”，这其实触及了系统的另一面——**探索期（Exploration）**的必要性。&lt;/p&gt;
 &lt;p&gt;基于矩阵分析和第一性原理的思维模式，我们可以通过三个“反直觉”的硬核视角，重新定义“闲聊”的价值。&lt;/p&gt;
@@ -281,9 +295,9 @@
     </item>
     <item>
       <title>OpenClaw 爆火：“主权 AI”的大胆探索</title>
-      <link>http://localhost:1313/posts/openclaw-viral-truth-sovereign-ai/</link>
+      <link>https://jackley-dev.github.io/posts/openclaw-viral-truth-sovereign-ai/</link>
       <pubDate>Sun, 01 Feb 2026 11:30:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/openclaw-viral-truth-sovereign-ai/</guid>
+      <guid>https://jackley-dev.github.io/posts/openclaw-viral-truth-sovereign-ai/</guid>
       <description>&lt;p&gt;简单来说：&lt;strong&gt;Clawdbot → Moltbot → OpenClaw&lt;/strong&gt; 是同一个项目在短短两周内的被迫演变。&lt;/p&gt;
 &lt;p&gt;这不仅仅是一个改名事件，它折射出了当前 AI Agent 领域的&lt;strong&gt;野蛮生长&lt;/strong&gt;和&lt;strong&gt;脆弱性&lt;/strong&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;1-发生了什么the-drama&#34;&gt;1. 发生了什么？（The Drama）&lt;/h2&gt;
@@ -304,9 +318,9 @@
     </item>
     <item>
       <title>Pencil.dev：开发者时代的 &#34;Vibe Coding&#34; 设计革命</title>
-      <link>http://localhost:1313/posts/pencil-dev-vibe-coding/</link>
+      <link>https://jackley-dev.github.io/posts/pencil-dev-vibe-coding/</link>
       <pubDate>Thu, 29 Jan 2026 10:00:00 +0800</pubDate>
-      <guid>http://localhost:1313/posts/pencil-dev-vibe-coding/</guid>
+      <guid>https://jackley-dev.github.io/posts/pencil-dev-vibe-coding/</guid>
       <description>&lt;p&gt;在 AI 辅助编程（AI-Assisted Coding）已经成为常态的 2026 年，我们的开发环境（IDE）变得越来越智能。Cursor 和 Windsurf 等工具让我们习惯了用自然语言与代码对话。&lt;/p&gt;
 &lt;p&gt;然而，在软件工程的链条上，依然存在一个巨大的断层：&lt;strong&gt;设计（Design）&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;长期以来，设计文件（Figma）与代码仓库（Git）是两个平行的世界。设计师在 Figma 里画图，工程师在 IDE 里“翻译”图片。所谓的“翻译”，本质上是一场高损耗的“人工编译”过程：&lt;/p&gt;
@@ -320,9 +334,9 @@
     </item>
     <item>
       <title>Demis Hassabis 的反击：与其更好，不如不同</title>
-      <link>http://localhost:1313/posts/demis-hassabis-%E7%9A%84%E5%8F%8D%E5%87%BB%E4%B8%8E%E5%85%B6%E6%9B%B4%E5%A5%BD%E4%B8%8D%E5%A6%82%E4%B8%8D%E5%90%8C/</link>
+      <link>https://jackley-dev.github.io/posts/demis-hassabis-%E7%9A%84%E5%8F%8D%E5%87%BB%E4%B8%8E%E5%85%B6%E6%9B%B4%E5%A5%BD%E4%B8%8D%E5%A6%82%E4%B8%8D%E5%90%8C/</link>
       <pubDate>Mon, 19 Jan 2026 20:48:36 +0800</pubDate>
-      <guid>http://localhost:1313/posts/demis-hassabis-%E7%9A%84%E5%8F%8D%E5%87%BB%E4%B8%8E%E5%85%B6%E6%9B%B4%E5%A5%BD%E4%B8%8D%E5%A6%82%E4%B8%8D%E5%90%8C/</guid>
+      <guid>https://jackley-dev.github.io/posts/demis-hassabis-%E7%9A%84%E5%8F%8D%E5%87%BB%E4%B8%8E%E5%85%B6%E6%9B%B4%E5%A5%BD%E4%B8%8D%E5%A6%82%E4%B8%8D%E5%90%8C/</guid>
       <description>&lt;p&gt;在 ChatGPT 横空出世后的很长一段时间里，Google 看起来像是一个被时代抛弃的巨人。尽管它拥有 Transformer 的发明权，拥有全球最顶尖的 AI 人才库，但在产品化的战场上，它被 OpenAI 打得毫无还手之力。&lt;/p&gt;
 &lt;p&gt;然而，战局在 2023 年底开始扭转。随着 Gemini 1.0、1.5 Pro 以及后续 Flash 版本的密集发布，Google 不仅稳住了阵脚，更构建了一套能与 GPT-4 分庭抗礼甚至在某些维度实现反超的体系。&lt;/p&gt;
 &lt;p&gt;这一切的操盘手，正是 DeepMind 的创始人 Demis Hassabis。复盘这场绝地反击，我们会发现，Hassabis 并没有试图造一个“更好的 ChatGPT”，而是践行了一个深刻的竞争哲学：&lt;strong&gt;“与其更好，不如不同” (Different is better than better)&lt;/strong&gt;。&lt;/p&gt;
@@ -339,9 +353,9 @@
     </item>
     <item>
       <title>进化错配：旧石器大脑 vs AI 时代 (Evolutionary Mismatch)</title>
-      <link>http://localhost:1313/posts/evolutionary-mismatch-paleolithic-brain-vs-ai-era/</link>
+      <link>https://jackley-dev.github.io/posts/evolutionary-mismatch-paleolithic-brain-vs-ai-era/</link>
       <pubDate>Sun, 18 Jan 2026 22:29:27 +0800</pubDate>
-      <guid>http://localhost:1313/posts/evolutionary-mismatch-paleolithic-brain-vs-ai-era/</guid>
+      <guid>https://jackley-dev.github.io/posts/evolutionary-mismatch-paleolithic-brain-vs-ai-era/</guid>
       <description>&lt;h2 id=&#34;key-takeaways-bluf&#34;&gt;Key Takeaways (BLUF)&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;现代人的核心困境：硬件与软件不兼容。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;我们的基因是为了在 &lt;strong&gt;匮乏、线性、小部落&lt;/strong&gt; 的草原上生存而优化的；但我们此刻身处 &lt;strong&gt;过剩、指数级、全球化&lt;/strong&gt; 的数字丛林。
@@ -438,9 +452,9 @@
     </item>
     <item>
       <title>晚睡心理学：为什么夜间CEO总是坑害白天打工仔？</title>
-      <link>http://localhost:1313/posts/%E6%99%9A%E7%9D%A1%E5%BF%83%E7%90%86%E5%AD%A6%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%9C%E9%97%B4ceo%E6%80%BB%E6%98%AF%E5%9D%91%E5%AE%B3%E7%99%BD%E5%A4%A9%E6%89%93%E5%B7%A5%E4%BB%94/</link>
+      <link>https://jackley-dev.github.io/posts/%E6%99%9A%E7%9D%A1%E5%BF%83%E7%90%86%E5%AD%A6%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%9C%E9%97%B4ceo%E6%80%BB%E6%98%AF%E5%9D%91%E5%AE%B3%E7%99%BD%E5%A4%A9%E6%89%93%E5%B7%A5%E4%BB%94/</link>
       <pubDate>Wed, 14 Jan 2026 22:56:56 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E6%99%9A%E7%9D%A1%E5%BF%83%E7%90%86%E5%AD%A6%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%9C%E9%97%B4ceo%E6%80%BB%E6%98%AF%E5%9D%91%E5%AE%B3%E7%99%BD%E5%A4%A9%E6%89%93%E5%B7%A5%E4%BB%94/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E6%99%9A%E7%9D%A1%E5%BF%83%E7%90%86%E5%AD%A6%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%9C%E9%97%B4ceo%E6%80%BB%E6%98%AF%E5%9D%91%E5%AE%B3%E7%99%BD%E5%A4%A9%E6%89%93%E5%B7%A5%E4%BB%94/</guid>
       <description>&lt;p&gt;这是一个非常经典且极具欺骗性的生理-心理博弈陷阱。作为一个“理性”的人，我们往往很难接受自己在晚上会变得如此“非理性”。&lt;/p&gt;
 &lt;p&gt;你是否也经历过这样的死循环：&lt;/p&gt;
 &lt;ul&gt;
@@ -473,9 +487,9 @@
     </item>
     <item>
       <title>给手机设个“数字宵禁”：利用 iOS 停用时间保障睡眠</title>
-      <link>http://localhost:1313/posts/%E7%BB%99%E6%89%8B%E6%9C%BA%E8%AE%BE%E4%B8%AA%E6%95%B0%E5%AD%97%E5%AE%B5%E7%A6%81%E5%88%A9%E7%94%A8-ios-%E5%81%9C%E7%94%A8%E6%97%B6%E9%97%B4%E4%BF%9D%E9%9A%9C%E7%9D%A1%E7%9C%A0/</link>
+      <link>https://jackley-dev.github.io/posts/%E7%BB%99%E6%89%8B%E6%9C%BA%E8%AE%BE%E4%B8%AA%E6%95%B0%E5%AD%97%E5%AE%B5%E7%A6%81%E5%88%A9%E7%94%A8-ios-%E5%81%9C%E7%94%A8%E6%97%B6%E9%97%B4%E4%BF%9D%E9%9A%9C%E7%9D%A1%E7%9C%A0/</link>
       <pubDate>Tue, 13 Jan 2026 22:50:25 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%BB%99%E6%89%8B%E6%9C%BA%E8%AE%BE%E4%B8%AA%E6%95%B0%E5%AD%97%E5%AE%B5%E7%A6%81%E5%88%A9%E7%94%A8-ios-%E5%81%9C%E7%94%A8%E6%97%B6%E9%97%B4%E4%BF%9D%E9%9A%9C%E7%9D%A1%E7%9C%A0/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E7%BB%99%E6%89%8B%E6%9C%BA%E8%AE%BE%E4%B8%AA%E6%95%B0%E5%AD%97%E5%AE%B5%E7%A6%81%E5%88%A9%E7%94%A8-ios-%E5%81%9C%E7%94%A8%E6%97%B6%E9%97%B4%E4%BF%9D%E9%9A%9C%E7%9D%A1%E7%9C%A0/</guid>
       <description>&lt;p&gt;晚睡往往不是因为我们&amp;quot;不想睡&amp;quot;，而是因为&amp;quot;停不下来&amp;quot;。&lt;/p&gt;
 &lt;p&gt;在经过一整天的高强度工作后，晚间的意志力（Willpower）通常处于耗尽状态（Ego Depletion）。这时候试图靠&amp;quot;自律&amp;quot;来放下手机，去对抗短视频或社交网络精心设计的成瘾机制，无异于徒手对抗重力。&lt;/p&gt;
 &lt;p&gt;更有效的策略是：&lt;strong&gt;承认意志力的局限，引入系统级的外部强制力。&lt;/strong&gt;&lt;/p&gt;
@@ -514,9 +528,9 @@
     </item>
     <item>
       <title>一键发布博客到小红书:从Markdown到图文笔记的自动化</title>
-      <link>http://localhost:1313/posts/%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%88%B0%E5%B0%8F%E7%BA%A2%E4%B9%A6%E4%BB%8Emarkdown%E5%88%B0%E5%9B%BE%E6%96%87%E7%AC%94%E8%AE%B0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
+      <link>https://jackley-dev.github.io/posts/%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%88%B0%E5%B0%8F%E7%BA%A2%E4%B9%A6%E4%BB%8Emarkdown%E5%88%B0%E5%9B%BE%E6%96%87%E7%AC%94%E8%AE%B0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96/</link>
       <pubDate>Mon, 12 Jan 2026 22:56:32 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%88%B0%E5%B0%8F%E7%BA%A2%E4%B9%A6%E4%BB%8Emarkdown%E5%88%B0%E5%9B%BE%E6%96%87%E7%AC%94%E8%AE%B0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%E5%8D%9A%E5%AE%A2%E5%88%B0%E5%B0%8F%E7%BA%A2%E4%B9%A6%E4%BB%8Emarkdown%E5%88%B0%E5%9B%BE%E6%96%87%E7%AC%94%E8%AE%B0%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;有了博客文章后,想同步发布到小红书获取更多流量。但手动操作太繁琐:&lt;/p&gt;
 &lt;ul&gt;
@@ -556,9 +570,9 @@
     </item>
     <item>
       <title>等待AI流式输出时，我们应该做什么？</title>
-      <link>http://localhost:1313/posts/%E7%AD%89%E5%BE%85ai%E6%B5%81%E5%BC%8F%E8%BE%93%E5%87%BA%E6%97%B6%E6%88%91%E4%BB%AC%E5%BA%94%E8%AF%A5%E5%81%9A%E4%BB%80%E4%B9%88/</link>
+      <link>https://jackley-dev.github.io/posts/%E7%AD%89%E5%BE%85ai%E6%B5%81%E5%BC%8F%E8%BE%93%E5%87%BA%E6%97%B6%E6%88%91%E4%BB%AC%E5%BA%94%E8%AF%A5%E5%81%9A%E4%BB%80%E4%B9%88/</link>
       <pubDate>Mon, 12 Jan 2026 16:13:05 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%AD%89%E5%BE%85ai%E6%B5%81%E5%BC%8F%E8%BE%93%E5%87%BA%E6%97%B6%E6%88%91%E4%BB%AC%E5%BA%94%E8%AF%A5%E5%81%9A%E4%BB%80%E4%B9%88/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E7%AD%89%E5%BE%85ai%E6%B5%81%E5%BC%8F%E8%BE%93%E5%87%BA%E6%97%B6%E6%88%91%E4%BB%AC%E5%BA%94%E8%AF%A5%E5%81%9A%E4%BB%80%E4%B9%88/</guid>
       <description>&lt;p&gt;在与 AI 结对编程的日常中，我们经常面临一个特殊的场景：&lt;strong&gt;等待 AI 的流式输出&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;这段时间通常很短（10-30秒），但频率极高。它像极了当年程序员等待代码编译的时刻。张一鸣曾有过类似的思考：“等待编译的过程中我应该做什么？”&lt;/p&gt;
 &lt;p&gt;这不仅仅是一个时间管理问题，更是一个&lt;strong&gt;认知带宽保护&lt;/strong&gt;和&lt;strong&gt;思维杠杆&lt;/strong&gt;的问题。&lt;/p&gt;
@@ -601,9 +615,9 @@
     </item>
     <item>
       <title>用 AI IDE 打造博客写作工作流：Trae 与 Claude Code 双平台实践</title>
-      <link>http://localhost:1313/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</link>
+      <link>https://jackley-dev.github.io/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Mon, 12 Jan 2026 11:55:26 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;写博客最难的部分往往不是写作本身，而是从想法到成文的过程。很多时候，和朋友聊天时灵感迸发，但事后整理却觉得索然无味。&lt;/p&gt;
 &lt;p&gt;我想要一个这样的工作流：&lt;/p&gt;
@@ -647,9 +661,9 @@
     </item>
     <item>
       <title>线上音频转录（mac版）</title>
-      <link>http://localhost:1313/posts/%E7%BA%BF%E4%B8%8A%E9%9F%B3%E9%A2%91%E8%BD%AC%E5%BD%95mac%E7%89%88/</link>
+      <link>https://jackley-dev.github.io/posts/%E7%BA%BF%E4%B8%8A%E9%9F%B3%E9%A2%91%E8%BD%AC%E5%BD%95mac%E7%89%88/</link>
       <pubDate>Sun, 21 Dec 2025 21:58:48 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%BA%BF%E4%B8%8A%E9%9F%B3%E9%A2%91%E8%BD%AC%E5%BD%95mac%E7%89%88/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E7%BA%BF%E4%B8%8A%E9%9F%B3%E9%A2%91%E8%BD%AC%E5%BD%95mac%E7%89%88/</guid>
       <description>&lt;p&gt;我想解决的问题是：面对一个线上音频，暂时没法下载下来，但我想将这个音频转写成文字版。&lt;/p&gt;
 &lt;p&gt;一个验证下来比较便捷可行的思路是：先安装虚拟声卡，让系统声音通过虚拟声卡播放，用音频转录工具接收虚拟声卡的声音进行转录。&lt;/p&gt;
 &lt;hr&gt;
@@ -690,9 +704,9 @@
     </item>
     <item>
       <title>应对晚睡拖延症</title>
-      <link>http://localhost:1313/posts/%E5%BA%94%E5%AF%B9%E6%99%9A%E7%9D%A1%E6%8B%96%E5%BB%B6%E7%97%87/</link>
+      <link>https://jackley-dev.github.io/posts/%E5%BA%94%E5%AF%B9%E6%99%9A%E7%9D%A1%E6%8B%96%E5%BB%B6%E7%97%87/</link>
       <pubDate>Mon, 15 Dec 2025 18:09:55 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E5%BA%94%E5%AF%B9%E6%99%9A%E7%9D%A1%E6%8B%96%E5%BB%B6%E7%97%87/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E5%BA%94%E5%AF%B9%E6%99%9A%E7%9D%A1%E6%8B%96%E5%BB%B6%E7%97%87/</guid>
       <description>&lt;p&gt;想早睡（如：晚上11点前睡），但实际总难以执行，有时还在12点之后才睡，第二天没有精神的时候又后悔前一天没有早睡。&lt;/p&gt;
 &lt;p&gt;我分析原因可能是：&lt;/p&gt;
 &lt;ol&gt;
@@ -707,9 +721,9 @@
     </item>
     <item>
       <title>配置Github Pages</title>
-      <link>http://localhost:1313/posts/%E9%85%8D%E7%BD%AEgithub-pages/</link>
+      <link>https://jackley-dev.github.io/posts/%E9%85%8D%E7%BD%AEgithub-pages/</link>
       <pubDate>Fri, 05 Dec 2025 23:25:56 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E9%85%8D%E7%BD%AEgithub-pages/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E9%85%8D%E7%BD%AEgithub-pages/</guid>
       <description>&lt;p&gt;我想建立一个长期的写作基地，所以试着创建了自己的github pages，本篇记录了创建过程。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;3分钟极简版，创建GitHub Pages&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;

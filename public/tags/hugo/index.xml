@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Hugo on 我的博客</title>
-    <link>http://localhost:1313/tags/hugo/</link>
+    <link>https://jackley-dev.github.io/tags/hugo/</link>
     <description>Recent content in Hugo on 我的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 12 Jan 2026 11:55:26 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jackley-dev.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>用 AI IDE 打造博客写作工作流：Trae 与 Claude Code 双平台实践</title>
-      <link>http://localhost:1313/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</link>
+      <link>https://jackley-dev.github.io/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Mon, 12 Jan 2026 11:55:26 +0800</pubDate>
-      <guid>http://localhost:1313/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>https://jackley-dev.github.io/posts/%E7%94%A8-ai-ide-%E6%89%93%E9%80%A0%E5%8D%9A%E5%AE%A2%E5%86%99%E4%BD%9C%E5%B7%A5%E4%BD%9C%E6%B5%81trae-%E4%B8%8E-claude-code-%E5%8F%8C%E5%B9%B3%E5%8F%B0%E5%AE%9E%E8%B7%B5/</guid>
       <description>&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
 &lt;p&gt;写博客最难的部分往往不是写作本身，而是从想法到成文的过程。很多时候，和朋友聊天时灵感迸发，但事后整理却觉得索然无味。&lt;/p&gt;
 &lt;p&gt;我想要一个这样的工作流：&lt;/p&gt;
