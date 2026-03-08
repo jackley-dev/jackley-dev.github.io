@@ -20,6 +20,13 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
   - Summarize discussion into a structured blog post.
   - **File**: `content/posts/{category}/YYYY-MM-DD-{english-slug}.md`
   - **Front Matter**: (Standard Hugo TOML)
+  - **Writing Style (Strict)**:
+    1. **Delete "Philosophical Fluff"**: Remove empty metaphors (e.g., "power boundaries", "universal key"). Jump straight to the point.
+    2. **Simplify Core Concepts**: Explain functions directly without redundant metaphors.
+       - *Example*: Use "Permission Group" instead of "Access Card".
+       - *Example*: State "Deny > Allow" directly without flowery adjectives.
+    3. **Refactor Deep Thoughts**: Keep valuable technical analogies (e.g., IAM) but remove broad generalizations (e.g., "Software 2.0").
+    4. **Minimalist Conclusion**: Compress conclusions into 1-2 sentences emphasizing key takeaways.
 
 ### 3. 📝 Convert to XHS Draft (Trigger: "convert")
 - **Step 1: Clean (Automatic)**
