@@ -53,34 +53,21 @@ tags = ["DeepTutor", "MiniMax", "LiteLLM", "调试", "API"]
 
 ## 3. 核心 Bug：多 System 消息引发的 2013 错误
 
-在基础配置全部正确，且**单文件脚本调用正常**的情况下，DeepTutor Agent 框架内依然报错：
-`invalid params, invalid chat setting (2013)`
+- **现象**：基础配置均正确且**单文件脚本调用正常**，但在 DeepTutor Agent 框架内报错：`invalid chat setting (2013)`。
+- **Root Cause**：DeepTutor 会在请求中注入**多个** `system` 消息。OpenAI 接口允许这种格式，但 MiniMax 极其严格，检测到多个 `system` 消息会直接拒收。
+- **解决**：修改底层 `_build_messages` 方法，在发送请求前自动合并相邻的同角色消息。
 
-### Root Cause (根本原因)
-开启 DEBUG 抓取底层 Payload 发现，DeepTutor 的 `AgenticChatPipeline` 会在请求阶段注入多个 `system` 角色的消息（用于上下文记忆和行为准则）。
-OpenAI 接口允许这种松散的数组结构，但 **MiniMax 的 API 参数校验极其严格**：一旦检测到 `messages` 列表中存在两个或以上的 `system` 消息，直接拒收并抛出 2013 错误。
-
-### 源码级修复方案
-核心逻辑：在发送 HTTP 请求前，拦截 Payload，将相邻的同角色（如 `system`）消息进行合并。
-
-修改底层文件 `_build_messages` 方法：
-
+**核心修复逻辑**：
 ```python
-# 核心修复逻辑：合并相邻的同角色消息
+# 合并相邻同角色消息 (如连续的 system)
 result = []
 for msg in raw_messages:
-    if not result:
-        result.append(dict(msg))
-    # 如果当前消息角色与上一条相同（例如连续的 system）
-    elif result[-1]["role"] == msg["role"] and isinstance(result[-1]["content"], str) and isinstance(msg["content"], str):
-        # 使用换行符拼接 content
-        result[-1]["content"] = f"{result[-1]['content']}\n\n{msg['content']}"
+    if result and result[-1]["role"] == msg["role"]:
+        result[-1]["content"] += f"\n\n{msg['content']}"
     else:
         result.append(dict(msg))
 return result
 ```
-
-保存源码后重新运行，DeepTutor 成功接入 MiniMax，正常输出流式结果。
 
 ---
 
