@@ -24,13 +24,10 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
     - **Taxonomies**: MUST use flat format (e.g., `tags = [...]`, `categories = ["tech"]`). Do NOT use `[taxonomies]` as it causes parsing errors in some Hugo themes.
     - **Date/Time**: MUST set the time to `00:00:00+08:00` (e.g., `YYYY-MM-DDT00:00:00+08:00`). If set to current time, GitHub Actions (UTC timezone) might consider it a "future" time and skip building the post.
   - **Writing Style (Strict)**:
-    1. **Delete "Philosophical Fluff"**: Remove empty metaphors (e.g., "power boundaries", "universal key"). Jump straight to the point.
-    2. **Simplify Core Concepts**: Explain functions directly without redundant metaphors.
-       - *Example*: Use "Permission Group" instead of "Access Card".
-       - *Example*: State "Deny > Allow" directly without flowery adjectives.
-    3. **Refactor Deep Thoughts**: Keep valuable technical analogies (e.g., IAM) but remove broad generalizations (e.g., "Software 2.0").
-    4. **Minimalist Conclusion**: Compress conclusions into 1-2 sentences emphasizing key takeaways.
-    5. **Image Paths**: MUST use absolute path from the root (e.g., `/images/xxx.jpg`). Do NOT use relative paths like `../../../static/images/`. The IDE preview works with `/images/` because of the `images -> static/images` symlink in the project root.
+    1. **极简直白 (Minimalist & Direct)**：结论先行，直奔主题。拒绝抒情、口水话和空洞的隐喻（如“软件 2.0”），背景描述要口语化、接地气。
+    2. **高度结构化 (Structured)**：多用列表、对比表格、文件树 (Tree) 展示逻辑，保证内容一目了然，极具扫读性。
+    3. **极客用词 (Geeky & Professional)**：术语精准，边界清晰。作为“高级工程师给自己的踩坑备忘录”，注重痛点解决和实操性（直接给出命令/代码）。
+    4. **Image Paths**: MUST use absolute path from the root (e.g., `/images/xxx.jpg`). Do NOT use relative paths like `../../../static/images/`. The IDE preview works with `/images/` because of the `images -> static/images` symlink in the project root.
 
 ### 3. 📝 Convert to XHS Draft (Trigger: "convert")
 - **Step 1: Clean (Automatic)**
