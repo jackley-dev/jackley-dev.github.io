@@ -30,16 +30,16 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
        - *Example*: State "Deny > Allow" directly without flowery adjectives.
     3. **Refactor Deep Thoughts**: Keep valuable technical analogies (e.g., IAM) but remove broad generalizations (e.g., "Software 2.0").
     4. **Minimalist Conclusion**: Compress conclusions into 1-2 sentences emphasizing key takeaways.
-    5. **Image Paths**: MUST use relative path from the post file to the static image (e.g., `../../../static/images/xxx.jpg`) instead of absolute `/images/...`. This ensures images render correctly both in Hugo build and IDE preview.
+    5. **Image Paths**: MUST use absolute path from the root (e.g., `/images/xxx.jpg`). Do NOT use relative paths like `../../../static/images/`. The IDE preview works with `/images/` because of the `images -> static/images` symlink in the project root.
 
 ### 3. 📝 Convert to XHS Draft (Trigger: "convert")
 - **Step 1: Clean (Automatic)**
   - **Action**: Run `python3 scripts/xhs/convert_blog.py`.
   - **Logic**: Reads the latest blog post, strips Front Matter/Shortcodes/Links.
-  - **Output**: Creates/Overwrites the content file at `xhs_drafts/{filename}.md`. (Contains only the cleaned article body).
+  - **Output**: Creates/Overwrites the content file at `xhs_drafts/files/{filename}.md`. (Contains only the cleaned article body).
 
 - **Step 2: Summarize (AI Assisted)**
-  - **Action**: User (or Agent) reads `xhs_drafts/{filename}.md` and asks LLM to generate a summary.
+  - **Action**: User (or Agent) reads `xhs_drafts/files/{filename}.md` and asks LLM to generate a summary.
   - **Prompt Template**:
     ```text
     Role: Senior Technical Editor (Xiaohongshu)
@@ -51,10 +51,10 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
     4. Tags: Rich and comprehensive tags (tech stack, related tools, concepts).
     5. Tone: Professional, serious, technical authority.
     ```
-  - **Output**: Save the result to `xhs_drafts/{filename}_summary.md`.
+  - **Output**: Save the result to `xhs_drafts/files/{filename}_summary.md`.
 
 - **Step 3: Edit (User Action)**
-  - Review and refine `xhs_drafts/{filename}_summary.md`.
+  - Review and refine `xhs_drafts/files/{filename}_summary.md`.
 
 ### 4. 🖼️ Generate XHS Card
 #### Option A: Plain Text (Trigger: "gen-card")
@@ -62,20 +62,20 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
 - **Action**:
   - Run: `python3 scripts/xhs/publish_post_to_xhs.py`
   - **Logic**: Simple text-based generation using PIL. Best for simple news/quotes.
-  - Output: "Cards generated in xhs_drafts/image/"
+  - Output: "Cards generated in xhs_drafts/images/"
 
 #### Option B: Rich Content (Trigger: "gen-rich")
 - **Trigger**: User inputs "gen-rich".
 - **Action**:
   - Run: `python3 scripts/xhs/publish_post_to_xhs.py -m render`
   - **Logic**: HTML/CSS based rendering with Playwright. Supports Code blocks, Tables, Images, Notion-style layout.
-  - Output: "Cards generated in xhs_drafts/image/"
+  - Output: "Cards generated in xhs_drafts/images/"
 
 ### 5. 📕 Publish to Xiaohongshu (Trigger: "pub")
 - **Trigger**: User inputs "pub".
 - **Action**:
   - Run: `python3 scripts/xhs/prepare_pub_data.py`
-  - **Logic**: Extracts text from `xhs_drafts/{filename}_summary.md` and images from `xhs_drafts/image/`.
+  - **Logic**: Extracts text from `xhs_drafts/files/{filename}_summary.md` and images from `xhs_drafts/images/`.
   - Use **xiaohongshu-mcp** to publish.
   - Output: Confirmation with link to published note
 
