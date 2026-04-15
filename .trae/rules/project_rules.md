@@ -20,6 +20,7 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
   - Summarize discussion into a structured blog post.
   - **File**: `content/posts/{category}/YYYY-MM-DD-{english-slug}.md`
   - **Front Matter**: (Standard Hugo TOML)
+    - **Slug**: MUST explicitly set `slug = "{english-slug}"` to ensure clean URLs and avoid index issues caused by Chinese titles.
     - **Taxonomies**: MUST use flat format (e.g., `tags = [...]`, `categories = ["tech"]`). Do NOT use `[taxonomies]` as it causes parsing errors in some Hugo themes.
     - **Date/Time**: MUST set the time to `00:00:00+08:00` (e.g., `YYYY-MM-DDT00:00:00+08:00`). If set to current time, GitHub Actions (UTC timezone) might consider it a "future" time and skip building the post.
   - **Writing Style (Strict)**:
@@ -29,6 +30,7 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
        - *Example*: State "Deny > Allow" directly without flowery adjectives.
     3. **Refactor Deep Thoughts**: Keep valuable technical analogies (e.g., IAM) but remove broad generalizations (e.g., "Software 2.0").
     4. **Minimalist Conclusion**: Compress conclusions into 1-2 sentences emphasizing key takeaways.
+    5. **Image Paths**: MUST use relative path from the post file to the static image (e.g., `../../../static/images/xxx.jpg`) instead of absolute `/images/...`. This ensures images render correctly both in Hugo build and IDE preview.
 
 ### 3. 📝 Convert to XHS Draft (Trigger: "convert")
 - **Step 1: Clean (Automatic)**

@@ -167,6 +167,195 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">DeepTutor 接入 MiniMax 踩坑记录
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>DeepTutor 是近期 GitHub 上热度极高的教育辅助 AI 项目，Star 数增长迅猛。考虑到其潜力，我决定在本地部署，并尝试接入 MiniMax 的 Token plan。
+没想到，在配置底层基于 LiteLLM 的路由时，遇到了一系列复杂的鉴权与接口兼容性问题，最终甚至用到了源码级的解决方案。放在 AI 时代之前，拿到一个跑不通的开源项目直接改源码门槛极高；但在如今 AI Coding 工具的辅助下，深入框架修改源码已经变成一件低成本的日常操作。
+本文将详细记录这次接入 MiniMax 的核心踩坑点及最终修复方案。
+环境与基础配置问题 LiteLLM 路由配置错误 最初尝试通用 OpenAI 兼容模式，将 LLM_BINDING 设为 openai，导致 LLM Provider NOT provided 报错。 解决：必须将 LLM_BINDING 设为 minimax，并配置 LLM_MODEL=MiniMax-M2.7，LiteLLM 底层逻辑才能正确匹配提供商配置。
+鉴权与端点配置 缺失 Group ID 导致 2049 错误 MiniMax 原生接口要求提供 Group ID（账户 ID），仅提供 API Key 会返回 invalid api key (2049) 错误。 解决：在 .env 中添加 MINIMAX_GROUP_ID=你的纯数字ID。
+端点 URL 配置错误导致 404 在使用 OpenAI 格式的 Payload 时，将 LLM_HOST 配置为了 Anthropic 端点（导致协议与请求格式不匹配），或使用了早期已废弃的域名。 解决：统一使用国内官方支持的 OpenAI 兼容端点：https://api.minimaxi.com/v1。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-15 00:00:00 +0800 CST'>April 15, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to DeepTutor 接入 MiniMax 踩坑记录" href="https://jackley-dev.github.io/posts/deeptutor-minimax-api-debugging/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">驾驭多 Agent 系统：从微观管理者到系统架构师 (Titan Mode)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>我们将通过第一性原理（First Principles）、系统动力学（System Dynamics）和认知模型（Cognitive Models），深度拆解“人机协同”中的结构性矛盾，并映射到顶级管理者的组织设计逻辑中。
+核心洞察：范式错配 (Paradigm Mismatch) 你所遇到的“长时间等待”和“频繁上下文切换”，本质上是因为人类仍在使用“即时通讯（Synchronous Chat）”的思维定势，来管理“异步任务（Asynchronous Tasks）”系统。
+目前的 AI UI 界面（如对话框）具有极强的欺骗性，它暗示你是在和一个“人”聊天，导致你本能地停留在屏幕前等待回复。但多 Agent 协作的本质是计算集群的批处理。当你拥有多个 Agent 时，你不再是一个“聊天者（Chatter）”，而是一个**“资源调度者 / CEO（Orchestrator）”**。
+CEO 绝不会站在程序员背后看着他敲代码（等待），也不会每隔 5 分钟去不同的部门听取碎片化的汇报（上下文切换）。
+以下是系统性的拆解与 CEO 级别的应对策略：
+一、 破局“长时间等待”：从“阻塞式”到“事件驱动” 认知诊断：人脑的“阻塞式 I/O” 在计算机科学中，如果你发起一个请求并死等它完成，这叫“阻塞（Blocking）”。人类在使用 Agent 时经常陷入这种状态，占用自己最宝贵的计算资源（注意力）去等待机器的计算资源。
+CEO 的策略：异步化与 SLA（服务等级协议） CEO 分配任务后，会明确期望的交付时间和标准（SLA），然后立刻将注意力转移到下一个高优任务。他们依靠“结果反馈”来触发下一步行动，而不是“过程监控”。
+个人效能建议（对齐 CEO）：
+建立“收件箱（Inbox）”模式，抛弃“聊天框”依赖：将 Agent 的任务视为发送一封电子邮件，而不是发一条微信。任务发出后，立刻关闭当前界面，进入你的下一个深度工作区块（Deep Work Block）。 配置“事件回调（Webhook/Notification）”机制：不要主动去“轮询（Polling）”Agent 是否完成了工作。让系统在完成时（或失败需要介入时）通过特定的渠道（如专属的飞书/Slack 频道、甚至只是一个声音提示）通知你。 并发调度（Concurrency）：当你有一个需要等待 10 分钟的复杂 Agent 任务时，这 10 分钟应该被预先规划为另一个不需要高认知负荷的任务（如回复常规邮件、阅读简报），实现人机双线并发。 二、 破局“频繁上下文切换”：构建“抽象层” 认知诊断：工作记忆超载 心理学表明，人类的工作记忆只能同时处理 4-7 个信息块（Chunk）。每次你在不同领域的 Agent（如代码 Agent、调研 Agent、财务 Agent）之间切换，你的大脑都需要清空当前缓存（Cache Eviction），重新加载新的业务背景。这种“上下文切换成本（Context Switching Cost）”是极其高昂的，会导致严重的决策疲劳。
+CEO 的策略：科层制（Hierarchy）与标准化看板（Dashboards） CEO 从不直接管理 100 个一线员工。他们通过建立“抽象层”——即高管团队（VP、总监）和“幕僚长（Chief of Staff）”来过滤信息。同时，他们要求下属使用标准化的格式（如一页纸备忘录、OKR 看板）进行汇报。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-08 10:00:00 +0800 CST'>April 8, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to 驾驭多 Agent 系统：从微观管理者到系统架构师 (Titan Mode)" href="https://jackley-dev.github.io/posts/%E9%A9%BE%E9%A9%AD%E5%A4%9A-agent-%E7%B3%BB%E7%BB%9F%E4%BB%8E%E5%BE%AE%E8%A7%82%E7%AE%A1%E7%90%86%E8%80%85%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88-titan-mode/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">从 Trae Skills 迁移到 Claude Code Skills
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Trae Skills vs Claude Code Skills 踩坑将 Skills 从 Trae 迁移到 VSCode &#43; Claude Code，搞清楚了三种机制的本质差异。
+Trae Skills：自动发现 &#43; 渐进加载 .trae/skills/ └── pdf/ ├── SKILL.md ← 触发入口（name &#43; description 常驻上下文） ├── references/ ← 按需懒加载 └── scripts/ ← 直接执行，不占 token 自动发现：放进目录即生效，零配置 模型自主触发：模型读取 description，自判断何时调用 三层渐进加载：Metadata 常驻 → SKILL.md 触发时加载 → references/scripts 按需加载 Claude Code 的现状（2026年4月） 官方文档原文：
+Custom commands have been merged into skills. A file at .claude/commands/deploy.md and a skill at .claude/skills/deploy/SKILL.md both create /deploy and work the same way.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-07 16:17:02 +0800 CST'>April 7, 2026</span>&nbsp;·&nbsp;<span>jackley</span></footer>
+  <a class="entry-link" aria-label="post link to 从 Trae Skills 迁移到 Claude Code Skills" href="https://jackley-dev.github.io/posts/%E4%BB%8E-trae-skills-%E8%BF%81%E7%A7%BB%E5%88%B0-claude-code-skills/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">AI IDE——AI时代的工作台
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>作为一名编码工作者，我现在越来越习惯用 AI IDE 来处理非编码工作，包括文档处理、知识管理和个人数字分身。不仅是我，非编程岗同事，也逐步开始使用 AI IDE 来处理日常工作。
+相比网页版的大模型对话框，或者 Notion AI 等文档工具，AI IDE 的降维打击体现在两点：直接执行的能力与持续演进的个人记忆系统。
+一、所见即所得的直接执行力 传统的 AI 工具只负责“回答问题”，你需要手动复制、粘贴、整理。而 AI IDE 的核心差异是直接产出结果。
+它能直接读取和修改本地的多个文件，省去了上下文搬运的过程。在实际工作中，这意味着：
+便捷读取多格式文档：直接读取和解析本地的 PPT、Excel、Word、PDF、Markdown 等各类格式文件。 按需生成各类文档：不仅能读，还能根据指令在工作区内直接输出并保存为所需格式的文档文件。 自动化知识管理：对本地海量文件进行自动识别、分类整理与自动化归档，构建井然有序的个人知识库。 脑暴与产出一体化：虽然网页版 Chatbot 也能做头脑风暴，但 IDE 能够将“发散思考”到“生成最终产出”的整个流程无缝闭环，直接落地为实体文件。 你给的是指令，它交付的是完成后的文件。
+二、构建专属的个人记忆系统 这是 AI IDE 最容易被低估，也最重要的价值。
+基于 IDE 的全局视野与 AI 的学习能力，你可以借此构建一套专属的个人记忆系统。由于 IDE 成了你日常工作和决策的核心工作台，它自然而然地拥有了与你互动的全量上下文。在长期的协作中，AI 可以持续学习你的价值观、行为方式和执行偏好。它不仅是一个聪明的工具，更会逐渐变成你的“数字分身”，越来越顺畅地与你配合，按照你的方式去做判断、决策和执行。
+结论 AI IDE 正在跨越代码编辑器的边界。它通过提供真实的执行环境和深度的本地上下文，正在成为 AI 时代知识工作者的通用数字工作台。
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-03 00:00:00 +0800 CST'>April 3, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to AI IDE——AI时代的工作台" href="https://jackley-dev.github.io/posts/ai-ideai%E6%97%B6%E4%BB%A3%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8F%B0/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Andrej Karpathy 访谈：编程的终结与智能体时代
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>本文为 Andrej Karpathy 访谈视频《编程的终结：智能体、自动化研究与 AI 循环时代》的核心观点整理。访谈深入探讨了从“手写代码”向“系统管理”演变的开发新范式。
+开发范式的系统性转移 从“编写代码”到“表达意志” “编程”一词正在失去其原有含义，现在的核心在于向 AI 智能体（Agents）表达个人意志。自 2024 年底起，开发范式发生了质的飞跃。Karpathy 提到自己几乎不再手写代码，而是将 80% 以上的工作委托给智能体，每天花大量时间作为指挥者运行这些 AI。
+宏观动作（Macro-actions）管理 当前的开发已经不再是逐行编写函数，而是通过“宏观动作”在代码库层面进行操作。开发者转变为类似项目管理者的角色，同时调动多个并行工作的智能体：
+研究代理：负责探索和信息收集。 编码代理：负责具体的代码实现。 规划代理：负责制定实施路径。 人类：负责审查结果与方向把控。 系统瓶颈的演进 从算力受限到 Token 吞吐受限 过去十年的工程瓶颈主要在于 GPU 的底层算力（FLOPs）。而现在的系统瓶颈已经转变为 Token 吞吐量和人类的指挥技能。如果开发者无法满负荷利用智能体的 Token 生成能力，那么人类自身就成了整个开发循环中的“瓶颈”。
+智能体的未来形态 “Claw”与持久化智能体 传统的 AI 交互局限于对话窗口，而未来属于被称为“Claw”的代理层。它具备更复杂的记忆系统和持久性特征，能够在后台持续循环运行、独立执行任务，甚至在用户不进行主动干预时也能代表用户处理事务。
+“Dobby”家庭自动化系统与软件重构 Karpathy 展示了将 Sonos 音响、灯光、空调及安防监控等 6 个独立的 App 统一成一个基于 WhatsApp 的自然语言界面系统（代号“Dobby”）。这种模式揭示了未来软件的发展方向：软件将不再需要开发复杂的 UI，而是直接提供底层 API 供智能体调用和整合。
+“Vibe Coding”与临时软件 “氛围编程”（Vibe Coding）虽然目前仍需要人类进行设计决策，但在未来几年内将成为极低门槛的基础能力。AI 能够根据用户模糊的意图，快速生成一次性的“临时软件”来解决特定问题，彻底屏蔽底层技术细节。
+自动化研究与科研架构 AutoResearch 与递归自我改进 为了最大化效能，未来的科研循环必须逐步剔除人类的直接参与。实验表明，让 AI 智能体自主进行超参数调优（如针对 NanoGPT 模型），其结果甚至超越了拥有 20 年经验的顶尖人类专家。这标志着 LLM 已经具备了递归自我改进的雏形能力。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-22 10:00:00 +0800 CST'>March 22, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Andrej Karpathy 访谈：编程的终结与智能体时代" href="https://jackley-dev.github.io/posts/andrej-karpathy-%E8%AE%BF%E8%B0%88%E7%BC%96%E7%A8%8B%E7%9A%84%E7%BB%88%E7%BB%93%E4%B8%8E%E6%99%BA%E8%83%BD%E4%BD%93%E6%97%B6%E4%BB%A3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Andrej Karpathy 揭秘马斯克的“大锤”管理学
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Andrej Karpathy 近期分享了他在 Tesla 与 Elon Musk 共事期间的观察。与外界常常关注的宏大愿景不同，Karpathy 揭示了马斯克在日常管理中极其务实甚至残酷的一面——他将其形容为**“挥动大锤”（Applying the Hammer）**。
+这不仅仅是一种比喻，更是一套可执行的工程管理算法。
+极简且高技术化的团队 马斯克对团队规模有着近乎偏执的控制欲。他倾向于保持极小规模、但技术能力极强的团队。
+这背后的逻辑很简单：随着团队规模线性增长，沟通成本呈指数级上升。
+抵制自然扩张：大多数公司在业务增长时会自然增加人手，马斯克则极力抵制这种倾向。 小团队红利：小团队意味着决策链条短，每个人都必须是多面手，信息传递几乎没有损耗。 果断淘汰低绩效者 与许多大公司“难以解雇员工”的温和文化不同，马斯克支持主动辞退表现不佳的员工。
+这不是为了节省成本，而是为了保持团队的“技术密度”。顶尖人才不仅产出高，更重要的是他们之间的沟通效率极高。一旦混入低绩效者，整个团队的协作带宽就会被拉低。
+扁平化与技术化管理 在马斯克的公司里，你很难找到不懂技术的中层管理者（Middle Management）。
+拒绝“传声筒”：管理结构非常精简。管理者必须具备深厚的技术背景，能够理解底层逻辑，而不是仅仅负责转发邮件和做 PPT。 专业化分工：管理是为了服务技术实现，而不是为了管理而管理。 高效且动态的会议文化 马斯克极度反感停滞和无效率。他鼓励一种看起来“不礼貌”但在工程上极高效的会议文化：
+如果你觉得会议无益或学不到东西，直接起座离开。
+这种文化消除了“面子工程”，让每个人的时间都花在刀刃上。
+拒绝“娇惯”的奋斗文化 不同于硅谷大厂提供的按摩、免费洗衣等过度福利，马斯克的公司文化强调高强度和产出。
+这里的核心价值观是技术卓越（Technical Excellence），而非员工舒适度。这种环境筛选出了那些真正对技术狂热、愿意为解决难题而投入的人。
+事实的唯一来源：一线工程师 马斯克约 50% 的时间会直接与工程师交流。对他来说：
+代码是真相：PPT 和汇报可能会骗人，但代码不会。 一线是真相：中间管理层的报告往往经过了层层过滤和美化。马斯克选择绕过中间层，直接从源头获取信息。 “挥动大锤”解决瓶颈 这是 Karpathy 印象最深的一点。当项目遇到关键资源瓶颈（例如 GPU 短缺）时，马斯克不会接受“正在协调”这种借口。
+他会亲自介入，“挥动大锤”砸开障碍：
+立即翻倍资源：如果计算资源不足，他会要求立即翻倍，而不是增加 10%。 每日更新机制：设立每日检查点，直到瓶颈被彻底消除。 展现极强执行力：这种自上而下的压力，能够瞬间击穿部门墙和官僚流程。 跨越层级的供应链干预 为了扫清障碍，他会跨过所有繁冗的采购流程。如果显卡缺货，他会直接联系 NVIDIA CEO 黄仁勋。
+这种**“超级管理员”式的权限调用**，确保了关键路径上的问题能够以最高优先级解决。
+马斯克的管理风格常被误解为微观管理（Micromanagement）。但 Karpathy 的视角让我们看到，这其实是一种基于物理第一性原理的管理工程学：消除噪音（低绩效、中间层），增强信号（直接沟通、高密度人才），并集中所有能量（挥动大锤）击穿最大的阻力。
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-14 10:00:00 +0800 CST'>March 14, 2026</span>&nbsp;·&nbsp;<span>jackley</span></footer>
+  <a class="entry-link" aria-label="post link to Andrej Karpathy 揭秘马斯克的“大锤”管理学" href="https://jackley-dev.github.io/posts/andrej-karpathy-%E6%8F%AD%E7%A7%98%E9%A9%AC%E6%96%AF%E5%85%8B%E7%9A%84%E5%A4%A7%E9%94%A4%E7%AE%A1%E7%90%86%E5%AD%A6/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">OpenClaw升级后Agent罢工？三步配置教你解决
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>升级到 OpenClaw 2026.3.2 后，很多朋友发现自己的 Agent 突然“变笨”了——不能写代码，不能执行命令，甚至连文件都读不了。
+这是因为 OpenClaw 引入了一个重大的 Breaking Change (破坏性更新)。
+什么是 Breaking Change？ 在软件开发中，Breaking Change 指的是那些不向后兼容的改动。简单说，就是“你以前的代码/配置，在新版本里跑不通了”。
+这次 OpenClaw 的更新，最大的改变在于权限策略的翻转：
+以前 (Legacy): 默认信任。Agent 启动即拥有系统权限，想干嘛干嘛。 现在 (v2026.3.2&#43;): 默认安全 (Secure by Default)。 发生了什么：Tool Profiles 的默认值变更 OpenClaw 的 Tool Profiles (工具配置) 机制其实早就存在，但在此次更新中，默认配置从“全能模式”变成了 messaging (通讯员模式)。
+这意味着，除非你显式授权，否则 Agent 默认只能收发消息。
+minimal: 仅保留会话状态，极其受限。 messaging (新默认值): 仅能聊天。适合客服、通知类 Bot。 coding: 开发者模式。允许读写文件，但限制系统命令。 full: 全功能模式。无限制。 这就像是以前公司发门禁卡，默认给的是“全通卡”；现在新员工入职，默认只给“大堂通行证”。虽然安全了，但对于习惯了“全通卡”的老员工（开发者）来说，确实很不方便。
+如何解决？ ❌ 方案一：暴力解锁 (不推荐) 最简单的办法，是直接把配置改回“全通模式”，并且让它在宿主机上直接运行。
+// 🚫 危险配置：千万别这么做 { &#34;tools&#34;: { &#34;profile&#34;: &#34;full&#34;, &#34;exec&#34;: { &#34;host&#34;: &#34;gateway&#34;, // 直接在宿主机运行 &#34;ask&#34;: &#34;off&#34; // 从不询问，直接执行 } } } 为什么危险？ 这就好比为了方便进出，把公司大门直接拆了。一旦 Agent 出现“幻觉”（比如误执行 rm -rf / 或修改了系统关键配置），你的宿主机将没有任何防线，直接崩溃。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-10 10:00:00 +0800 CST'>March 10, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to OpenClaw升级后Agent罢工？三步配置教你解决" href="https://jackley-dev.github.io/posts/openclaw%E5%8D%87%E7%BA%A7%E5%90%8Eagent%E7%BD%A2%E5%B7%A5%E4%B8%89%E6%AD%A5%E9%85%8D%E7%BD%AE%E6%95%99%E4%BD%A0%E8%A7%A3%E5%86%B3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">OpenClaw 更新：从“逻辑权限”到“物理沙箱”的纵深防御
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在上一篇关于 Tool Profiles 的讨论中，我们提到了“信任是分级的”。但作为一名务实的 Builder，我们深知：逻辑上的约束永远只是第一道防线。
+当 Agent 拥有了 coding 权限，即使我们限制了它不能执行 rm -rf，它依然可能因为“幻觉”写出一些破坏性的代码。为了彻底解决“爆炸半径”问题，OpenClaw 推出了 Sandboxing (沙箱机制)。
+这是从“软件定义权限”向“基础设施定义安全”的跨越。
+核心理念：物理隔离 (Physical Isolation) OpenClaw 的沙箱本质上是利用 Docker 容器 来运行 Agent 的工具。
+这意味着，虽然 OpenClaw 内置了沙箱的管理逻辑（Gateway 负责调度），但你必须在宿主机上预先安装 Docker Engine。它并不是一个完全独立的、零依赖的虚拟机，而是基于容器技术的轻量级隔离。
+这意味着 exec (执行命令)、read/write (读写文件)、edit (编辑文件) 等高危操作不再直接作用于你的宿主机（Host），而是在一个受限的容器环境中运行。
+这与我在行为模式中提到的 “沙箱思维” (Sandbox Thinking) 高度契合：
+在沙箱内，允许系统崩溃（Let it Crash）以积累数据；在沙箱外，严格设立熔断机制（Safety Layer）。
+关键配置深度拆解 OpenClaw 的沙箱设计非常灵活，主要通过以下几个维度进行精细化控制：
+1. 运行模式 (Modes) 通过 agents.defaults.sandbox.mode 控制：
+off: 裸奔模式，工具直接在宿主机运行（慎用）。 non-main (默认): 仅对非主会话（如群聊、自动化任务）启用。这是一个非常平衡的策略，保护了核心生产环境，同时不影响日常调试。 all: 全量开启。 2. 隔离粒度 (Scope) 决定了容器的复用策略：
+session (默认): 每个会话一个独立容器。最安全，但启动开销略大。 agent: 每个 Agent 一个容器。 shared: 所有沙箱共用一个容器。适合资源受限的环境。 3. 工作区访问 (Workspace Access) 这是最体现“控制力”的地方：
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-05 14:30:00 +0800 CST'>March 5, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to OpenClaw 更新：从“逻辑权限”到“物理沙箱”的纵深防御" href="https://jackley-dev.github.io/posts/openclaw-%E6%9B%B4%E6%96%B0%E4%BB%8E%E9%80%BB%E8%BE%91%E6%9D%83%E9%99%90%E5%88%B0%E7%89%A9%E7%90%86%E6%B2%99%E7%AE%B1%E7%9A%84%E7%BA%B5%E6%B7%B1%E9%98%B2%E5%BE%A1/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">OpenClaw 更新：为 AI Agent 装上“安全护栏”
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>OpenClaw 最近引入了一套完整的 Tool Profiles (工具配置) 和 Allow/Deny (黑白名单) 机制。这赋予了开发者定义“权限沙箱”的能力，从根本上解决了 Agent 权限过大的安全隐患。
+⚠️ 2026.3.3 Breaking Change 预警
+默认配置变更为 messaging。
+新安装的 OpenClaw 采取了&#34;默认安全&#34; (Secure by Default) 策略，不再默认开启编程和系统工具。如果你希望 Agent 具备 Coding 能力，必须显式在配置中将 tools.profile 设置为 &#34;coding&#34; (或 &#34;full&#34;)。
+核心更新解读 这次更新的核心在于控制粒度的提升。
+1. Tool Profiles：预设权限组 OpenClaw 提供了几种开箱即用的 Profile，类似于为 Agent 分配了不同的“工种”：
+minimal: 极简模式，仅保留会话状态。适合纯聊天或需要极高安全性的场景。 coding: 开发者模式。包含文件系统 (group:fs)、运行时 (group:runtime)、内存等。这是 Builder 最常用的模式。 messaging: 通讯员模式。专注于消息收发 (group:messaging)，适合客服或通知类 Agent。 full: 全功能模式。无限制，慎用。 2. 精细化的 Allow/Deny 策略 Profile 只是基线 (Base)，真正的威力在于 tools.allow 和 tools.deny 的微调。遵循最小权限原则 (Principle of Least Privilege)，Deny 规则优先级高于 Allow。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-03-05 10:00:00 +0800 CST'>March 5, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to OpenClaw 更新：为 AI Agent 装上“安全护栏”" href="https://jackley-dev.github.io/posts/openclaw-%E6%9B%B4%E6%96%B0%E4%B8%BA-ai-agent-%E8%A3%85%E4%B8%8A%E5%AE%89%E5%85%A8%E6%8A%A4%E6%A0%8F/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">构建你的第二大脑：基于 AI 的个人记忆系统 (AI Memory System)
     </h2>
   </header>
@@ -184,201 +373,6 @@
   </div>
   <footer class="entry-footer"><span title='2026-03-01 10:00:00 +0800 CST'>March 1, 2026</span></footer>
   <a class="entry-link" aria-label="post link to 构建你的第二大脑：基于 AI 的个人记忆系统 (AI Memory System)" href="https://jackley-dev.github.io/posts/%E6%9E%84%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E5%9F%BA%E4%BA%8E-ai-%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F-ai-memory-system/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">深度解读 Claude Skills：打造 Agent 的“食谱”与“大脑”
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>在 AI Agent 的开发生态中，我们一直在寻找一种能够稳定复现复杂工作流的方法。最近，Anthropic 发布了一份重磅文档——《构建 Claude 技能（Skills）的完整指南》，为我们提供了一个标准化的答案。
-如果你正在使用 MCP (Model Context Protocol) 连接各种工具，或者试图让 Claude 遵循特定的 SOP（标准作业程序），这份指南绝对不容错过。本文将为你提炼其中的核心洞见，带你理解 Skills 是如何成为 Agent 的“食谱”的。
-什么是 Skill？：厨房与食谱 Anthropic 给出了一个非常精妙的比喻来解释 Skill 与 MCP 的关系：
-MCP (Model Context Protocol) 是专业厨房。它提供了各种食材（数据）、刀具（工具）和设备（API）。有了 MCP，Claude 可以访问 Linear、GitHub、Notion，但这只意味着它“能”做什么，不代表它知道“怎么做”最好。 Skill (技能) 是食谱。它是一套封装好的指令集，教 Claude 如何利用厨房里的工具，按步骤制作出一道完美的菜肴。 简单来说，Skill = 显性知识 &#43; 最佳实践。它将你脑海中的“业务流程”固化为 Claude 可以理解和执行的文件。
-核心设计哲学：渐进式披露 (Progressive Disclosure) Skill 的设计中通过渐进式披露机制来平衡 Token 消耗和上下文质量。这是一个非常值得借鉴的 Prompt Engineering 模式：
-Level 1: 索引层 (Frontmatter)
-加载时机：始终加载到 System Prompt 中。 内容：仅包含 Skill 的名称和一段简短的描述（Description）。 作用：让 Claude 知道“我会什么”，以及“什么时候该用什么”。Claude 根据用户的 Prompt 决定是否唤醒某个 Skill。 Level 2: 指令层 (SKILL.md 正文)
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-27 10:00:00 +0800 CST'>February 27, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to 深度解读 Claude Skills：打造 Agent 的“食谱”与“大脑”" href="https://jackley-dev.github.io/posts/%E6%B7%B1%E5%BA%A6%E8%A7%A3%E8%AF%BB-claude-skills%E6%89%93%E9%80%A0-agent-%E7%9A%84%E9%A3%9F%E8%B0%B1%E4%B8%8E%E5%A4%A7%E8%84%91/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">心智的摩托车：AI 时代的减法与专注
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>AI 时代的焦虑，很大程度上来源于一种被“信息洪流”淹没的无力感。每天都有新的模型发布，每小时都有新的技术突破。
-更有甚者，这些信息大多是高质量的：这个新框架能提升 50% 的开发效率，那个新模型在推理能力上超越了人类，这篇论文提出了革命性的架构…… 好像每个方向都充满了价值，每个机会都不容错过。
-但这种“什么都想抓住”的心态，往往导致了最糟糕的结果：在所有方向上浅尝辄止，最终一无所获。
-在这样一个技术爆炸、噪音与信号难以分辨的时代，个人究竟该如何定位自己的价值？最近，我听了硅谷哲人、AngelList 创始人纳瓦尔·拉维坎特（Naval Ravikant）的最新一期播客《心智的摩托车：论 AI 与未来工作》（A Motorcycle for the Mind）。这期节目不仅重塑了我对 AI 的理解，更让我意识到：AI 时代，做减法比做加法更重要。
-高质量信息的陷阱 过去，我们的挑战是信息匮乏；现在，我们的挑战是高质量信息的过载。
-当我们被无数“有价值”的信息轰炸时，注意力和精力被切分得支离破碎。今天学一下 RAG，明天试一下 Agent，后天研究一下多模态。看起来很忙碌，但实际上，我们只是在信息的表层冲浪，从未潜入深海。
-这就好比你拥有一把绝世宝剑（AI），却不知道该挥向哪里，最终只能在空气中乱舞。
-如果在 AI 时代，你不能选择一个自己最有机会的方向沉下心来做，那么被各种信息轰炸的结果，就是你的认知永远停留在“知道”层面，而无法转化为“做到”的价值。
-纳瓦尔的启示：判断力是减法的艺术 史蒂夫·乔布斯曾说电脑是“心智的自行车”，通过机械效率放大人类智力。纳瓦尔将这个比喻升级为：AI 是“心智的摩托车”（Motorcycle for the mind）。
-摩托车自带引擎（大模型生成能力），不再需要你费力蹬踏。现在的游戏规则变了：你不再需要比拼体力和手速，你需要学会的是如何控制油门、掌握方向，以及在高速行驶中保持平衡。
-这就引出了纳瓦尔强调的核心竞争力：判断力（Judgment）。
-很多人误以为判断力是“做出正确选择”的能力，但在 AI 时代，判断力首先是“决定不做什么”的能力。
-拒绝平庸的机会：AI 是一个极其勤奋的实习生，它能给你生成无数种方案。但它不知道哪一种最适合你，哪一种能在这个拥挤的市场中存活。你的价值，在于对 99% 的“可行但平庸”的选项说“不”。 对抗 FOMO（错失恐惧症）：承认你不可能追上所有热点。与其在十个方向上做 10 分的努力，不如在一个方向上利用 AI 杠杆做到 1000 分。 在无限的选项海洋中，做减法才是最高级的智慧。
-深潜（Deep Dive）：抵御熵增的唯一方式 纳瓦尔在访谈中提到了 Specific Knowledge（特有知识） 的概念。这种知识无法通过培训获得，只能通过在极度具体的领域中解决极度困难的问题来习得。
-AI 时代的悖论在于：通用知识变得极其廉价（AI 什么都知道），而特有知识变得无比昂贵。
-如何获得特有知识？唯一的路径就是深潜。
-1. 沉下心来，Build Something Real 与其读 100 篇关于 LLM 原理的论文，不如动手用 LLM 开发一个真正有人用的产品。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-23 10:00:00 +0800 CST'>February 23, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to 心智的摩托车：AI 时代的减法与专注" href="https://jackley-dev.github.io/posts/%E5%BF%83%E6%99%BA%E7%9A%84%E6%91%A9%E6%89%98%E8%BD%A6ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E5%87%8F%E6%B3%95%E4%B8%8E%E4%B8%93%E6%B3%A8/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">警惕“外包思维”：AI 时代的技术主权与技能形成
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p> “AI Enhanced Productivity ≠ Competence. 生产力的提升不代表能力的提升。”
-最近，Anthropic 的研究员 Judy Hanwen Shen 和 Alex Tamkin 发布了一篇非常及时的论文：How AI Impacts Skill Formation (arXiv:2601.20245)。
-在这个 Copilot 几乎成为标配的时代，这篇论文通过严谨的随机对照实验，揭示了一个令人不安的趋势：过度依赖 AI 的新手，正在失去核心的编程能力。
-1. 效率与能力的“魔鬼交易” 实验让开发者学习一个新的异步编程库。结果显示：
-技能受损：使用 AI 的新手在概念理解、代码阅读和调试能力上表现显著更差。 效率假象：平均而言，使用 AI 的组并没有获得显著的效率提升。虽然代码生成得快，但理解和修复 AI 的错误花费了更多时间。 完全委托（Full Delegation）的代价：那些将任务“全权委托”给 AI 的参与者，虽然在生产力上略有提升，但代价是几乎没有学会这个库的使用。 这不仅仅是“新手”的问题，这是所有在这个时代写代码的人面临的共同危机。
-2. 关键变量：认知参与 (Cognitive Engagement) 论文最精彩的部分在于，它没有全盘否定 AI。它识别了 6 种交互模式，其中有 3 种模式 即使使用了 AI，依然保持了良好的学习效果。
-它们的共同点是：认知参与 (Cognitive Engagement)。
-❌ 坏模式 (Low Engagement)：盲目复制粘贴、让 AI 解决所有报错、大脑“离线”。 ✅ 好模式 (High Engagement)：在使用 AI 时，依然在主动思考逻辑、结构和原理。 3. 视角模拟：Software 2.0 时代的技术主权 如果我们代入 Andrej Karpathy (OpenAI 创始成员, 前 Tesla AI 总监) 的视角来看这个问题：
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-20 10:00:00 +0800 CST'>February 20, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to 警惕“外包思维”：AI 时代的技术主权与技能形成" href="https://jackley-dev.github.io/posts/%E8%AD%A6%E6%83%95%E5%A4%96%E5%8C%85%E6%80%9D%E7%BB%B4ai-%E6%97%B6%E4%BB%A3%E7%9A%84%E6%8A%80%E6%9C%AF%E4%B8%BB%E6%9D%83%E4%B8%8E%E6%8A%80%E8%83%BD%E5%BD%A2%E6%88%90/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">国内云部署OpenClaw实战：两天烧掉60元，它离“好用”还有多远？
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>**核心感受：难用。**这是我在阿里云（无影云电脑）和腾讯云（Lighthouse）上折腾了两天 OpenClaw 后的结论。
-社交媒体热炒它是“替代程序员”的“最强 AI 员工”，但在国内云环境实际体验下来，它还远远算不上“好用”。
-1. 祛魅：它能干的，AI Coding 工具也能干 OpenClaw 宣传的很多核心生产力，比如技术调研、代码生成、自动化操作，其实现在的 AI 编程工具（如 Trae, Cursor, Windsurf）在专业度上依然更胜一筹。
-调研：Trae/Cursor 是“懂代码的专家”，能结合代码上下文精准搜索；而 OpenClaw 更像通用助手，搜索能力并非开箱即用，还得额外折腾 Skills 和 API Key。 编码：AI IDE 在代码补全和重构上已经非常成熟；相比之下，OpenClaw 对整个代码库（Context）的理解还很薄弱，难以胜任复杂项目。 自动化：发邮件、设提醒这类任务，IDE 配合脚本可以精准执行；OpenClaw 却往往需要反复校准和指引，操作繁琐，试错成本极高。 OpenClaw 在这些核心生产力领域，并没有展现出相对于AI IDE的“降维打击”，反而显得有些笨拙。
-2. 劝退：更傻、受限、更贵 相比于成熟的 AI Coding 工具，OpenClaw 在国内云环境下的表现显得非常“稚嫩”。
-2.1 更傻：不稳定的执行者 提醒功能灾难：设置提醒时常失灵，或者像病毒一样疯狂弹窗。有次甚至发了 120 多次 重复提醒，直接炸了通知栏。 缺乏能动性：遇到报错（如缺库）只会“两手一摊”，不会像 Trae 那样主动请求安装。它更像死板的执行器，离“会思考”还很远。 图：OpenClaw 的“夺命连环 call”
-2.2 受限：严重的“水土不服” 这是国内云部署面临的主要挑战。
-Skill 生态隔离：OpenClaw 的强大在于 Skills（技能）。但其官方生态主要依赖海外服务（比如 Google Search, Twitter 整合），在国内云环境下无法直接连接，导致大量技能失效。 本土化能力缺失：缺乏适配国内生态的 Skills（如百度搜索、微信集成），在没有额外开发的情况下，它就变成了一个只能靠训练数据（旧知识）回答问题的“断网 AI”，实用性大打折扣。 2.3 更贵：两天花一个月订阅费 最直观的痛点在于高昂的 API 调用成本。 为了追求更好的效果，我配置了 Kimi k2.5 模型。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-12 10:00:00 +0800 CST'>February 12, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to 国内云部署OpenClaw实战：两天烧掉60元，它离“好用”还有多远？" href="https://jackley-dev.github.io/posts/%E5%9B%BD%E5%86%85%E4%BA%91%E9%83%A8%E7%BD%B2openclaw%E5%AE%9E%E6%88%98%E4%B8%A4%E5%A4%A9%E7%83%A7%E6%8E%8960%E5%85%83%E5%AE%83%E7%A6%BB%E5%A5%BD%E7%94%A8%E8%BF%98%E6%9C%89%E5%A4%9A%E8%BF%9C/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">告别长图：构建基于 Markdown 和 Playwright 的自动化技术写作流
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>在技术传播的领域，我们常常面临一个两难的选择：是追求 内容的深度与结构化（如 Blog、Docs），还是追求 流量与易读性（如小红书、Twitter）？
-长期以来，为了在小红书分享技术内容，我不得不维护两套工作流：
-在 IDE 中写 Markdown，发布到个人博客。 打开设计工具（Figma/Canva）或长图生成器，复制粘贴文字，手动调整排版，导出图片。 这种**“数据孤岛”**不仅效率低下，而且让我失去了对版本的控制。一旦代码示例需要修改，我就得重新走一遍作图流程。
-于是，我决定用工程师的方式解决这个问题。我构建了一套名为 gen-rich 的自动化流水线，实现了 “Write Once, Publish Everywhere”。
-核心理念：Single Source of Truth 整个方案的核心在于：Markdown 是唯一真理。
-所有的内容都应当源自 Git 仓库中的 Markdown 文件。无论是在 Web 端展示，还是生成社交媒体图片，都只是对同一份数据的不同**渲染（Rendering）**方式。
-架构概览 这一方案主要由三个环节组成：
-解析层 (Parser)：读取 Markdown，转换为语义化的 HTML。 渲染层 (Renderer)：应用 CSS 样式，并进行智能分页。 生成层 (Generator)：使用 Headless Browser 截图保存。 1. 像写代码一样写文章 我希望生成的图片具有类似 Notion 或 Obsidian 的“技术笔记”质感：
-清晰的层级结构（H1, H2, Callouts）。 完美的代码高亮（这是技术内容的灵魂）。 模块化的视觉组件。 为此，我设计了一套基于 CSS Variables 的样式系统。通过定义 --page-width, --bg-color, --card-radius 等变量，我可以轻松切换不同的“皮肤”。
-:root { --page-width: 1080px; --page-height: 1440px; --primary-color: #333; --code-bg: #f5f6f7; /* ... */ } 2. 智能分页算法 小红书的展示形式是 4:5 的卡片组，而不是一张无限长的图片。因此，我们不能简单地截图整个网页，必须进行分页（Pagination）。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-11 12:00:00 +0800 CST'>February 11, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to 告别长图：构建基于 Markdown 和 Playwright 的自动化技术写作流" href="https://jackley-dev.github.io/posts/%E5%91%8A%E5%88%AB%E9%95%BF%E5%9B%BE%E6%9E%84%E5%BB%BA%E5%9F%BA%E4%BA%8E-markdown-%E5%92%8C-playwright-%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8A%80%E6%9C%AF%E5%86%99%E4%BD%9C%E6%B5%81/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">软件工程已死？UML 之父 Grady Booch：错！这是第三次黄金时代
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>近日，关于“SaaS 已死”和“软件工程将被 AI 取代”的论调再次甚嚣尘上。
-起因是 Anthropic 的 CEO Dario Amodei 在达沃斯论坛上的一番言论，他暗示随着 AI 能力的提升，软件工程将被完全自动化，代码将变得“不值钱”。这番话引发了硅谷投资圈和技术圈的激烈反弹。a16z 合伙人 Justine Moore 调侃道：“好像你真能让财富 500 强企业放弃 Salesforce，转而使用一个 13 岁小孩用 AI 写的 CRM 系统似的！”
-而最重量级的反击，来自现年 71 岁的软件工程泰斗 —— Grady Booch。
-Booch 直言不讳地指出：Dario 大错特错，他根本不懂什么是软件工程。 软件工程非但没有死亡，反而因为 AI 的加入，正在迎来第三次黄金时代。
-⚔️ 巅峰对决：当 AI 新贵遇上软工祖师爷 在深入观点之前，我们需要先了解一下这场论战双方的量级。这不仅仅是两个人的观点冲突，更是两种思维范式的碰撞。
-🔴 红方：Dario Amodei (AI 激进派) 身份：Anthropic CEO &amp; Co-founder (Claude 背后的男人)。 背景：曾任 OpenAI 研究副总裁，是 Scaling Laws (缩放定律) 的核心推崇者之一。 核心主张：相信模型能力的指数级增长将解决绝大多数认知任务。在他的视角里，写代码（Coding）是一种可以通过训练数据被无限逼近和替代的技能。他代表的是硅谷最新的技术乐观主义，关注的是效率与自动化。 🔵 蓝方：Grady Booch (软工泰斗) 身份：IBM 院士 (IBM Fellow)，首席科学家。 背景：UML (统一建模语言) 之父之一。在 90 年代，他提出的 Booch Method 直接塑造了现代面向对象分析与设计 (OOAD) 的雏形。 核心主张：软件工程 $\neq$ 写代码。软件工程是在资源受限的条件下，构建和维护高质量系统的艺术。他代表的是工程学的严谨与系统思维，关注的是复杂性与权衡。 💡 核心分歧：Coding vs. Engineering Booch 对 Dario 最犀利的反驳在于重新定义了问题的本质：你以为你在谈论软件工程，其实你只看到了 Coding。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-10 14:00:00 +0800 CST'>February 10, 2026</span>&nbsp;·&nbsp;<span>李峰</span></footer>
-  <a class="entry-link" aria-label="post link to 软件工程已死？UML 之父 Grady Booch：错！这是第三次黄金时代" href="https://jackley-dev.github.io/posts/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B7%B2%E6%AD%BBuml-%E4%B9%8B%E7%88%B6-grady-booch%E9%94%99%E8%BF%99%E6%98%AF%E7%AC%AC%E4%B8%89%E6%AC%A1%E9%BB%84%E9%87%91%E6%97%B6%E4%BB%A3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">辛普森悖论 vs 均值特性：统计学的直觉陷阱
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>在数据分析和决策中，我们经常会遇到直觉与数据相悖的情况。最令人困惑的莫过于 “均值特性” (Mean Value Property) 和 “辛普森悖论” (Simpson’s Paradox) 的混淆。
-乍看之下，它们都关乎“平均数”和“分组”，但数学本质却天差地别。本文将通过代码演示和核心原理拆解，帮你彻底厘清这两个概念。
-1. 辛普森悖论 (Simpson’s Paradox) 这是统计学中最著名的“反直觉”现象：在每个分组中都占优势的一方，在合并总评时反而输了。
-1.1 现象与成因 现象：局部优势 ≠ 全局优势。 原因：样本分布不均匀 (加权权重不同)。决定胜负的往往不是“水平高低”，而是谁在“简单模式”下的人数更多。 1.2 直观演示 (Code Demo) 我们用一个具体的 Python 脚本模拟了这一现象：
-场景：比较男生和女生的考试通过率。
-分组：分为“困难班”（通过率极低）和“简单班”（通过率极高）。 # simpson_paradox.py def calculate_rate(success, total): return (success / total) * 100 if total &gt; 0 else 0 def print_group(name, b_success, b_total, g_success, g_total): b_rate = calculate_rate(b_success, b_total) g_rate = calculate_rate(g_success, g_total) winner = &#34;男生&#34; if b_rate &gt; g_rate else &#34;女生&#34; print(f&#34;\n### {name}&#34;) print(f&#34;- 男生: {b_success}/{b_total} = {b_rate:.1f}%&#34;) print(f&#34;- 女生: {g_success}/{g_total} = {g_rate:.1f}%&#34;) print(f&#34;👉 结论: {winner} 胜出&#34;) # 1. 困难班 (Hard Mode) - 只有少数精英女生敢挑战 h_b_pass, h_b_total = 5, 100 # 男生大部队 h_g_pass, h_g_total = 1, 30 # 女生少数派 # 2. 简单班 (Easy Mode) - 只有少数差生男生在这里 e_b_pass, e_b_total = 91, 100 # 男生少数派 e_g_pass, e_g_total = 180, 200 # 女生大部队 # 分组展示 print_group(&#34;困难班 (Hard Mode)&#34;, h_b_pass, h_b_total, h_g_pass, h_g_total) print_group(&#34;简单班 (Easy Mode)&#34;, e_b_pass, e_b_total, e_g_pass, e_g_total) # 3. 合并计算 (Total) t_b_pass = h_b_pass &#43; e_b_pass t_b_total = h_b_total &#43; e_b_total t_g_pass = h_g_pass &#43; e_g_pass t_g_total = h_g_total &#43; e_g_total print_group(&#34;全校汇总 (Total)&#34;, t_b_pass, t_b_total, t_g_pass, t_g_total) 运行结果：
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-09 16:30:00 +0800 CST'>February 9, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to 辛普森悖论 vs 均值特性：统计学的直觉陷阱" href="https://jackley-dev.github.io/posts/simpson-paradox-vs-mean-value/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">OpenClaw 部署兵法：别被名字忽悠，算力形态决定成败
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>OpenClaw 作为一款现代化的 RPA (Robotic Process Automation) 平台，提供了多达五种的部署方式。最近我在看阿里云的控制台时，看到了一张图展示了这些选项：轻量云服务器、无影云电脑（企业版/个人版）、AgentBay 以及 ECS 云服务器。
-作为技术决策者，或者正在利用周末时间进行 “Maker Mode” 探索的开发者，我们不能只看它们的名字，而要看它们背后的算力形态和运维成本。
-这对你至关重要——选错了部署方式，你可能把一半的时间都浪费在配环境上（比如在 Linux 上折腾 X11），而不是在构建核心资产。
-核心结论 (BLUF) 如果你没时间看完全文，这里是针对不同场景的直接建议：
-最推荐 (Maker/快速验证)：无影云电脑 (个人版/企业版) 理由：RPA 的本质是“模仿人类操作 GUI”。云电脑直接给你一个带桌面的 Windows/Linux 环境，开箱即用。它省去了在纯 Linux 服务器上折腾 X11/VNC/Headless 浏览器的巨大痛苦，让你能专注于业务逻辑。 最灵活 (生产环境/大规模)：ECS 云服务器 理由：适合大规模并发运行无头 (Headless) 爬虫或 API 编排。但前提是你需要极强的 Linux 运维能力来解决环境依赖。 最省心 (小白/轻量)：轻量应用服务器 理由：打包好的套餐，适合跑个简单的 Web 后台，但不适合复杂的桌面级 RPA。 深度差异解读：算力形态的本质 我们可以用**“招聘员工”**的类比来理解这几种差异。不同的部署方式，本质上是在雇佣不同类型的“数字员工”。
-1. 无影云电脑 (个人版/企业版) —— “远程办公的文员” 这是最符合 RPA 直觉的形态。
-本质：DaaS (Desktop as a Service)。它就是一台云端的 PC，有显卡、有显示器（虚拟的）、有鼠标键盘输入流。 RPA 优势：RPA 经常需要识别图像、点击按钮。云电脑提供了原生桌面环境。你不需要模拟“屏幕”，它本身就有屏幕。 版本差异： 个人版：像你的家用电脑，独享，自由，便宜。 企业版：像公司的电脑，受域控管理，安全性高，适合团队协作分发镜像。 2. 云服务器 ECS —— “机房里的黑盒算力” 本质：IaaS (Infrastructure as a Service)。它是一个纯粹的 Linux/Windows 内核，默认没有“显示器”。 RPA 挑战：在 ECS 上跑 RPA，通常只能跑 Headless (无头模式)。如果你的流程涉及复杂的 GUI 交互（比如无法通过 API 操作的旧软件），你需要自己在 Linux 上配置 Xvfb (虚拟帧缓冲) 来模拟显示器，运维复杂度极高。 适用场景：纯数据抓取、API 对接、无需渲染界面的后台任务。 3. 轻量应用服务器 —— “各种限制的 VPS” 本质：简化版的 ECS，带宽和性能受限，但通过“应用镜像”简化了部署。 评价：对于 OpenClaw 这种重型应用（涉及 Docker、数据库、甚至浏览器渲染），轻量服的性能可能会成为瓶颈，且扩展性差（不能随意加硬盘、改网络架构）。 4. 无影 AgentBay —— “AI 专属的胶囊公寓” 本质：这应该是阿里云针对 AI Agent 推出的托管运行时（类似 Serverless for Agents）。 推测：它可能把底层环境（OS、依赖）都抽象掉了，你只需要上传 OpenClaw 的“技能”或“脚本”。 潜力：如果为了极致的“造资产”而非“造环境”，这是未来的方向，但目前自由度可能不如云电脑。 决策矩阵 (Decision Matrix) 特性 无影云电脑 (DaaS) ECS 云服务器 (IaaS) 轻量服务器 核心形态 有头 (GUI Native) 无头 (Headless Native) 低配无头 RPA 友好度 ⭐⭐⭐⭐⭐ (原生支持) ⭐⭐⭐ (需魔改环境) ⭐⭐ (性能瓶颈) 运维难度 低 (像用 PC 一样) 高 (需配置 VPC/安全组) 中 (一键部署) 最佳场景 周末 Maker 验证 生产环境高并发 个人博客/简单脚本 建议 (Action Item) 既然你的目标是 “OpenClaw/Coding 构建硬核资产”，你的核心资产是 流程 (Workflow) 本身，而不是底层的服务器运维经验。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-07 10:00:00 +0800 CST'>February 7, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to OpenClaw 部署兵法：别被名字忽悠，算力形态决定成败" href="https://jackley-dev.github.io/posts/openclaw-deployment-strategy/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">重新定义闲聊：反脆弱、熵增与弱关系的硬核视角
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>这是一个非常敏锐的观察。我们之前的价值观往往偏向于“高信噪比”和“价值门票论”（先有价值再有社交），这在**执行期（Exploitation）**是非常高效的策略。
-但如果你现在感觉到了“闲聊的重要性”，这其实触及了系统的另一面——**探索期（Exploration）**的必要性。
-基于矩阵分析和第一性原理的思维模式，我们可以通过三个“反直觉”的硬核视角，重新定义“闲聊”的价值。
-视角一：纳西姆·塔勒布的“凸性” (Convexity) 思维模型：反脆弱 (Antifragile)
-不要把闲聊看作“时间的浪费”，而应看作一种**“非对称投资”**。
-成本（下行风险）：5-10分钟的时间，一杯咖啡的钱。这是有界的。 收益（上行空间）：可能发现一个新的商业机会、一个关键的“Unknown Unknown”信息、或者一个未来的合作伙伴。这是无界的。 结论：闲聊本质上是**“低成本期权”**。如果你完全杜绝闲聊，你就主动切断了生活中所有“正向黑天鹅”的发生路径。你需要允许一定的“冗余”来捕捉运气。
-视角二：香农的信息论 (Information Theory) 思维模型：熵增与去噪
-在工作中，SOP 和高效会议追求的是低熵（确定性、消除歧义）。大家只说“有用”的话，这意味着信息量其实是有限的，因为都在预期之内（Known Knowns）。
-闲聊则是高熵（不确定性、随机性）的。
-当你和不同部门的人闲聊时，你引入了噪声。 在复杂系统中（如神经网络训练），适度的噪声注入（Noise Injection）可以防止模型陷入“局部最优解”（Overfitting）。 映射：如果你的生活只有高效工作，你就是在过拟合当下的环境。闲聊是防止你思维僵化的“Dropout”机制。
-视角三：马克·格兰诺维特的“弱关系” (Weak Ties) 思维模型：网络拓扑学
-强关系（密友、核心同事）：提供信任和执行力。但他们的信息源和你高度重叠，很难提供新视角。 弱关系（闲聊对象、点头之交）：提供信息和机会。他们连接着你在这个圈层之外的庞大网络。 结论：大部分突破性的机会（跳槽、跨界合作）都来自“弱关系”。闲聊是维护这些“弱链接”心跳包（Keep-Alive Packet）的唯一协议。
-行动建议：战略性闲聊 (Strategic Small Talk) 结合 “Sparse Activation” (稀疏激活) 和 “SOP” 偏好，我们不建议进行漫无目的的滥聊，而是进行**“战略性闲聊”**：
-定义“随机性沙箱”：
-给自己设定一个“低效率时段”（比如午饭后20分钟，或每周五下午）。在这个沙箱里，禁止谈论具体工作。 允许自己“说废话”，允许话题发散。 Ping 机制：
-对于高价值但低频接触的人（弱关系），不要等“有事相求”才联系。 定期发送一个轻量级的“Ping”（分享一个观点、一个好玩的链接），维持链路通畅。这不消耗社交能量，但保留了连接。 把闲聊当做“探针”：
-在管理中，正式汇报听到的往往是“修饰后的真相”。 闲聊（比如茶水间偶遇）是探测团队真实温度、潜规则和隐性情绪的 Debug Probe。 总结 不要为了“闲聊”而闲聊，要为了**“增加系统的随机性和可能性”**而闲聊。
-从“追求绝对效率”转向“追求概率优势”。
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-02-06 10:00:00 +0800 CST'>February 6, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to 重新定义闲聊：反脆弱、熵增与弱关系的硬核视角" href="https://jackley-dev.github.io/posts/strategic-small-talk-antifragility-entropy/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

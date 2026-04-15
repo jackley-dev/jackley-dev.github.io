@@ -6,8 +6,134 @@
     <description>Recent content on 我的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 01 Mar 2026 10:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://jackley-dev.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DeepTutor 接入 MiniMax 踩坑记录</title>
+      <link>https://jackley-dev.github.io/posts/deeptutor-minimax-api-debugging/</link>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/deeptutor-minimax-api-debugging/</guid>
+      <description>记录基于 LiteLLM 的 DeepTutor 框架接入 MiniMax 时遇到的环境配置、鉴权及多 System 消息合并等踩坑与解决过程。</description>
+    </item>
+    <item>
+      <title>驾驭多 Agent 系统：从微观管理者到系统架构师 (Titan Mode)</title>
+      <link>https://jackley-dev.github.io/posts/%E9%A9%BE%E9%A9%AD%E5%A4%9A-agent-%E7%B3%BB%E7%BB%9F%E4%BB%8E%E5%BE%AE%E8%A7%82%E7%AE%A1%E7%90%86%E8%80%85%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88-titan-mode/</link>
+      <pubDate>Wed, 08 Apr 2026 10:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/%E9%A9%BE%E9%A9%AD%E5%A4%9A-agent-%E7%B3%BB%E7%BB%9F%E4%BB%8E%E5%BE%AE%E8%A7%82%E7%AE%A1%E7%90%86%E8%80%85%E5%88%B0%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84%E5%B8%88-titan-mode/</guid>
+      <description>深度拆解“人机协同”中的结构性矛盾，并映射到顶级管理者的组织设计逻辑中，探讨如何像 CEO 一样管理 AI Agent。</description>
+    </item>
+    <item>
+      <title>从 Trae Skills 迁移到 Claude Code Skills</title>
+      <link>https://jackley-dev.github.io/posts/%E4%BB%8E-trae-skills-%E8%BF%81%E7%A7%BB%E5%88%B0-claude-code-skills/</link>
+      <pubDate>Tue, 07 Apr 2026 16:17:02 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/%E4%BB%8E-trae-skills-%E8%BF%81%E7%A7%BB%E5%88%B0-claude-code-skills/</guid>
+      <description>&lt;h1 id=&#34;trae-skills-vs-claude-code-skills&#34;&gt;Trae Skills vs Claude Code Skills&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;踩坑将 Skills 从 Trae 迁移到 VSCode + Claude Code，搞清楚了三种机制的本质差异。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;trae-skills自动发现--渐进加载&#34;&gt;Trae Skills：自动发现 + 渐进加载&lt;/h2&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.trae/skills/
+└── pdf/
+    ├── SKILL.md          ← 触发入口（name + description 常驻上下文）
+    ├── references/       ← 按需懒加载
+    └── scripts/          ← 直接执行，不占 token
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;自动发现&lt;/strong&gt;：放进目录即生效，零配置&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;模型自主触发&lt;/strong&gt;：模型读取 description，自判断何时调用&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;三层渐进加载&lt;/strong&gt;：Metadata 常驻 → SKILL.md 触发时加载 → references/scripts 按需加载&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;claude-code-的现状2026年4月&#34;&gt;Claude Code 的现状（2026年4月）&lt;/h2&gt;
+&lt;p&gt;官方文档原文：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Custom commands have been merged into skills. A file at &lt;code&gt;.claude/commands/deploy.md&lt;/code&gt; and a skill at &lt;code&gt;.claude/skills/deploy/SKILL.md&lt;/code&gt; both create &lt;code&gt;/deploy&lt;/code&gt; and work the same way.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI IDE——AI时代的工作台</title>
+      <link>https://jackley-dev.github.io/posts/ai-ideai%E6%97%B6%E4%BB%A3%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8F%B0/</link>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/ai-ideai%E6%97%B6%E4%BB%A3%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8F%B0/</guid>
+      <description>为什么非程序员也开始用 AI IDE 办公？它的核心优势在于执行力与个人记忆系统。</description>
+    </item>
+    <item>
+      <title>Andrej Karpathy 访谈：编程的终结与智能体时代</title>
+      <link>https://jackley-dev.github.io/posts/andrej-karpathy-%E8%AE%BF%E8%B0%88%E7%BC%96%E7%A8%8B%E7%9A%84%E7%BB%88%E7%BB%93%E4%B8%8E%E6%99%BA%E8%83%BD%E4%BD%93%E6%97%B6%E4%BB%A3/</link>
+      <pubDate>Sun, 22 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/andrej-karpathy-%E8%AE%BF%E8%B0%88%E7%BC%96%E7%A8%8B%E7%9A%84%E7%BB%88%E7%BB%93%E4%B8%8E%E6%99%BA%E8%83%BD%E4%BD%93%E6%97%B6%E4%BB%A3/</guid>
+      <description>Andrej Karpathy 访谈《编程的终结：智能体、自动化研究与 AI 循环时代》核心观点整理，探讨开发范式转移、Token 吞吐受限以及自动化研究的未来。</description>
+    </item>
+    <item>
+      <title>Andrej Karpathy 揭秘马斯克的“大锤”管理学</title>
+      <link>https://jackley-dev.github.io/posts/andrej-karpathy-%E6%8F%AD%E7%A7%98%E9%A9%AC%E6%96%AF%E5%85%8B%E7%9A%84%E5%A4%A7%E9%94%A4%E7%AE%A1%E7%90%86%E5%AD%A6/</link>
+      <pubDate>Sat, 14 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/andrej-karpathy-%E6%8F%AD%E7%A7%98%E9%A9%AC%E6%96%AF%E5%85%8B%E7%9A%84%E5%A4%A7%E9%94%A4%E7%AE%A1%E7%90%86%E5%AD%A6/</guid>
+      <description>&lt;p&gt;Andrej Karpathy 近期分享了他在 Tesla 与 Elon Musk 共事期间的观察。与外界常常关注的宏大愿景不同，Karpathy 揭示了马斯克在日常管理中极其务实甚至残酷的一面——他将其形容为**“挥动大锤”（Applying the Hammer）**。&lt;/p&gt;
+&lt;p&gt;这不仅仅是一种比喻，更是一套可执行的工程管理算法。&lt;/p&gt;
+&lt;h2 id=&#34;极简且高技术化的团队&#34;&gt;极简且高技术化的团队&lt;/h2&gt;
+&lt;p&gt;马斯克对团队规模有着近乎偏执的控制欲。他倾向于保持极小规模、但技术能力极强的团队。&lt;/p&gt;
+&lt;p&gt;这背后的逻辑很简单：&lt;strong&gt;随着团队规模线性增长，沟通成本呈指数级上升。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;抵制自然扩张&lt;/strong&gt;：大多数公司在业务增长时会自然增加人手，马斯克则极力抵制这种倾向。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;小团队红利&lt;/strong&gt;：小团队意味着决策链条短，每个人都必须是多面手，信息传递几乎没有损耗。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;果断淘汰低绩效者&#34;&gt;果断淘汰低绩效者&lt;/h2&gt;
+&lt;p&gt;与许多大公司“难以解雇员工”的温和文化不同，马斯克支持主动辞退表现不佳的员工。&lt;/p&gt;
+&lt;p&gt;这不是为了节省成本，而是为了&lt;strong&gt;保持团队的“技术密度”&lt;/strong&gt;。顶尖人才不仅产出高，更重要的是他们之间的沟通效率极高。一旦混入低绩效者，整个团队的协作带宽就会被拉低。&lt;/p&gt;
+&lt;h2 id=&#34;扁平化与技术化管理&#34;&gt;扁平化与技术化管理&lt;/h2&gt;
+&lt;p&gt;在马斯克的公司里，你很难找到不懂技术的中层管理者（Middle Management）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;拒绝“传声筒”&lt;/strong&gt;：管理结构非常精简。管理者必须具备深厚的技术背景，能够理解底层逻辑，而不是仅仅负责转发邮件和做 PPT。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;专业化分工&lt;/strong&gt;：管理是为了服务技术实现，而不是为了管理而管理。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;高效且动态的会议文化&#34;&gt;高效且动态的会议文化&lt;/h2&gt;
+&lt;p&gt;马斯克极度反感停滞和无效率。他鼓励一种看起来“不礼貌”但在工程上极高效的会议文化：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如果你觉得会议无益或学不到东西，直接起座离开。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这种文化消除了“面子工程”，让每个人的时间都花在刀刃上。&lt;/p&gt;
+&lt;h2 id=&#34;拒绝娇惯的奋斗文化&#34;&gt;拒绝“娇惯”的奋斗文化&lt;/h2&gt;
+&lt;p&gt;不同于硅谷大厂提供的按摩、免费洗衣等过度福利，马斯克的公司文化强调高强度和产出。&lt;/p&gt;
+&lt;p&gt;这里的核心价值观是&lt;strong&gt;技术卓越（Technical Excellence）&lt;/strong&gt;，而非员工舒适度。这种环境筛选出了那些真正对技术狂热、愿意为解决难题而投入的人。&lt;/p&gt;
+&lt;h2 id=&#34;事实的唯一来源一线工程师&#34;&gt;事实的唯一来源：一线工程师&lt;/h2&gt;
+&lt;p&gt;马斯克约 50% 的时间会直接与工程师交流。对他来说：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;代码是真相&lt;/strong&gt;：PPT 和汇报可能会骗人，但代码不会。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;一线是真相&lt;/strong&gt;：中间管理层的报告往往经过了层层过滤和美化。马斯克选择绕过中间层，直接从源头获取信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;挥动大锤解决瓶颈&#34;&gt;“挥动大锤”解决瓶颈&lt;/h2&gt;
+&lt;p&gt;这是 Karpathy 印象最深的一点。当项目遇到关键资源瓶颈（例如 GPU 短缺）时，马斯克不会接受“正在协调”这种借口。&lt;/p&gt;
+&lt;p&gt;他会亲自介入，&lt;strong&gt;“挥动大锤”砸开障碍&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;立即翻倍资源&lt;/strong&gt;：如果计算资源不足，他会要求立即翻倍，而不是增加 10%。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;每日更新机制&lt;/strong&gt;：设立每日检查点，直到瓶颈被彻底消除。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;展现极强执行力&lt;/strong&gt;：这种自上而下的压力，能够瞬间击穿部门墙和官僚流程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;跨越层级的供应链干预&#34;&gt;跨越层级的供应链干预&lt;/h2&gt;
+&lt;p&gt;为了扫清障碍，他会跨过所有繁冗的采购流程。如果显卡缺货，他会直接联系 NVIDIA CEO 黄仁勋。&lt;/p&gt;
+&lt;p&gt;这种**“超级管理员”式的权限调用**，确保了关键路径上的问题能够以最高优先级解决。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;马斯克的管理风格常被误解为微观管理（Micromanagement）。但 Karpathy 的视角让我们看到，这其实是一种&lt;strong&gt;基于物理第一性原理的管理工程学&lt;/strong&gt;：消除噪音（低绩效、中间层），增强信号（直接沟通、高密度人才），并集中所有能量（挥动大锤）击穿最大的阻力。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>OpenClaw升级后Agent罢工？三步配置教你解决</title>
+      <link>https://jackley-dev.github.io/posts/openclaw%E5%8D%87%E7%BA%A7%E5%90%8Eagent%E7%BD%A2%E5%B7%A5%E4%B8%89%E6%AD%A5%E9%85%8D%E7%BD%AE%E6%95%99%E4%BD%A0%E8%A7%A3%E5%86%B3/</link>
+      <pubDate>Tue, 10 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/openclaw%E5%8D%87%E7%BA%A7%E5%90%8Eagent%E7%BD%A2%E5%B7%A5%E4%B8%89%E6%AD%A5%E9%85%8D%E7%BD%AE%E6%95%99%E4%BD%A0%E8%A7%A3%E5%86%B3/</guid>
+      <description>升级 OpenClaw 2026.3.2 后 Agent 突然变笨？不能写代码？别急！本文详解 Tool Profiles 权限机制，通过沙箱与自动提权的配合，兼顾安全与自动化体验。</description>
+    </item>
+    <item>
+      <title>OpenClaw 更新：从“逻辑权限”到“物理沙箱”的纵深防御</title>
+      <link>https://jackley-dev.github.io/posts/openclaw-%E6%9B%B4%E6%96%B0%E4%BB%8E%E9%80%BB%E8%BE%91%E6%9D%83%E9%99%90%E5%88%B0%E7%89%A9%E7%90%86%E6%B2%99%E7%AE%B1%E7%9A%84%E7%BA%B5%E6%B7%B1%E9%98%B2%E5%BE%A1/</link>
+      <pubDate>Thu, 05 Mar 2026 14:30:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/openclaw-%E6%9B%B4%E6%96%B0%E4%BB%8E%E9%80%BB%E8%BE%91%E6%9D%83%E9%99%90%E5%88%B0%E7%89%A9%E7%90%86%E6%B2%99%E7%AE%B1%E7%9A%84%E7%BA%B5%E6%B7%B1%E9%98%B2%E5%BE%A1/</guid>
+      <description>如果说 Tool Profiles 是 Agent 的“工牌”，那么 Sandboxing 就是它的“密闭实验室”。OpenClaw 引入的 Docker 沙箱机制，为 AI 执行提供了真正的物理隔离。</description>
+    </item>
+    <item>
+      <title>OpenClaw 更新：为 AI Agent 装上“安全护栏”</title>
+      <link>https://jackley-dev.github.io/posts/openclaw-%E6%9B%B4%E6%96%B0%E4%B8%BA-ai-agent-%E8%A3%85%E4%B8%8A%E5%AE%89%E5%85%A8%E6%8A%A4%E6%A0%8F/</link>
+      <pubDate>Thu, 05 Mar 2026 10:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/openclaw-%E6%9B%B4%E6%96%B0%E4%B8%BA-ai-agent-%E8%A3%85%E4%B8%8A%E5%AE%89%E5%85%A8%E6%8A%A4%E6%A0%8F/</guid>
+      <description>OpenClaw 最新引入的 Tool Profiles 和 Allow/Deny 机制，标志着 Agent 开发从“粗放狂奔”进入了“精细化权限管理”时代。这是 Software 2.0 时代的 IAM 系统。</description>
+    </item>
     <item>
       <title>构建你的第二大脑：基于 AI 的个人记忆系统 (AI Memory System)</title>
       <link>https://jackley-dev.github.io/posts/%E6%9E%84%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E5%9F%BA%E4%BA%8E-ai-%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F-ai-memory-system/</link>
