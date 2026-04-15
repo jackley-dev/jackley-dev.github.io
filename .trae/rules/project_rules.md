@@ -20,6 +20,8 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
   - Summarize discussion into a structured blog post.
   - **File**: `content/posts/{category}/YYYY-MM-DD-{english-slug}.md`
   - **Front Matter**: (Standard Hugo TOML)
+    - **Taxonomies**: MUST use flat format (e.g., `tags = [...]`, `categories = ["tech"]`). Do NOT use `[taxonomies]` as it causes parsing errors in some Hugo themes.
+    - **Date/Time**: MUST set the time to `00:00:00+08:00` (e.g., `YYYY-MM-DDT00:00:00+08:00`). If set to current time, GitHub Actions (UTC timezone) might consider it a "future" time and skip building the post.
   - **Writing Style (Strict)**:
     1. **Delete "Philosophical Fluff"**: Remove empty metaphors (e.g., "power boundaries", "universal key"). Jump straight to the point.
     2. **Simplify Core Concepts**: Explain functions directly without redundant metaphors.
