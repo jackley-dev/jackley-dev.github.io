@@ -1,10 +1,9 @@
 +++
-title = "DeepTutor 接入 MiniMax API 踩坑记录"
-date = 2026-04-15T10:00:00+08:00
+title = "DeepTutor 接入 MiniMax 踩坑记录"
+date = "2026-04-15T00:00:00+08:00"
 description = "记录基于 LiteLLM 的 DeepTutor 框架接入 MiniMax 时遇到的环境配置、鉴权及多 System 消息合并等踩坑与解决过程。"
-[taxonomies]
-tags = ["DeepTutor", "MiniMax", "LiteLLM", "调试", "API"]
 categories = ["tech"]
+tags = ["DeepTutor", "MiniMax", "LiteLLM", "调试", "API"]
 +++
 
 DeepTutor 是近期 GitHub 上热度极高的教育辅助 AI 项目，Star 数增长迅猛。考虑到其潜力，我决定在本地部署，并尝试接入 MiniMax 的 Token plan。
@@ -61,4 +60,4 @@ return result
 
 ## 总结
 
-国产大模型 API 在参数校验（如限制多 System 消息）和鉴权（强制 Group ID）上存在特有规则。在复杂框架中遇到非预期报错时，通过最小复现脚本隔离测试，并打印底层 Payload 进行源码级排查是最高效的解决路径。
+经过这番折腾，DeepTutor 终于完美跑通并成功接入了国内版 MiniMax。回顾这次踩坑，面对国产大模型 API 特有的鉴权与参数校验规则，在复杂框架中遇到诡异报错时，编写最小复现脚本并打印底层 Payload 进行排查，依然是最高效的破局手段。
