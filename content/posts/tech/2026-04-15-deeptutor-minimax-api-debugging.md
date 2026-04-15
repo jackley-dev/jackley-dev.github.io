@@ -9,9 +9,7 @@ tags = ["DeepTutor", "MiniMax", "LiteLLM", "调试", "API"]
 
 # DeepTutor 接入 MiniMax 踩坑记录
 
-> 本文记录了将高热度 AI 项目 DeepTutor 本地部署并接入 MiniMax Token plan 时，排查 LiteLLM 路由、接口鉴权及多 System 消息报错的源码级修复过程。
-
-最近 DeepTutor 在 GitHub 上火得不行，看着 Star 蹭蹭往上涨，我一时手痒就打算在本地跑跑看，顺便接个 MiniMax 的 Token plan 试试水。
+本文记录了 DeepTutor 本地部署的踩坑经历。最近 DeepTutor 在 GitHub 上火得不行，看着 Star 蹭蹭往上涨，我一时手痒就尝试了在本地部署，顺便接个 MiniMax 的 Token plan 试试水。
 
 ![DeepTutor Star History](/images/2026-04-15-deeptutor-star-history.jpg)
 
@@ -24,10 +22,11 @@ tags = ["DeepTutor", "MiniMax", "LiteLLM", "调试", "API"]
 - **现象**：将 `.env` 中的 `LLM_BINDING` 设为 `openai`，启动时抛出 `LLM Provider NOT provided`。
 - **原因**：DeepTutor 底层依赖 LiteLLM 路由请求。通用 `openai` 绑定无法触发特定模型前缀的解析逻辑。
 - **解决**：强制指定 Provider 绑定，并正确声明模型名称：
-  ```bash
-  LLM_BINDING=minimax
-  LLM_MODEL=MiniMax-M2.7
-  ```
+
+```bash
+LLM_BINDING=minimax
+LLM_MODEL=MiniMax-M2.7
+```
 
 ---
 
@@ -37,17 +36,19 @@ tags = ["DeepTutor", "MiniMax", "LiteLLM", "调试", "API"]
 - **现象**：配置了有效的 API Key，但请求始终返回 `invalid api key (2049)`。
 - **原因**：与 OpenAI 仅需 API Key 不同，MiniMax 原生接口**强制要求**双重鉴权，必须提供账户的 `Group ID`。
 - **解决**：在 `.env` 中补充纯数字 ID：
-  ```bash
-  MINIMAX_GROUP_ID=你的纯数字ID
-  ```
+
+```bash
+MINIMAX_GROUP_ID=你的纯数字ID
+```
 
 ### 端点 URL 配置错误 (Error 404)
 - **现象**：请求直接返回 HTTP 404 Not Found。
-- **原因**：使用了早期已废弃的域名，或者错误配置了 Anthropic 格式的端点，导致 OpenAI 格式的 Payload 协议不匹配。
+- **原因**：错误配置了 Anthropic 格式的端点，导致 OpenAI 格式的 Payload 协议不匹配。
 - **解决**：统一替换为国内官方支持的最新兼容端点：
-  ```bash
-  LLM_HOST=https://api.minimaxi.com/v1
-  ```
+
+```bash
+LLM_HOST=https://api.minimaxi.com/v1
+```
 
 ---
 
