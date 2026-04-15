@@ -1,5 +1,6 @@
 +++
 title = "DeepTutor 接入 MiniMax 踩坑记录"
+slug = "deeptutor-minimax-api-debugging"
 date = "2026-04-15T00:00:00+08:00"
 description = "记录基于 LiteLLM 的 DeepTutor 框架接入 MiniMax 时遇到的环境配置、鉴权及多 System 消息合并等踩坑与解决过程。"
 categories = ["tech"]
@@ -8,7 +9,7 @@ tags = ["DeepTutor", "MiniMax", "LiteLLM", "调试", "API"]
 
 DeepTutor 是近期 GitHub 上热度极高的教育辅助 AI 项目，Star 数增长迅猛。考虑到其潜力，我决定在本地部署，并尝试接入 MiniMax 的 Token plan。
 
-![DeepTutor Star History](/images/2026-04-15-deeptutor-star-history.jpg)
+![DeepTutor Star History](../../../static/images/2026-04-15-deeptutor-star-history.jpg)
 
 没想到，在配置底层基于 LiteLLM 的路由时，遇到了一系列复杂的鉴权与接口兼容性问题，最终甚至用到了源码级的解决方案。放在 AI 时代之前，拿到一个跑不通的开源项目直接改源码门槛极高；但在如今 AI Coding 工具的辅助下，深入框架修改源码已经变成一件低成本的日常操作。
 
