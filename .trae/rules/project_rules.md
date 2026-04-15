@@ -28,6 +28,7 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
     2. **高度结构化 (Structured)**：多用列表、对比表格、文件树 (Tree) 展示逻辑，保证内容一目了然，极具扫读性。
     3. **极客用词 (Geeky & Professional)**：术语精准，边界清晰。作为“高级工程师给自己的踩坑备忘录”，注重痛点解决和实操性（直接给出命令/代码）。
     4. **Image Paths**: MUST use absolute path from the root (e.g., `/images/xxx.jpg`). Do NOT use relative paths like `../../../static/images/`. The IDE preview works with `/images/` because of the `images -> static/images` symlink in the project root.
+    5. **Single Title**: Do NOT repeat the article title in the markdown body. The `title` field in the Front Matter is sufficient.
 
 ### 3. 📝 Convert to XHS Draft (Trigger: "convert")
 - **Step 1: Clean (Automatic)**
