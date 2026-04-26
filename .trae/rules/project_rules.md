@@ -25,10 +25,11 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
     - **Date/Time**: MUST set the time to `00:00:00+08:00` (e.g., `YYYY-MM-DDT00:00:00+08:00`). If set to current time, GitHub Actions (UTC timezone) might consider it a "future" time and skip building the post.
   - **Writing Style (Strict)**:
     1. **极简直白 (Minimalist & Direct)**：结论先行，直奔主题。拒绝抒情、口水话和空洞的隐喻（如“软件 2.0”），背景描述要口语化、接地气。
-    2. **高度结构化 (Structured)**：多用列表、对比表格、文件树 (Tree) 展示逻辑，保证内容一目了然，极具扫读性。
-    3. **极客用词 (Geeky & Professional)**：术语精准，边界清晰。作为“高级工程师给自己的踩坑备忘录”，注重痛点解决和实操性（直接给出命令/代码）。
-    4. **Image Paths**: MUST use absolute path from the root (e.g., `/images/xxx.jpg`). Do NOT use relative paths like `../../../static/images/`. The IDE preview works with `/images/` because of the `images -> static/images` symlink in the project root.
-    5. **Single Title**: Do NOT repeat the article title in the markdown body. The `title` field in the Front Matter is sufficient.
+    2. **去冗余 (No Fluff & Pronouns)**：尽量剔除不必要的代词（如“它”、“它的”、“你的”、“这个”等）和无信息量的过渡句，但在必要时可保留以保证句子通顺自然。确保主谓宾紧凑有力，避免为了铺垫而生硬造句。
+    3. **高度结构化 (Structured)**：多用列表、对比表格、文件树 (Tree) 展示逻辑，保证内容一目了然，极具扫读性。
+    4. **极客用词 (Geeky & Professional)**：术语精准，边界清晰。作为“高级工程师给自己的踩坑备忘录”，注重痛点解决和实操性（直接给出命令/代码）。
+    5. **Image Paths**: MUST use absolute path from the root (e.g., `/images/xxx.jpg`). Do NOT use relative paths like `../../../static/images/`. The IDE preview works with `/images/` because of the `images -> static/images` symlink in the project root.
+    6. **Single Title**: Do NOT repeat the article title in the markdown body. The `title` field in the Front Matter is sufficient.
 
 ### 3. 📝 Convert to XHS Draft (Trigger: "convert")
 - **Step 1: Clean (Automatic)**
