@@ -6,8 +6,71 @@
     <description>Recent content in Posts on 我的博客</description>
     <generator>Hugo -- 0.152.2</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 15 Apr 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2026 00:00:00 +0800</lastBuildDate>
     <atom:link href="https://jackley-dev.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 智能是机械态智能：从第一性原理拆解人机差异</title>
+      <link>https://jackley-dev.github.io/posts/ai-vs-human-intelligence-first-principles/</link>
+      <pubDate>Sat, 08 Aug 2026 00:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/ai-vs-human-intelligence-first-principles/</guid>
+      <description>从目标函数、架构、训练机制、表征四个底层维度拆解 LLM 与人类智能的本质差异：为什么 AI 擅长关联和细节，人类擅长跳跃、宏观判断和灵感。</description>
+    </item>
+    <item>
+      <title>Gemini CLI 项目级配置机制解析</title>
+      <link>https://jackley-dev.github.io/posts/gemini-cli-project-level-configuration-guide/</link>
+      <pubDate>Wed, 20 May 2026 00:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/gemini-cli-project-level-configuration-guide/</guid>
+      <description>解析除了 GEMINI.md 之外，Gemini CLI 还支持哪些项目级别的配置与上下文管理机制。</description>
+    </item>
+    <item>
+      <title>当 Antigravity 遇上公司 VPN：Mac 用户的终极网络解决方案</title>
+      <link>https://jackley-dev.github.io/posts/antigravity-mac-vpn-proxifier-solution/</link>
+      <pubDate>Sun, 17 May 2026 00:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/antigravity-mac-vpn-proxifier-solution/</guid>
+      <description>利用 Proxifier 进行精细化流量隔离，完美解决 Antigravity 编辑器与公司 VPN 之间的网络路由冲突问题。</description>
+    </item>
+    <item>
+      <title>Mac 语音输入方案：VoiceInk 体验备忘录</title>
+      <link>https://jackley-dev.github.io/posts/voiceink-mac-stt/</link>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/voiceink-mac-stt/</guid>
+      <description>&lt;h2 id=&#34;缺失的-mac-语音交互&#34;&gt;缺失的 Mac 语音交互&lt;/h2&gt;
+&lt;p&gt;在大模型逐渐成为主力工具的今天，“聊天”变成了高频工作方式，语音交互的需求也跟着暴增。&lt;/p&gt;
+&lt;p&gt;手机端好办，像豆包、千问这些 App 都自带语音输入。但回到 Mac 桌面端，想找一套顺手的 STT（语音转文字）工具就得自己折腾了。系统听写准确率一般，市面上的独立软件要么太贵，要么反应迟钝。&lt;/p&gt;
+&lt;h2 id=&#34;踩坑与选择voiceink&#34;&gt;踩坑与选择——VoiceInk&lt;/h2&gt;
+&lt;p&gt;前前后后试用了几款产品，最后发现还是 &lt;strong&gt;VoiceInk&lt;/strong&gt; 最能满足我的日常需求。作为一款开箱即用的 Mac 原生工具，它打动我的核心点主要有三个：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;完全免费&lt;/strong&gt;：开源无内购。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;中文精准&lt;/strong&gt;：语音识别准确率极高，自动添加标点，懂中文语境。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;原生丝滑&lt;/strong&gt;：支持全局快捷键，光标在哪文字就实时输出在哪，无需复制粘贴。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;极速安装&#34;&gt;极速安装&lt;/h2&gt;
+&lt;p&gt;直接通过 Homebrew 一键搞定：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;brew install --cask voiceink
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;核心配置&#34;&gt;核心配置&lt;/h2&gt;
+&lt;p&gt;安装完成后，建议进行以下基础配置，以兼顾识别性能与速度：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;模型选择&lt;/strong&gt;：推荐下载并使用 &lt;code&gt;large v3 turbo&lt;/code&gt; 模型，实测在准确率和响应速度上取得了极佳的平衡。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;语言设置&lt;/strong&gt;：将转换语言显式设置为&lt;strong&gt;中文&lt;/strong&gt;，避免中英文混杂时发生识别漂移。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img alt=&#34;VoiceInk 核心配置&#34; loading=&#34;lazy&#34; src=&#34;https://jackley-dev.github.io/images/voiceink-settings.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;个人使用体验&#34;&gt;个人使用体验&lt;/h2&gt;
+&lt;p&gt;默认快捷键（右侧 &lt;code&gt;⌘&lt;/code&gt; 键）非常顺手。现在我跟 AI 聊天时，光标一点，按下快捷键直接“动嘴”，输入效率拉满。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DeepTutor 拔草指南</title>
+      <link>https://jackley-dev.github.io/posts/deeptutor-as-skills/</link>
+      <pubDate>Sat, 25 Apr 2026 00:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/deeptutor-as-skills/</guid>
+      <description>别再折腾DeepTutor了，我尝试把它最有价值的Guided Learning模块Skills化了</description>
+    </item>
+    <item>
+      <title>Git Worktree：多 Agent 并行开发的最优解</title>
+      <link>https://jackley-dev.github.io/posts/git-worktree-multi-agent/</link>
+      <pubDate>Thu, 23 Apr 2026 00:00:00 +0800</pubDate>
+      <guid>https://jackley-dev.github.io/posts/git-worktree-multi-agent/</guid>
+      <description>为什么说 git worktree 是多 Agent 并行开发的最优解？从概念辨析到工程实践的完整解析。</description>
+    </item>
     <item>
       <title>DeepTutor 接入 MiniMax 踩坑记录</title>
       <link>https://jackley-dev.github.io/posts/deeptutor-minimax-api-debugging/</link>

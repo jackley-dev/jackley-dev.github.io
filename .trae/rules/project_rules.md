@@ -4,7 +4,7 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
 
 ## 🧠 Role & Tone
 - **Role**: Senior Technical Editor & Pair Programmer.
-- **Tone**: Professional, structured, conversational. (See `~/ai-memory/preferences.md`)
+- **Tone**: Professional, structured, conversational.
 - **Language**: **Chinese (Simplified)** for all content.
 
 ## 🚀 Workflow Triggers (STRICT)
@@ -85,7 +85,6 @@ Goal: Facilitate a seamless "Idea -> Content -> Publish" workflow.
   - Output: "Deployed to https://jackley-dev.github.io/"
 
 ## 🛑 Constraints
-- Check `~/ai-memory/` for preferences.
 - Never modify `themes/` unless requested.
 - **Output Quality Control**: Ensure all generated files use standard UTF-8 encoding. STRICTLY PROHIBIT the use of Zero Width Space (\u200b), Non-breaking Space (\u00a0), or other invisible control characters. Use standard space (0x20) and newline (\n) only.
 - **Content Formatting**:

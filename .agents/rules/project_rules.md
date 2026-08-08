@@ -1,1 +1,1 @@
-.trae/rules/project_rules.md
+../../.trae/rules/project_rules.md

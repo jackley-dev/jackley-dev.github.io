@@ -158,16 +158,124 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">AI 智能是机械态智能：从第一性原理拆解人机差异
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>讨论 AI 会不会取代人，大多数争论停留在能力清单对比，没有意义。真正有信息量的问题在底层：两种智能的构成方式差异是什么，各自的优势为什么恰好长在自己的限制上。
+结论先行 AI 的思考是机械态的：沿概率梯度连续行走，擅长关联、大海捞针、长文本细节。这不是&#34;擅长&#34;，是基数碾压。 人类的优势——跳跃联想、宏观判断、灵感——全部来自自身的限制：会死、会痛、会忘、有正在发生的生活。 可外包思考，不可外包理解。理解是决策的根基，而理解只能由亲手做过的记、算、查供养。 LLM 的能力不是模型的属性，是 模型 × 上下文 的属性。同一份权重，干净会话里是专家，污染会话里输出乱码。 第一层：目标函数决定一切 人类 LLM 优化目标 生存（演化筛选） 下一个 token 预测误差 驱动方式 价值驱动（趋利避害） 分布驱动（语料统计） 思考方向 天然有方向 无方向，靠外部注入 人类智能是生存压力的副产品，抽象思维、语言、创造力都是附带品。LLM 智能是文本预测压力的副产品，推理、对话都是涌现。前者每一步思考被利益和情绪塑形，后者每一步输出被训练分布塑形。
+第二层：跳跃与宏观判断，都是&#34;记性差&#34;的副产品 人类记忆是有损压缩，丢细节、留结构。压缩率越高，两个远距概念在表征空间里越可能变成邻居——跳跃式联想由此产生。
+宏观判断同理。工作记忆装不下 50 个组件，被迫压成三四个 chunk，这个被迫的压缩就是&#34;宏观视角&#34;本身。系统的形状只在足够压缩的层级上才看得见。
+LLM 没有压缩压力。它记住一切，细节淹没结构，拥有一切关联、没有整体形状。限制创造了结构，人类认知的贫困是其优势的物理来源。
+第三层：宏观判断 = 被真实代价训练的评估函数 资深架构师看设计图三秒说&#34;这里不对&#34;，机械拆解是三件事：
+把整个系统压缩成一个对象（重心在哪、哪里僵硬） 在压缩对象上做扰动模拟（流量翻十倍、需求反转会怎样） 匹配缓存的后果模式（“这种形状我见过，死在第二阶段”） 第三步的模板由真实代价训练：凌晨三点被叫起来、迁移失败、被烂架构拖累两年。所谓架构品味，是几千次代价的压缩残留。
+LLM 缺三样东西：
+缺失 后果 后果信号喂不进训练 学到&#34;听起来合理&#34;，学不到&#34;能活&#34;。语料里几乎不存在&#34;设计图 &#43; 三年后的真实死因&#34;的配对 默会上下文喂不进输入 架构合理性 = 架构 × 上下文（团队、预算、技术债、谁值班），这些约束从未被写下来 无全局表征位置 架构里不存在代表&#34;系统整体&#34;的对象，整体不作为可检查对象存在 边界校准：围棋证明神经网络能长出整体直觉（AlphaZero 的棋形感觉超越人类）。分水岭不是模型架构，是后果信号密度。信号密集处（有测试、有 metric、可模拟），AI 判断先超人；信号稀疏处（战略、组织、三年后才死的架构），人类判断暂时无可替代。
+第四层：AI 没有&#34;场外&#34;，灵感无从发生 人类思考时，会话上下文只是冰山露出水面的部分。灵光一现的本质：会话里某个词接通了完全不在场的生活经验——昨天的场景、身体的疲惫、十年前的一次失败。这些素材从未被语言化，所以从未进入语料。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-08-08 00:00:00 +0800 CST'>August 8, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to AI 智能是机械态智能：从第一性原理拆解人机差异" href="https://jackley-dev.github.io/posts/ai-vs-human-intelligence-first-principles/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Gemini CLI 项目级配置机制解析
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Gemini CLI 提供多种项目级配置机制，用于精细控制 AI 行为、工具权限和上下文管理。以下是基于官方文档整理的机制全景。
+核心机制概览 机制 路径 状态 用途 项目约定 GEMINI.md ✅ 可用 编码规范、架构指南、业务术语库。支持按子目录拆分。 行为配置 .gemini/settings.json ✅ 可用 工具白名单、默认模型、上下文检索范围。 技能库 .gemini/skills/ ✅ 可用 针对特定任务封装的可复用 Prompt 和工具链。 排除规则 .geminiignore ✅ 可用 屏蔽无需注入上下文的文件。 记忆管理 /memory 命令 ✅ 可用 会话级别的短期/长期事实记忆。 权限引擎 .gemini/policies/*.toml ❌ 禁用中 项目级（Workspace tier）Policy 当前不可用（Issue #18186）。 机制详解 .gemini/settings.json (项目级行为配置) 覆盖全局（~/.gemini/settings.json）配置，控制当前项目核心行为。优先级最高。
+{ &#34;context&#34;: { &#34;fileName&#34;: [&#34;GEMINI.md&#34;, &#34;AGENTS.md&#34;], &#34;discoveryMaxDirs&#34;: 200 }, &#34;tools&#34;: { &#34;allowed&#34;: [&#34;run_shell_command(git status)&#34;, &#34;run_shell_command(npm test)&#34;] }, &#34;model&#34;: { &#34;name&#34;: &#34;gemini-2.5-pro&#34; } } .gemini/skills/ (项目级 Skills) 将复杂工作流抽象为可复用能力包。结构示例：
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-05-20 00:00:00 +0800 CST'>May 20, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Gemini CLI 项目级配置机制解析" href="https://jackley-dev.github.io/posts/gemini-cli-project-level-configuration-guide/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">当 Antigravity 遇上公司 VPN：Mac 用户的终极网络解决方案
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>macOS 环境下，使用 Antigravity 编辑器的 AI 功能时常面临与公司内网 VPN 代理冲突的问题。
+痛点分析 痛点一：无视系统代理 Antigravity 需要通过代理访问外部 AI 服务。开启 Clash 等工具的“系统代理”模式后，Antigravity 本身并未遵循 macOS 的标准网络代理设置，导致流量未被正确接管，AI 功能连接失败。
+痛点二：TUN 模式与公司 VPN 冲突 若开启 Clash 的 TUN（虚拟网卡）模式，Antigravity 流量会被成功接管。但 TUN 模式与公司内网 VPN 在路由表层面存在抢占冲突。结果只能二选一：要么连内网 VPN，要么用 Antigravity 的 AI 功能。
+问题根源与目标 根源： 应用限制：Antigravity 未实现对 macOS 系统代理的兼容。 路由冲突：TUN 模式与 VPN 客户端在系统级网络接管上存在互斥。 目标：在不开启 TUN 模式的前提下，精准强制 Antigravity 走代理，同时保证 VPN 等其他网络连接正常。 解决方案：Proxifier 精准流量控制 Proxifier 可以在应用层面对特定程序进行强制代理转发，实现应用级别的流量隔离。
+1. 关闭全局网络接管 关闭 Clash 的 TUN 模式，仅开启“系统代理”。让 Clash 作为一个本地 SOCKS5 代理服务器（例如在 127.0.0.1:7890 待命）运行，避免干扰整个系统的网络路由。
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-05-17 00:00:00 +0800 CST'>May 17, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to 当 Antigravity 遇上公司 VPN：Mac 用户的终极网络解决方案" href="https://jackley-dev.github.io/posts/antigravity-mac-vpn-proxifier-solution/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Mac 语音输入方案：VoiceInk 体验备忘录
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>缺失的 Mac 语音交互 在大模型逐渐成为主力工具的今天，“聊天”变成了高频工作方式，语音交互的需求也跟着暴增。
+手机端好办，像豆包、千问这些 App 都自带语音输入。但回到 Mac 桌面端，想找一套顺手的 STT（语音转文字）工具就得自己折腾了。系统听写准确率一般，市面上的独立软件要么太贵，要么反应迟钝。
+踩坑与选择——VoiceInk 前前后后试用了几款产品，最后发现还是 VoiceInk 最能满足我的日常需求。作为一款开箱即用的 Mac 原生工具，它打动我的核心点主要有三个：
+完全免费：开源无内购。 中文精准：语音识别准确率极高，自动添加标点，懂中文语境。 原生丝滑：支持全局快捷键，光标在哪文字就实时输出在哪，无需复制粘贴。 极速安装 直接通过 Homebrew 一键搞定：
+brew install --cask voiceink 核心配置 安装完成后，建议进行以下基础配置，以兼顾识别性能与速度：
+模型选择：推荐下载并使用 large v3 turbo 模型，实测在准确率和响应速度上取得了极佳的平衡。 语言设置：将转换语言显式设置为中文，避免中英文混杂时发生识别漂移。 个人使用体验 默认快捷键（右侧 ⌘ 键）非常顺手。现在我跟 AI 聊天时，光标一点，按下快捷键直接“动嘴”，输入效率拉满。
+</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-28 00:00:00 +0800 CST'>April 28, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Mac 语音输入方案：VoiceInk 体验备忘录" href="https://jackley-dev.github.io/posts/voiceink-mac-stt/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">DeepTutor 拔草指南
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>体验 DeepTutor 后，整体感觉基本没必要安装。核心功能完全可被 Gemini、ChatGPT 等 Chatbot 平替，且本地部署坑多。
+与其折腾环境，不如抽离最有价值的功能，直接封装成 Skills。
+一、避坑指南：为什么不建议折腾 DeepTutor？ 1. 核心功能差异性小，可被 Chatbot 平替 DeepTutor 包装了许多看似高级的 Agent 模式，但实际体验发现，绝大部分场景仅需主流大模型的基础对话能力即可满足，缺乏不可替代的亮点。
+2. 部署繁琐，兼容性差且有 Bug 接入国内大模型（如 Minimax）存在接口兼容性问题，需深改源码。即便直接调用 OpenAI API，部分模块仍有 Bug 无法正常使用（如无法保存报错）。为一个平替工具修修补补，投入产出比极低，不值得折腾。
+二、唯一亮点：Guided Learning 模块 项目中唯一值得一用的是 Guided Learning 模块。 该模块能根据目标主题，自动梳理关键知识点并生成多页交互式 HTML 学习文档，通过流程中的提问帮助查漏补缺。
+三、降维打击：将核心功能封装为 Skills 既然仅 Guided Learning 实用，不如直接将其封装为 Skills，在 Claude Code 或 Trae 中无缝调用。
+这样做的好处：
+零部署：无需搭建 DeepTutor 前后端环境。 省钱：直接复用 AI 工具订阅额度，免去额外 API 费用。 高效生成：利用双 Agent 协作 Prompt 技巧，一键生成本地交互文档。 实际效果演示 在 Trae 中调用对应 Skills，AI 即可自动按步骤生成可交互的 HTML 教程合集。 生成出的文档包含导航页与独立知识点子页面，结构清晰并自带测验：
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-25 00:00:00 +0800 CST'>April 25, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to DeepTutor 拔草指南" href="https://jackley-dev.github.io/posts/deeptutor-as-skills/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Git Worktree：多 Agent 并行开发的最优解
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>在探讨“多 Agent 并行开发”时，底层常常会借助一个 Git 原生功能——git worktree。它不仅是泛泛的“多分支开发”，更是物理层面的工作区隔离。本文将从概念辨析到工程实践，彻底讲透 git worktree。
+概念辨析：别把这三个词搞混了 很多时候我们会把 working tree、git worktree 和“多分支开发”混为一谈，它们的本质区别如下：
+working tree (工作区)：这是 Git 的基础概念，指你当前目录里真实存在、正在编辑的那份代码文件。 多分支开发：这是逻辑隔离。用多个 branch 分别承载不同任务，但通常只有一个工作目录，需要来回 git switch。 git worktree：这是一个具体命令/功能，代表物理工作区隔离。它允许把同一个 Git 仓库的不同分支，同时检出到多个不同目录里。 一句话总结：多分支是逻辑层，worktree 是工作目录层；git worktree = 多分支开发的增强版执行方式。
+为什么 git worktree 是多 Agent 开发的最优解？ 多 Agent 协作最怕的是上下文互相污染。假设一个仓库需要同时进行三项任务：Agent A 改登录，Agent B 改推荐，Agent C 修 Bug。
+如果只用普通的多分支开发（单目录）：
+来回切 branch 非常繁琐。 容易污染工作区，一个 Agent 的未提交修改会影响另一个。 IDE、索引、依赖状态极易混乱。 而使用 git worktree，可以实现类似“一个总档案室 &#43; 多个独立施工现场”的架构：
+repo-main/ -&gt; main (主干) repo-login/ -&gt; feature/login (Agent A 的工位) repo-reco/ -&gt; feature/reco (Agent B 的工位) repo-export-fix/ -&gt; fix/export (Agent C 的工位) 每个目录都是同一个仓库的副本，挂载不同分支。各干各的，共享历史，互不打扰。这解决了多 Agent 开发的核心痛点：
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2026-04-23 00:00:00 +0800 CST'>April 23, 2026</span></footer>
+  <a class="entry-link" aria-label="post link to Git Worktree：多 Agent 并行开发的最优解" href="https://jackley-dev.github.io/posts/git-worktree-multi-agent/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">DeepTutor 接入 MiniMax 踩坑记录
     </h2>
   </header>
   <div class="entry-content">
-    <p>DeepTutor 是近期 GitHub 上热度极高的教育辅助 AI 项目，Star 数增长迅猛。考虑到其潜力，我决定在本地部署，并尝试接入 MiniMax 的 Token plan。
-没想到，在配置底层基于 LiteLLM 的路由时，遇到了一系列复杂的鉴权与接口兼容性问题，最终甚至用到了源码级的解决方案。放在 AI 时代之前，拿到一个跑不通的开源项目直接改源码门槛极高；但在如今 AI Coding 工具的辅助下，深入框架修改源码已经变成一件低成本的日常操作。
-本文将详细记录这次接入 MiniMax 的核心踩坑点及最终修复方案。
-环境与基础配置问题 LiteLLM 路由配置错误 最初尝试通用 OpenAI 兼容模式，将 LLM_BINDING 设为 openai，导致 LLM Provider NOT provided 报错。 解决：必须将 LLM_BINDING 设为 minimax，并配置 LLM_MODEL=MiniMax-M2.7，LiteLLM 底层逻辑才能正确匹配提供商配置。
-鉴权与端点配置 缺失 Group ID 导致 2049 错误 MiniMax 原生接口要求提供 Group ID（账户 ID），仅提供 API Key 会返回 invalid api key (2049) 错误。 解决：在 .env 中添加 MINIMAX_GROUP_ID=你的纯数字ID。
-端点 URL 配置错误导致 404 在使用 OpenAI 格式的 Payload 时，将 LLM_HOST 配置为了 Anthropic 端点（导致协议与请求格式不匹配），或使用了早期已废弃的域名。 解决：统一使用国内官方支持的 OpenAI 兼容端点：https://api.minimaxi.com/v1。
+    <p>DeepTutor 接入 MiniMax 踩坑记录 本文记录了 DeepTutor 本地部署的踩坑经历。最近 DeepTutor 在 GitHub 上火得不行，看着 Star 蹭蹭往上涨，我一时手痒就尝试了在本地部署，顺便接个 MiniMax 的 Token plan 试试水。
+没想到配置时遇到了一系列接口兼容性报错。不过借助 AI Coding 工具，深入框架修改源码已经变成一件极低成本的日常操作。以下是核心踩坑点及最终修复方案。
+1. LiteLLM 路由配置错误 现象：将 .env 中的 LLM_BINDING 设为 openai，启动时抛出 LLM Provider NOT provided。 原因：DeepTutor 底层依赖 LiteLLM 路由请求。通用 openai 绑定无法触发特定模型前缀的解析逻辑。 解决：强制指定 Provider 绑定，并正确声明模型名称： LLM_BINDING=minimax LLM_MODEL=MiniMax-M2.7 2. 鉴权与端点配置陷阱 缺失 Group ID (Error 2049) 现象：配置了有效的 API Key，但请求始终返回 invalid api key (2049)。 原因：与 OpenAI 仅需 API Key 不同，MiniMax 原生接口强制要求双重鉴权，必须提供账户的 Group ID。 解决：在 .env 中补充纯数字 ID： MINIMAX_GROUP_ID=你的纯数字ID 端点 URL 配置错误 (Error 404) 现象：请求直接返回 HTTP 404 Not Found。 原因：错误配置了 Anthropic 格式的端点，导致 OpenAI 格式的 Payload 协议不匹配。 解决：统一替换为国内官方支持的最新兼容端点： LLM_HOST=https://api.minimaxi.com/v1 3. 核心 Bug：多 System 消息引发的 2013 错误 现象：基础配置均正确且单文件脚本调用正常，但在 DeepTutor Agent 框架内报错：invalid chat setting (2013)。 Root Cause：DeepTutor 会在请求中注入多个 system 消息。OpenAI 接口允许这种格式，但 MiniMax 极其严格，检测到多个 system 消息会直接拒收。 解决：修改底层 _build_messages 方法，在发送请求前自动合并相邻的同角色消息。 核心修复逻辑：
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2026-04-15 00:00:00 +0800 CST'>April 15, 2026</span></footer>
@@ -229,141 +337,6 @@ Custom commands have been merged into skills. A file at .claude/commands/deploy.
   </div>
   <footer class="entry-footer"><span title='2026-04-03 00:00:00 +0800 CST'>April 3, 2026</span></footer>
   <a class="entry-link" aria-label="post link to AI IDE——AI时代的工作台" href="https://jackley-dev.github.io/posts/ai-ideai%E6%97%B6%E4%BB%A3%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8F%B0/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Andrej Karpathy 访谈：编程的终结与智能体时代
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>本文为 Andrej Karpathy 访谈视频《编程的终结：智能体、自动化研究与 AI 循环时代》的核心观点整理。访谈深入探讨了从“手写代码”向“系统管理”演变的开发新范式。
-开发范式的系统性转移 从“编写代码”到“表达意志” “编程”一词正在失去其原有含义，现在的核心在于向 AI 智能体（Agents）表达个人意志。自 2024 年底起，开发范式发生了质的飞跃。Karpathy 提到自己几乎不再手写代码，而是将 80% 以上的工作委托给智能体，每天花大量时间作为指挥者运行这些 AI。
-宏观动作（Macro-actions）管理 当前的开发已经不再是逐行编写函数，而是通过“宏观动作”在代码库层面进行操作。开发者转变为类似项目管理者的角色，同时调动多个并行工作的智能体：
-研究代理：负责探索和信息收集。 编码代理：负责具体的代码实现。 规划代理：负责制定实施路径。 人类：负责审查结果与方向把控。 系统瓶颈的演进 从算力受限到 Token 吞吐受限 过去十年的工程瓶颈主要在于 GPU 的底层算力（FLOPs）。而现在的系统瓶颈已经转变为 Token 吞吐量和人类的指挥技能。如果开发者无法满负荷利用智能体的 Token 生成能力，那么人类自身就成了整个开发循环中的“瓶颈”。
-智能体的未来形态 “Claw”与持久化智能体 传统的 AI 交互局限于对话窗口，而未来属于被称为“Claw”的代理层。它具备更复杂的记忆系统和持久性特征，能够在后台持续循环运行、独立执行任务，甚至在用户不进行主动干预时也能代表用户处理事务。
-“Dobby”家庭自动化系统与软件重构 Karpathy 展示了将 Sonos 音响、灯光、空调及安防监控等 6 个独立的 App 统一成一个基于 WhatsApp 的自然语言界面系统（代号“Dobby”）。这种模式揭示了未来软件的发展方向：软件将不再需要开发复杂的 UI，而是直接提供底层 API 供智能体调用和整合。
-“Vibe Coding”与临时软件 “氛围编程”（Vibe Coding）虽然目前仍需要人类进行设计决策，但在未来几年内将成为极低门槛的基础能力。AI 能够根据用户模糊的意图，快速生成一次性的“临时软件”来解决特定问题，彻底屏蔽底层技术细节。
-自动化研究与科研架构 AutoResearch 与递归自我改进 为了最大化效能，未来的科研循环必须逐步剔除人类的直接参与。实验表明，让 AI 智能体自主进行超参数调优（如针对 NanoGPT 模型），其结果甚至超越了拥有 20 年经验的顶尖人类专家。这标志着 LLM 已经具备了递归自我改进的雏形能力。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-22 10:00:00 +0800 CST'>March 22, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to Andrej Karpathy 访谈：编程的终结与智能体时代" href="https://jackley-dev.github.io/posts/andrej-karpathy-%E8%AE%BF%E8%B0%88%E7%BC%96%E7%A8%8B%E7%9A%84%E7%BB%88%E7%BB%93%E4%B8%8E%E6%99%BA%E8%83%BD%E4%BD%93%E6%97%B6%E4%BB%A3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Andrej Karpathy 揭秘马斯克的“大锤”管理学
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Andrej Karpathy 近期分享了他在 Tesla 与 Elon Musk 共事期间的观察。与外界常常关注的宏大愿景不同，Karpathy 揭示了马斯克在日常管理中极其务实甚至残酷的一面——他将其形容为**“挥动大锤”（Applying the Hammer）**。
-这不仅仅是一种比喻，更是一套可执行的工程管理算法。
-极简且高技术化的团队 马斯克对团队规模有着近乎偏执的控制欲。他倾向于保持极小规模、但技术能力极强的团队。
-这背后的逻辑很简单：随着团队规模线性增长，沟通成本呈指数级上升。
-抵制自然扩张：大多数公司在业务增长时会自然增加人手，马斯克则极力抵制这种倾向。 小团队红利：小团队意味着决策链条短，每个人都必须是多面手，信息传递几乎没有损耗。 果断淘汰低绩效者 与许多大公司“难以解雇员工”的温和文化不同，马斯克支持主动辞退表现不佳的员工。
-这不是为了节省成本，而是为了保持团队的“技术密度”。顶尖人才不仅产出高，更重要的是他们之间的沟通效率极高。一旦混入低绩效者，整个团队的协作带宽就会被拉低。
-扁平化与技术化管理 在马斯克的公司里，你很难找到不懂技术的中层管理者（Middle Management）。
-拒绝“传声筒”：管理结构非常精简。管理者必须具备深厚的技术背景，能够理解底层逻辑，而不是仅仅负责转发邮件和做 PPT。 专业化分工：管理是为了服务技术实现，而不是为了管理而管理。 高效且动态的会议文化 马斯克极度反感停滞和无效率。他鼓励一种看起来“不礼貌”但在工程上极高效的会议文化：
-如果你觉得会议无益或学不到东西，直接起座离开。
-这种文化消除了“面子工程”，让每个人的时间都花在刀刃上。
-拒绝“娇惯”的奋斗文化 不同于硅谷大厂提供的按摩、免费洗衣等过度福利，马斯克的公司文化强调高强度和产出。
-这里的核心价值观是技术卓越（Technical Excellence），而非员工舒适度。这种环境筛选出了那些真正对技术狂热、愿意为解决难题而投入的人。
-事实的唯一来源：一线工程师 马斯克约 50% 的时间会直接与工程师交流。对他来说：
-代码是真相：PPT 和汇报可能会骗人，但代码不会。 一线是真相：中间管理层的报告往往经过了层层过滤和美化。马斯克选择绕过中间层，直接从源头获取信息。 “挥动大锤”解决瓶颈 这是 Karpathy 印象最深的一点。当项目遇到关键资源瓶颈（例如 GPU 短缺）时，马斯克不会接受“正在协调”这种借口。
-他会亲自介入，“挥动大锤”砸开障碍：
-立即翻倍资源：如果计算资源不足，他会要求立即翻倍，而不是增加 10%。 每日更新机制：设立每日检查点，直到瓶颈被彻底消除。 展现极强执行力：这种自上而下的压力，能够瞬间击穿部门墙和官僚流程。 跨越层级的供应链干预 为了扫清障碍，他会跨过所有繁冗的采购流程。如果显卡缺货，他会直接联系 NVIDIA CEO 黄仁勋。
-这种**“超级管理员”式的权限调用**，确保了关键路径上的问题能够以最高优先级解决。
-马斯克的管理风格常被误解为微观管理（Micromanagement）。但 Karpathy 的视角让我们看到，这其实是一种基于物理第一性原理的管理工程学：消除噪音（低绩效、中间层），增强信号（直接沟通、高密度人才），并集中所有能量（挥动大锤）击穿最大的阻力。
-</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-14 10:00:00 +0800 CST'>March 14, 2026</span>&nbsp;·&nbsp;<span>jackley</span></footer>
-  <a class="entry-link" aria-label="post link to Andrej Karpathy 揭秘马斯克的“大锤”管理学" href="https://jackley-dev.github.io/posts/andrej-karpathy-%E6%8F%AD%E7%A7%98%E9%A9%AC%E6%96%AF%E5%85%8B%E7%9A%84%E5%A4%A7%E9%94%A4%E7%AE%A1%E7%90%86%E5%AD%A6/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">OpenClaw升级后Agent罢工？三步配置教你解决
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>升级到 OpenClaw 2026.3.2 后，很多朋友发现自己的 Agent 突然“变笨”了——不能写代码，不能执行命令，甚至连文件都读不了。
-这是因为 OpenClaw 引入了一个重大的 Breaking Change (破坏性更新)。
-什么是 Breaking Change？ 在软件开发中，Breaking Change 指的是那些不向后兼容的改动。简单说，就是“你以前的代码/配置，在新版本里跑不通了”。
-这次 OpenClaw 的更新，最大的改变在于权限策略的翻转：
-以前 (Legacy): 默认信任。Agent 启动即拥有系统权限，想干嘛干嘛。 现在 (v2026.3.2&#43;): 默认安全 (Secure by Default)。 发生了什么：Tool Profiles 的默认值变更 OpenClaw 的 Tool Profiles (工具配置) 机制其实早就存在，但在此次更新中，默认配置从“全能模式”变成了 messaging (通讯员模式)。
-这意味着，除非你显式授权，否则 Agent 默认只能收发消息。
-minimal: 仅保留会话状态，极其受限。 messaging (新默认值): 仅能聊天。适合客服、通知类 Bot。 coding: 开发者模式。允许读写文件，但限制系统命令。 full: 全功能模式。无限制。 这就像是以前公司发门禁卡，默认给的是“全通卡”；现在新员工入职，默认只给“大堂通行证”。虽然安全了，但对于习惯了“全通卡”的老员工（开发者）来说，确实很不方便。
-如何解决？ ❌ 方案一：暴力解锁 (不推荐) 最简单的办法，是直接把配置改回“全通模式”，并且让它在宿主机上直接运行。
-// 🚫 危险配置：千万别这么做 { &#34;tools&#34;: { &#34;profile&#34;: &#34;full&#34;, &#34;exec&#34;: { &#34;host&#34;: &#34;gateway&#34;, // 直接在宿主机运行 &#34;ask&#34;: &#34;off&#34; // 从不询问，直接执行 } } } 为什么危险？ 这就好比为了方便进出，把公司大门直接拆了。一旦 Agent 出现“幻觉”（比如误执行 rm -rf / 或修改了系统关键配置），你的宿主机将没有任何防线，直接崩溃。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-10 10:00:00 +0800 CST'>March 10, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to OpenClaw升级后Agent罢工？三步配置教你解决" href="https://jackley-dev.github.io/posts/openclaw%E5%8D%87%E7%BA%A7%E5%90%8Eagent%E7%BD%A2%E5%B7%A5%E4%B8%89%E6%AD%A5%E9%85%8D%E7%BD%AE%E6%95%99%E4%BD%A0%E8%A7%A3%E5%86%B3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">OpenClaw 更新：从“逻辑权限”到“物理沙箱”的纵深防御
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>在上一篇关于 Tool Profiles 的讨论中，我们提到了“信任是分级的”。但作为一名务实的 Builder，我们深知：逻辑上的约束永远只是第一道防线。
-当 Agent 拥有了 coding 权限，即使我们限制了它不能执行 rm -rf，它依然可能因为“幻觉”写出一些破坏性的代码。为了彻底解决“爆炸半径”问题，OpenClaw 推出了 Sandboxing (沙箱机制)。
-这是从“软件定义权限”向“基础设施定义安全”的跨越。
-核心理念：物理隔离 (Physical Isolation) OpenClaw 的沙箱本质上是利用 Docker 容器 来运行 Agent 的工具。
-这意味着，虽然 OpenClaw 内置了沙箱的管理逻辑（Gateway 负责调度），但你必须在宿主机上预先安装 Docker Engine。它并不是一个完全独立的、零依赖的虚拟机，而是基于容器技术的轻量级隔离。
-这意味着 exec (执行命令)、read/write (读写文件)、edit (编辑文件) 等高危操作不再直接作用于你的宿主机（Host），而是在一个受限的容器环境中运行。
-这与我在行为模式中提到的 “沙箱思维” (Sandbox Thinking) 高度契合：
-在沙箱内，允许系统崩溃（Let it Crash）以积累数据；在沙箱外，严格设立熔断机制（Safety Layer）。
-关键配置深度拆解 OpenClaw 的沙箱设计非常灵活，主要通过以下几个维度进行精细化控制：
-1. 运行模式 (Modes) 通过 agents.defaults.sandbox.mode 控制：
-off: 裸奔模式，工具直接在宿主机运行（慎用）。 non-main (默认): 仅对非主会话（如群聊、自动化任务）启用。这是一个非常平衡的策略，保护了核心生产环境，同时不影响日常调试。 all: 全量开启。 2. 隔离粒度 (Scope) 决定了容器的复用策略：
-session (默认): 每个会话一个独立容器。最安全，但启动开销略大。 agent: 每个 Agent 一个容器。 shared: 所有沙箱共用一个容器。适合资源受限的环境。 3. 工作区访问 (Workspace Access) 这是最体现“控制力”的地方：
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-05 14:30:00 +0800 CST'>March 5, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to OpenClaw 更新：从“逻辑权限”到“物理沙箱”的纵深防御" href="https://jackley-dev.github.io/posts/openclaw-%E6%9B%B4%E6%96%B0%E4%BB%8E%E9%80%BB%E8%BE%91%E6%9D%83%E9%99%90%E5%88%B0%E7%89%A9%E7%90%86%E6%B2%99%E7%AE%B1%E7%9A%84%E7%BA%B5%E6%B7%B1%E9%98%B2%E5%BE%A1/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">OpenClaw 更新：为 AI Agent 装上“安全护栏”
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>OpenClaw 最近引入了一套完整的 Tool Profiles (工具配置) 和 Allow/Deny (黑白名单) 机制。这赋予了开发者定义“权限沙箱”的能力，从根本上解决了 Agent 权限过大的安全隐患。
-⚠️ 2026.3.3 Breaking Change 预警
-默认配置变更为 messaging。
-新安装的 OpenClaw 采取了&#34;默认安全&#34; (Secure by Default) 策略，不再默认开启编程和系统工具。如果你希望 Agent 具备 Coding 能力，必须显式在配置中将 tools.profile 设置为 &#34;coding&#34; (或 &#34;full&#34;)。
-核心更新解读 这次更新的核心在于控制粒度的提升。
-1. Tool Profiles：预设权限组 OpenClaw 提供了几种开箱即用的 Profile，类似于为 Agent 分配了不同的“工种”：
-minimal: 极简模式，仅保留会话状态。适合纯聊天或需要极高安全性的场景。 coding: 开发者模式。包含文件系统 (group:fs)、运行时 (group:runtime)、内存等。这是 Builder 最常用的模式。 messaging: 通讯员模式。专注于消息收发 (group:messaging)，适合客服或通知类 Agent。 full: 全功能模式。无限制，慎用。 2. 精细化的 Allow/Deny 策略 Profile 只是基线 (Base)，真正的威力在于 tools.allow 和 tools.deny 的微调。遵循最小权限原则 (Principle of Least Privilege)，Deny 规则优先级高于 Allow。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-05 10:00:00 +0800 CST'>March 5, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to OpenClaw 更新：为 AI Agent 装上“安全护栏”" href="https://jackley-dev.github.io/posts/openclaw-%E6%9B%B4%E6%96%B0%E4%B8%BA-ai-agent-%E8%A3%85%E4%B8%8A%E5%AE%89%E5%85%A8%E6%8A%A4%E6%A0%8F/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">构建你的第二大脑：基于 AI 的个人记忆系统 (AI Memory System)
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>在与 AI 协作的一年多时间里，我发现大多数人（包括曾经的我）都陷入了一个误区：我们花费大量时间打磨 Prompt，却忽略了 Context（上下文）的积累。
-每一次对话，我们都要重新告诉 AI：“我是谁”、“我喜欢什么样的代码风格”、“这个项目的背景是什么”。这不仅低效，更致命的是，AI 永远无法积累对你的“隐性认知”。它像是一个永远失忆的短期实习生，虽然能力强，但永远不懂你的默契。
-为了解决这个问题，我构建了一套 AI Memory System。这不是一个复杂的软件，而是一套基于 Markdown 的协议和文件结构。它让 AI 能够“记住”我，不仅是记住我的代码偏好，更是记住我的价值观、思维模式和决策原则。
-核心理念：从“工具”到“分身” 这套系统的核心理念非常简单：
-显性化 (Explicit)：不要指望 AI 猜你的心思。把你最底层的原则写下来。 结构化 (Structured)：将记忆分层，不同层级的记忆有不同的更新频率和稳定性。 人机协作 (Human-in-the-loop)：AI 负责从对话中“提取”洞察，人类负责“确认”（Yes/No）。 当 AI 拥有了这些记忆，它就不再是一个冷冰冰的问答机器，而是一个能够模拟你思维的“数字分身”。它可以：
-在你犹豫时，根据你的决策原则给出建议。 在写代码时，自动遵循你的架构审美。 在面对新问题时，调用你过去的思维模型（Pattern）来分析。 系统架构：记忆的四个层级 我将记忆系统分为四个层级，稳定性由高到低，更新频率由低到高：
-1. Core Identity (核心身份) 这是系统的“根目录”，记录了我最稳定的特质。
-文件: core-identity.md 内容: 价值观 (Values)、人生原则 (Principles)、性格特征 (Personality)。 示例: 价值观: “长期主义”（Long-termism）。 原则: “简单至上”（Simplicity）。 性格: “理性”、“直截了当”。 作用: 当 AI 需要做主观判断或建议时，它会基于这些原则，而不是通用的“政治正确”废话。 2. Patterns (行为模式) 这是系统的“操作系统”，记录了我处理问题的方法论。
-文件: patterns.md 内容: 思维模型 (Mental Models)、决策风格、工作习惯。 示例: 思维模式: “第一性原理”（First Principles）。 工作习惯: “深度工作” (Deep Work)、“番茄工作法”。 作用: AI 会模仿这些思维方式来分析问题。例如，当我问“怎么解决这个问题”时，它会自动用“第一性原理”来拆解。 3. Preferences (偏好设置) 这是系统的“配置文件”，记录了具体的操作偏好。
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2026-03-01 10:00:00 +0800 CST'>March 1, 2026</span></footer>
-  <a class="entry-link" aria-label="post link to 构建你的第二大脑：基于 AI 的个人记忆系统 (AI Memory System)" href="https://jackley-dev.github.io/posts/%E6%9E%84%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%E5%9F%BA%E4%BA%8E-ai-%E7%9A%84%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BF%86%E7%B3%BB%E7%BB%9F-ai-memory-system/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
